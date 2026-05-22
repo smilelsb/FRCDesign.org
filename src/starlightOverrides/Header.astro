@@ -10,7 +10,11 @@ import { getSidebarForPath, type SidebarItem, type SidebarSection } from "../con
 
 const props = Astro.props;
 
-const navLinks = [
+const currentPath = Astro.url.pathname;
+const isChinesePath = currentPath === "/zh/" || currentPath.startsWith("/zh/");
+
+// 让 Header 根据 /zh/ 自动切换中英文导航
+const englishNavLinks = [
   { href: "/", label: "Home" },
   { href: "/feature-guide/", label: "Website Feature Guide" },
   { href: "/learning-course/", label: "Learning Course" },
@@ -22,11 +26,29 @@ const navLinks = [
   { href: "/contribution/methods-of-contributing/", label: "Contribution" },
 ];
 
-const currentPath = Astro.url.pathname;
+const chineseNavLinks = [
+  { href: "/zh/", label: "首页" },
+  { href: "/zh/feature-guide/", label: "网站功能指南" },
+  { href: "/zh/learning-course/", label: "学习课程" },
+  { href: "/zh/educators-guide/introduction/", label: "教师指南" },
+  { href: "/zh/design-handbook/", label: "设计手册" },
+  { href: "/zh/mechanism-examples/", label: "机构示例" },
+  { href: "/zh/best-practices/", label: "最佳实践" },
+  { href: "/zh/resources/", label: "其他资源" },
+  { href: "/zh/contribution/methods-of-contributing/", label: "贡献指南" },
+];
+
+const navLinks = isChinesePath ? chineseNavLinks : englishNavLinks;
+
 
 function isActive(href: string): boolean {
   if (href === "/") {
     return currentPath === "/" || currentPath === "";
+  }
+
+  // 中文首页 /zh/ 需要加一个特殊判断
+  if (href === "/zh/") {
+    return currentPath === "/zh/" || currentPath === "/zh";
   }
 
   // Special case: Changelog is a specific page under /resources/
@@ -147,7 +169,7 @@ for (const section of sidebarSections) {
   <nav class="mobile-navigation" aria-label="Primary" data-mobile-menu>
     <div class="mobile-navigation-inner">
       <div class="mobile-nav-section">
-        <span class="mobile-nav-section-title">Navigation</span>
+        <span class="mobile-nav-section-title">{isChinesePath ? "导航" : "Navigation"}</span> 
         {navLinks.map((item) => (
           <a href={item.href} class="mobile-nav-link">{item.label}</a>
         ))}
@@ -155,7 +177,7 @@ for (const section of sidebarSections) {
 
       {mobileSidebarItems.length > 0 && (
         <div class="mobile-nav-section mobile-sidebar-section">
-          <span class="mobile-nav-section-title">Page Navigation</span>
+          <span class="mobile-nav-section-title">{isChinesePath ? "页面导航" : "Page Navigation"}</span> 
           <div class="mobile-sidebar-tree" id="mobile-sidebar-tree" data-items={JSON.stringify(mobileSidebarItems)} data-current-path={currentPath}></div>
         </div>
       )}
