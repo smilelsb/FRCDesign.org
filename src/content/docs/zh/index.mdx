@@ -1,0 +1,56 @@
+﻿---
+title: 欢迎来到 FRCDesign.org
+description: 面向 FRC 机器人设计的综合学习指南与技术参考，使用 Onshape 进行学习与查阅
+template: splash
+prev: false
+next: false
+hero:
+  tagline: 面向 FRC 机器人设计的综合学习指南与技术参考，使用 Onshape 进行学习与查阅
+
+  actions:
+    - text: 开始学习
+      link: /zh/learning-course/
+      icon: right-arrow
+
+---
+
+import HomeCard from '@components/homepage/HomeCard.astro';
+
+<div class="home-cards-grid">
+  <HomeCard
+    title="网站功能指南"
+    href="/zh/feature-guide/"
+    icon="book"
+    description="介绍本网站的主要功能。建议在进入学习课程之前先阅读这一部分。"
+  />
+  <HomeCard
+    title="学习课程"
+    href="/zh/learning-course/"
+    icon="graduation"
+    description="一套引导式课程，帮助学生学习如何将 Onshape 应用于机器人设计基础。想系统学习 FRC 机器人设计与 CAD 技能？可以从这里开始。"
+  />
+  <HomeCard
+    title="设计手册"
+    href="/zh/design-handbook/"
+    icon="wrench"
+    description="深入讲解设计一台有竞争力机器人所需的核心概念。不同于学习课程，这里更偏向参考百科。"
+  />
+  <HomeCard
+    title="机构示例"
+    href="/zh/mechanism-examples/"
+    icon="gears"
+    description="这里的机构案例不是普通案例集合，而是围绕特定设计概念精心挑选，并对每个设计进行详细拆解。"
+  />
+  <HomeCard
+    title="CAD 最佳实践"
+    href="/zh/best-practices/"
+    icon="check"
+    description="整理在 Onshape 中建模机器人时值得遵循的最佳实践。"
+  />
+  <HomeCard
+    title="其他资源"
+    href="/zh/resources/"
+    icon="folder"
+    description="除了网站上的主要内容之外，这里还整理了一批实用资源，例如 FeatureScript 和模型等。"
+  />
+</div>
