@@ -28,6 +28,16 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
     },
   ],
 
+  // 添加中文版本 Feature Guide section
+  '/zh/feature-guide': [
+    {
+      label: '网站功能指南',
+      items: [
+        { label: '概览', slug: 'zh/feature-guide' },
+      ],
+    },
+  ],
+  
   // Learning Course section
   '/learning-course': [
     {
