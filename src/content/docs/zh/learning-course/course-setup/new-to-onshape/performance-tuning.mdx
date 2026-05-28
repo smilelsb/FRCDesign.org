@@ -1,48 +1,48 @@
 ﻿---
-title: Performance Tuning
-description: Optimizing Onshape performance for your system
+title: 性能调校
+description: 针对你的系统优化 Onshape 性能
 ---
 
 
-## Performance Tuning
+## 性能调校
 
-After your initial account setup, Onshape will run a browser check to ensure compatibility. Depending on your browser, additional steps can be taken to improve performance.
+完成初始账号设置后，Onshape 会运行浏览器检查，以确保兼容性。根据你使用的浏览器，还可以通过一些额外步骤来提升性能。
 
-<Aside type="tip">
-You can test your current performance at the [Onshape Compatibility Check Page](https://cad.onshape.com/check).
+<Aside type="tip" title="Tip（提示）">
+你可以在 [Onshape 兼容性检查页面](https://cad.onshape.com/check) 测试当前性能。
 </Aside>
 
-<Aside type="note">
-If the browser check fails, you may want to try a different browser. Currently, chromium browsers like Chrome, Edge, Opera, and Arc are the best supported browsers for Onshape, but Firefox usually works with no issues as well. Safari is not well supported.
+<Aside type="note" title="Note（备注）">
+如果浏览器检查失败，可以尝试换一个浏览器。目前，Chrome、Edge、Opera 和 Arc 等 Chromium 浏览器对 Onshape 的支持最好，不过 Firefox 通常也可以正常使用。Safari 的支持情况不太理想。
 </Aside>
 
-### Improving Chrome Performance
+### 提升 Chrome 性能
 
-If you are using Chrome, You can try modifying the following settings to improve rendering speeds.
+如果你使用 Chrome，可以尝试修改以下设置来提升渲染速度。
 
-- First, type `chrome://settings/` in your search bar to navigate to chrome settings. Make sure that "Use graphics acceleration when available" is enabled. Relaunch chrome if you have updated it to enable it.
+- 首先，在搜索栏中输入 `chrome://settings/`，进入 Chrome 设置。确保 “Use graphics acceleration when available（可用时使用图形加速）” 已启用。如果你刚刚修改并启用了它，请重新启动 Chrome。
 
-  <ContentFigure src="../img/performance-tuning/graphicsacceleration.webp" alt="Graphics acceleration setting" />
+  <ContentFigure src="../img/performance-tuning/graphicsacceleration.webp" alt="图形加速设置" />
 
-- Go to `chrome://flags/` and enable "Override Software Rendering List":
+- 前往 `chrome://flags/`，并启用 “Override Software Rendering List（覆盖软件渲染列表）”：
 
-  <ContentFigure src="../img/performance-tuning/override-rendering-list.webp" alt="Override rendering list" />
+  <ContentFigure src="../img/performance-tuning/override-rendering-list.webp" alt="覆盖软件渲染列表" />
 
-- Finally, Try adjusting your ANGLE graphics backend:
+- 最后，尝试调整 ANGLE 图形后端：
 
-  <ContentFigure src="../img/performance-tuning/ANGLE-backend.webp" alt="ANGLE backend" />
+  <ContentFigure src="../img/performance-tuning/ANGLE-backend.webp" alt="ANGLE 后端" />
 
-Please note that performance will depend on your individual computer setup. We suggest the following process:
+请注意，性能表现取决于你自己的电脑配置。我们建议按以下流程测试：
 
-- Choose an ANGLE graphics backend: `chrome://flags/#use-angle`
-- Click the Relaunch button
-- [Check your performance](https://cad.onshape.com/check)
+- 选择一个 ANGLE 图形后端：`chrome://flags/#use-angle`
+- 点击 Relaunch（重新启动）按钮
+- [检查你的性能](https://cad.onshape.com/check)
 
-Repeat these steps for each backend and use whichever is the most performant. Here are some examples all taken from the same machine.
+对每个后端重复这些步骤，然后使用性能最好的选项。下面这些示例都来自同一台电脑。
 
 <Slides>
   ![](../img/performance-tuning/default.webp)
-  The default configuration
+  默认配置
 
   ![](../img/performance-tuning/opengl.webp)
   OpenGL
@@ -57,4 +57,4 @@ Repeat these steps for each backend and use whichever is the most performant. He
   Direct3D 11 on 12
 </Slides>
 
-In the above example, Direct3D 11 narrowly beats out OpenGL, but that won't always be the case.
+在上面的示例中，Direct3D 11 略微优于 OpenGL，但并不总是如此。
