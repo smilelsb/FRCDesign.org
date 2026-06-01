@@ -1,60 +1,60 @@
 ﻿---
-title: "1A: Onshape Fundamentals - Section 1"
-description: Introduction and setup for Stage 1A Onshape Fundamentals
+title: "1A：Onshape 基础 - 第 1 小节"
+description: 第一阶段 1A Onshape 基础的介绍与设置
 ---
 
 import ContentRow from '@components/content/ContentRow.astro';
 
-## Introduction and Setup
+## 介绍与设置
 
-Welcome to Stage 1A! You'll be learning and practicing the basics of CAD throughout this stage.
+欢迎来到第一阶段 1A！在这一阶段中，你将学习并练习 CAD（计算机辅助设计）的基础内容。
 
-This course is structured a bit differently from what you might be used to, and we hope you enjoy the process.
-In these exercises, **you are encouraged to experiment and figure out how a feature "works."** You can usually move on once you are able to complete the exercises.
-Exercises build on each other and always expect you to have done the previous exercises, so **don't skip any.**
+这门课程的组织方式可能和你习惯的学习方式略有不同，希望你能享受这个过程。
+在这些练习中，**我们鼓励你主动尝试，并弄清楚一个功能到底是如何“工作”的。** 通常来说，只要你能够完成练习，就可以继续进入下一项内容。
+练习之间是层层递进的，后续内容默认你已经完成了前面的练习，所以**不要跳过任何练习。**
 
-**No matter your experience level, you should start here.** The time 1A takes to complete depends on your experience, because it relies on "figuring things out" to create connections and guide learning. It could take 30 minutes to an hour for an expert or multiple hours for complete beginners. The details you end up spending more time on are always going to be the stuff you need to learn or work on.
+**无论你现在的经验水平如何，都应该从这里开始。** 1A 的完成时间取决于你的基础，因为这一部分主要依靠自己“摸索”来建立理解，并推动学习。对于经验丰富的人，可能 30 分钟到 1 小时就能完成；对于完全的新手，可能需要数小时。你花时间最多的细节，往往正是你最需要学习或强化的内容。
 
-<Aside type="caution">
-Make sure the [required course tools](/learning-course/course-setup/required-course-tools/part-library) (the part library and featurescripts) are added to your Onshape account before starting this stage.
+<Aside type="caution" title="Warning（警告）">
+开始这一阶段前，请确保已经将[必备课程工具](/learning-course/course-setup/required-course-tools/part-library)（零件库和 FeatureScript）添加到你的 Onshape 账号中。
 </Aside>
 
-## Box Tube Intro
+## 方管介绍
 
-We will start off with Box Tubes, since they provide the primary structure of your robot. Box tubes are used in many places, from the drivetrain to the superstructure.
-They are strong, lightweight, and easy to work with. You will have to make countless box tubes throughout your FRC career, so it's important to get comfortable with them.
+我们会从 Box Tube（方管）开始，因为方管通常构成机器人的主要结构。从底盘传动到上层结构，方管都会在很多地方使用。
+方管强度高、重量轻，也便于加工。在你的 FRC 学习和参赛过程中，会反复建模大量方管，因此尽早熟悉它非常重要。
 
-<ContentFigure src="../img/1a/box-tube-example.webp" alt="Example of a box tube with a pre-punched hole pattern" width="80%">Example of a box tube with a pre-punched hole pattern</ContentFigure>
+<ContentFigure src="../img/1a/box-tube-example.webp" alt="标准孔距预冲孔的方管示例" width="80%">标准孔距预冲孔的方管示例</ContentFigure>
 
-### Example Usage
+### 使用示例
 
 <ContentRow>
-  <ContentFigure src="../img/1a/ht-superstructure.webp" alt="4414's 2022 box tube superstructure in CAD">4414's 2022 box tube superstructure in CAD</ContentFigure>
-  <ContentFigure src="../img/1a/hightide-real.webp" alt="4414's 2022 robot" width="50%">4414's 2022 robot</ContentFigure>
+  <ContentFigure src="../img/1a/ht-superstructure.webp" alt="4414 队 2022 赛季方管上层结构 CAD 模型">4414 队 2022 赛季方管上层结构 CAD 模型</ContentFigure>
+  <ContentFigure src="../img/1a/hightide-real.webp" alt="4414 队 2022 赛季机器人" width="50%">4414 队 2022 赛季机器人</ContentFigure>
 </ContentRow>
 
-From the side, a box tube can be represented as a simple rectangle.
-Box tubing is typically referred to by its size, eg: 2x1, 1x1, and 2x2 (Spoken as "two-by-one", "one-by-one", and "two-by-two"). For the rest of the learning course, we will use this notation when referring to box tube.
+从侧面看，方管可以简单表示为一个矩形。
+方管通常用尺寸来称呼，例如：2x1、1x1 和 2x2（读作 “two-by-one（2 乘 1）”、“one-by-one（1 乘 1）” 和 “two-by-two（2 乘 2）”）。在后续学习课程中，我们都会使用这种记法来表示方管。
 
-- **1 inch × 1 inch**
-- **2 inch × 1 inch**
-- **2 inch x 2 inch**
+- **1 英寸 × 1 英寸**
+- **2 英寸 × 1 英寸**
+- **2 英寸 × 2 英寸**
 
-<ContentFigure src="../img/1a/toob.webp" alt="Box tube cross sections (1x1 and 2x1)">Box tube cross sections (1x1 and 2x1)</ContentFigure>
+<ContentFigure src="../img/1a/toob.webp" alt="方管截面（1x1 和 2x1）">方管截面（1x1 和 2x1）</ContentFigure>
 
-We'll be working with these increments throughout the stages, keep them in mind!
+后续阶段会经常使用这些尺寸规格，请记住它们！
 
 ---
 
-## Important: Copy this Document!
+## 重要：复制这个文档！
 
-Copy this document to use for all of the exercises in 1A. A tutorial is provided below to show how to copy a document.
+请复制这个文档，用于完成 1A 中的所有练习。下面提供了一个教程，演示如何复制文档。
 
 <LinkButton href="https://cad.onshape.com/documents/1992f75680b0b5ae817636b8/w/7cd54748186a27d162af0a87/e/2cb2d376790249e2cb89e8c9?renderMode=0&uiState=66f5f1d68472407043c9e0fd" center>
-  Stage 1A Document Link
+  第一阶段 1A 文档链接
 </LinkButton>
 
-<ContentFigure src="Jrq30Tgtm2I">How to copy an Onshape document</ContentFigure>
+<ContentFigure src="Jrq30Tgtm2I">如何复制 Onshape 文档</ContentFigure>
 
 
-Once the document is copied, move on to Exercise 0 using the page navigation buttons below.
+复制文档后，使用页面下方的导航按钮进入"练习 0：导航操作"。

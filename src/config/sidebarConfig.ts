@@ -322,7 +322,7 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
           collapsed: true,
           items: [
             { label: '课程介绍', slug: 'zh/learning-course/stage1/introduction' },
-            { label: '专注于改进', slug: 'zh/learning-course/stage1/1a/focusing-on-improvement' },
+            { label: '聚焦能力提升', slug: 'zh/learning-course/stage1/1a/focusing-on-improvement' },
             {
               label: 'A：Onshape 基础',
               collapsed: true,
