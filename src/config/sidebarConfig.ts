@@ -287,6 +287,155 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
     },
   ],
 
+  // 中文版本 Learning Course section
+  '/zh/learning-course': [
+    {
+      label: '学习课程',
+      items: [
+        { label: '概览', slug: 'zh/learning-course' },
+        {
+          label: '课程准备',
+          collapsed: true,
+          items: [
+            { label: 'CAD 入门', slug: 'zh/learning-course/course-setup/new-to-cad' },
+            {
+              label: 'Onshape 入门',
+              collapsed: true,
+              items: [
+                { label: '账号设置', slug: 'zh/learning-course/course-setup/new-to-onshape/account-setup' },
+                { label: '性能调校', slug: 'zh/learning-course/course-setup/new-to-onshape/performance-tuning' },
+                { label: '文档页面', slug: 'zh/learning-course/course-setup/new-to-onshape/documents-page' },
+              ],
+            },
+            {
+              label: '必备课程工具',
+              collapsed: true,
+              items: [
+                { label: '零件库', slug: 'zh/learning-course/course-setup/required-course-tools/part-library' },
+                { label: '自定义特征 / FeatureScripts', slug: 'zh/learning-course/course-setup/required-course-tools/featurescripts' },
+              ],
+            },
+          ],
+        },
+        {
+          label: '第一阶段',
+          collapsed: true,
+          items: [
+            { label: '课程介绍', slug: 'zh/learning-course/stage1/introduction' },
+            { label: '专注于改进', slug: 'zh/learning-course/stage1/1a/focusing-on-improvement' },
+            {
+              label: 'A：Onshape 基础',
+              collapsed: true,
+              items: [
+                {
+                  label: '第 1 节：零件工作室基础',
+                  collapsed: true,
+                  items: [
+                    { label: '介绍与设置', slug: 'zh/learning-course/stage1/1a/section1-setup' },
+                    { label: '练习 0：导航操作', slug: 'zh/learning-course/stage1/1a/section1-exercise0' },
+                    { label: '练习 1：第一批管材', slug: 'zh/learning-course/stage1/1a/section1-exercise1' },
+                    { label: '练习 2：更多管材', slug: 'zh/learning-course/stage1/1a/section1-exercise2' },
+                    { label: '练习 3：草图基础', slug: 'zh/learning-course/stage1/1a/section1-exercise3' },
+                    { label: '练习 4：底盘传动框架', slug: 'zh/learning-course/stage1/1a/section1-exercise4' },
+                    { label: '练习 5：矩形框架', slug: 'zh/learning-course/stage1/1a/section1-exercise5' },
+                    { label: '练习 6：三角框架', slug: 'zh/learning-course/stage1/1a/section1-exercise6' },
+                  ],
+                },
+                {
+                  label: '第 2 节：板件',
+                  collapsed: true,
+                  items: [
+                    { label: '练习 1：板件工作流程', slug: 'zh/learning-course/stage1/1a/section2-exercise1' },
+                    { label: '练习 2：加强板/角撑板', slug: 'zh/learning-course/stage1/1a/section2-exercise2' },
+                    { label: '练习 3：上层结构加强板与板件', slug: 'zh/learning-course/stage1/1a/section2-exercise3' },
+                    { label: '练习 4：电机安装', slug: 'zh/learning-course/stage1/1a/section2-exercise4' },
+                  ],
+                },
+                {
+                  label: '第 3 节：装配体',
+                  collapsed: true,
+                  items: [
+                    { label: '练习 1：铆钉', slug: 'zh/learning-course/stage1/1a/section3-exercise1' },
+                    { label: '练习 2：Swerve 底盘', slug: 'zh/learning-course/stage1/1a/section3-exercise2' },
+                    { label: '练习 3：加强板/角撑板设置', slug: 'zh/learning-course/stage1/1a/section3-exercise3' },
+                    { label: '练习 4：完整框架', slug: 'zh/learning-course/stage1/1a/section3-exercise4' },
+                    { label: '练习 5：完成框架', slug: 'zh/learning-course/stage1/1a/section3-exercise5' },
+                  ],
+                },
+              ],
+            },
+            {
+              label: 'B：动力传动',
+              collapsed: true,
+              items: [
+                { label: '介绍', slug: 'zh/learning-course/stage1/1b/introduction' },
+                { label: '电机', slug: 'zh/learning-course/stage1/1b/motors' },
+                { label: '轴与轴承', slug: 'zh/learning-course/stage1/1b/shafts-bearings' },
+                { label: '扭矩与速度', slug: 'zh/learning-course/stage1/1b/torque-speed' },
+                { label: '齿轮基础', slug: 'zh/learning-course/stage1/1b/gears' },
+                { label: '练习 1：简单齿轮箱', slug: 'zh/learning-course/stage1/1b/exercise1' },
+                { label: '练习 2：两级齿轮箱', slug: 'zh/learning-course/stage1/1b/exercise2' },
+                { label: '同步带与带轮基础', slug: 'zh/learning-course/stage1/1b/belts' },
+                { label: '链条与链轮基础', slug: 'zh/learning-course/stage1/1b/chain' },
+                { label: '练习 3：齿轮与同步带齿轮箱', slug: 'zh/learning-course/stage1/1b/exercise3' },
+                { label: '总结', slug: 'zh/learning-course/stage1/1b/summary' },
+              ],
+            },
+            {
+              label: 'C：机构练习',
+              collapsed: true,
+              items: [
+                { label: '介绍', slug: 'zh/learning-course/stage1/1c/introduction' },
+                { label: '练习概览', slug: 'zh/learning-course/stage1/1c/exercise-overview' },
+                { label: '练习 1：平直拾取机构', slug: 'zh/learning-course/stage1/1c/exercise1' },
+                { label: '练习 2：死轴滚轮', slug: 'zh/learning-course/stage1/1c/exercise2' },
+                { label: '练习 3：发射机构', slug: 'zh/learning-course/stage1/1c/exercise3' },
+                { label: '练习 4：伸缩挂钩', slug: 'zh/learning-course/stage1/1c/exercise4' },
+                { label: '练习 5：翻转齿轮箱', slug: 'zh/learning-course/stage1/1c/exercise5' },
+                { label: '练习 6：方向切换', slug: 'zh/learning-course/stage1/1c/exercise6' },
+                { label: '练习 7：竖直滚轮', slug: 'zh/learning-course/stage1/1c/exercise7' },
+                { label: '练习 8：Indexer 居中', slug: 'zh/learning-course/stage1/1c/exercise8' },
+                { label: '总结', slug: 'zh/learning-course/stage1/1c/summary' },
+              ],
+            },
+            {
+              label: 'D：设计方法',
+              collapsed: true,
+              items: [
+                { label: '介绍', slug: 'zh/learning-course/stage1/1d/introduction' },
+                { label: '自顶向下设计', slug: 'zh/learning-course/stage1/1d/top-down-design' },
+                { label: '项目概览', slug: 'zh/learning-course/stage1/1d/project-overview' },
+                { label: '布局草图', slug: 'zh/learning-course/stage1/1d/layout-sketch' },
+                { label: '零件工作室', slug: 'zh/learning-course/stage1/1d/part-modeling' },
+                { label: '装配体', slug: 'zh/learning-course/stage1/1d/assembly-modeling' },
+                { label: '添加更多组件', slug: 'zh/learning-course/stage1/1d/adding-components' },
+                { label: '顶层装配体', slug: 'zh/learning-course/stage1/1d/top-level-assembly' },
+                { label: '总结', slug: 'zh/learning-course/stage1/1d/summary' },
+              ],
+            },
+            {
+              label: 'E：子系统工作流程',
+              collapsed: true,
+              items: [
+                { label: '介绍', slug: 'zh/learning-course/stage1/1e/introduction' },
+                { label: '项目概览', slug: 'zh/learning-course/stage1/1e/project-overview' },
+                { label: '电池安装', slug: 'zh/learning-course/stage1/1e/battery-mounting' },
+                { label: '练习 1：电池固定座', slug: 'zh/learning-course/stage1/1e/exercise1' },
+                { label: '电气系统', slug: 'zh/learning-course/stage1/1e/electronics' },
+                { label: '练习 2：安装电气元件', slug: 'zh/learning-course/stage1/1e/exercise2' },
+                { label: '练习 3：电气底板减重开槽', slug: 'zh/learning-course/stage1/1e/exercise3' },
+                { label: '练习 4：保险杠', slug: 'zh/learning-course/stage1/1e/exercise4' },
+                { label: '练习 5：保险杠安装', slug: 'zh/learning-course/stage1/1e/exercise5' },
+                { label: '复盘与总结', slug: 'zh/learning-course/stage1/1e/review-summary' },
+              ],
+            },
+          ],
+        },
+        { label: '后续步骤', slug: 'zh/learning-course/next-steps' },
+      ],
+    },
+  ],
+
   // Educator's Guide section
   '/educators-guide': [
     {
