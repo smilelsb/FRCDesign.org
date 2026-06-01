@@ -333,7 +333,7 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
                   items: [
                     { label: '介绍与设置', slug: 'zh/learning-course/stage1/1a/section1-setup' },
                     { label: '练习 0：导航操作', slug: 'zh/learning-course/stage1/1a/section1-exercise0' },
-                    { label: '练习 1：第一批管材', slug: 'zh/learning-course/stage1/1a/section1-exercise1' },
+                    { label: '练习 1：制作第一根管材', slug: 'zh/learning-course/stage1/1a/section1-exercise1' },
                     { label: '练习 2：更多管材', slug: 'zh/learning-course/stage1/1a/section1-exercise2' },
                     { label: '练习 3：草图基础', slug: 'zh/learning-course/stage1/1a/section1-exercise3' },
                     { label: '练习 4：底盘传动框架', slug: 'zh/learning-course/stage1/1a/section1-exercise4' },
