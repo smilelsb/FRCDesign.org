@@ -1,87 +1,87 @@
 ﻿---
-title: "1A: Onshape Fundamentals - Section 1"
-description: Build a box tube superstructure
+title: "1A：Onshape 基础 - 第 1 小节"
+description: 搭建方管上层结构
 ---
 
 
-## Exercise 5: Building a Box Superstructure
+## 练习 5：搭建方管上层框架结构
 
-### Introduction
+### 介绍
 
-Frames made out of box tube can be added to the top of a drivetrain for extra mounting for more parts of subsystems, like a shooter or an arm.
+方管框架可以安装在底盘传动上方，为射击机构、机械臂等子系统提供更多安装空间。
 
-<ContentFigure src="../img/1a/exercise-5-973-example.webp" alt="973's 2022 Superstructure" width="50%" border>973's 2022 Superstructure</ContentFigure>
+<ContentFigure src="../img/1a/exercise-5-973-example.webp" alt="973 队 2022 赛季上层结构" width="50%" border>973 队 2022 赛季上层框架结构</ContentFigure>
 
-In this exercise we'll be adding a simple box tube frame to the drivetrain you made previously.
+本练习中，你需要在之前做设计完成的底盘传动上，添加一个简单的方管框架。
 
-<ContentFigure src="../img/1a/exercise5-frame.webp" alt="Final Box Tube Frame" width="60%">Final Box Tube Frame</ContentFigure>
-
----
-
-### Layout Sketch and Drivetrain
-
-1. To properly plan this out, we must create a side layout sketch (the one used previously in Exercise 5).
-2. Start by inserting the **origin cube featurescript** that you added in [required course tools](/learning-course/course-setup/required-course-tools/featurescripts). Remember you can look things up using `Alt + C`!
-3. Make a new sketch, select the `right plane`, and start copying this sketch. Figure out the constraints you need yourself to replicate it perfectly.
-
-<ContentFigure src="../img/1a/exercise5-frame-sketch.webp" alt="Box superstructure sketch">Box superstructure sketch</ContentFigure>
-
-<Aside type="note" title="Origin Placement">
-The wheels are the 1.75-inch blocks on the corners of the tube. If that's the case, where is the origin placed in the side layout sketch? Why do you think it's placed there? Imagine if you looked at the robot in real life to the side.
-</Aside>
-
-4. After the side layout sketch is done, create the swerve drivetrain frame in your part studio according to what you remember from the last exercise. (Remember to select the mate connector!)
-
-<Aside type="tip">
-If you struggle, refer to the previous video after trying
-</Aside>
-
-<Aside type="note" title="Design Intent">
-Let's make this drivetrain a square. How would you approach your top sketch to avoid using any unnecessary dimensions? You should only need to define your swerve gap, the distance between your cross tubes (8 inches), and your tube offset.
-</Aside>
-
-**Hint:** What length is already defined/constrained? Can you use the equal constraint?
-
-### Modeling the Frame
-
-So far, sketches have been created on default planes and mate connectors. In order to model the box tube for the frame on top of the cross tubes, the sketch to create the tubes should be created on the face of the cross tube, because that's where you want that tube to be, even if the cross tube changes position.
-
-<Aside type="tip" title="Design Intent">
-This is called modeling with "design intent." There are many different ways to model something, but you can choose specific ways based on what your intent for a part or the overall design is. This can also help you avoid creative blocks and keep your CAD from creating errors when the design changes.
-</Aside>
-
-<ContentFigure src="../img/1a/side profile.webp" alt="Box superstructure sketch" width="50%">Box superstructure sketch</ContentFigure>
-
-Watch a demonstration of this sketching technique below.
-
-<ContentFigure src="_b2Gf8IiEEA">Sketching on a tube face</ContentFigure>
-
-Now that you've seen a demonstration, **try to complete the box tube structure** by creating a sketch on the face of the cross tube and projecting lines from the layout sketch into the new sketch with the `use` tool.
-
-### Requirements
-
-- The box frame should be made using 0 new dimensions total, both in the sketch and the extrude
-- Edit tube converter to use 1/16" thick walls and change "centered on tube" to "auto offset"
-
-<Aside type="caution" title="Tube Offsets">
-The distance between the edge of your tube and your hole differs for drivetrains and typical use. If you use "centered on tube" for your regular box tubes your hole spacing wont be correct. Only use "Centered on tube" for your drivetrain rails!
-</Aside>
+<ContentFigure src="../img/1a/exercise5-frame.webp" alt="最终方管框架" width="60%">最终方管框架</ContentFigure>
 
 ---
 
-### Finishing Up
+### 布局草图与底盘传动
 
-Once you finish, **take a 5-minute break**.
+1. 为了合理规划整体结构，我们需要先画出侧面布局草图（与练习 5 中使用的一致）。
+2. 先插入你在[必备课程工具](/learning-course/course-setup/required-course-tools/featurescripts)中添加的 **origin cube FeatureScript**。忘记名字时可以按 `Alt + C` 搜索！
+3. 新建草图，选择 `right plane`（右平面），然后照着下图，绘制出这份草图。你需要自行判断需要哪些约束，才能完整绘制出这份草图。
 
-After you come back, **try to improve or correct any mistakes you find**. Once you finish, compare your workflow with the solution. **What thought process led you to do something different?**
+<ContentFigure src="../img/1a/exercise5-frame-sketch.webp" alt="方管上层结构草图">方管上层框架结构草图</ContentFigure>
+
+<Aside type="note" title="Note（备注）：原点放置">
+实际中轮子对应就是在方管四角上 1.75 英寸的方块。那么，侧布局草图里的原点放在哪里？你觉得为什么放在那里？可以想像一下从侧面看真实机器人时的样子。
+</Aside>
+
+4. 侧布局草图完成后，根据上一练习的内容，在零件工作室中创建 swerve 底盘传动框架。（记得选择 Mate（配合）连接器！）
+
+<Aside type="tip" title="Tip（提示）">
+如果遇到困难，先自己尝试，再参考之前的视频。
+</Aside>
+
+<Aside type="note" title="Note（备注）：设计意图">
+这次我们把底盘传动做成正方形。你会如何设计顶层草图，避免不必要的尺寸？通常你只需定义 swerve 间隙、横梁间距（8 英寸）和管材偏移即可。
+</Aside>
+
+**提示：** 哪些长度已经被定义或约束住了？能不能用相等约束？
+
+### 框架建模
+
+到目前为止，草图都是在默认的基础平面和配合连接器上绘制的。要在横梁上方建方管框架，应在横梁端面上建草图，因为管材就应该落在那个位置——即使横梁位置以后改动，关系仍然成立。
+
+<Aside type="tip" title="Tip（提示）：设计意图">
+这种建模思路就叫作基于设计意图建模。同一个零件的建模方法多种多样，可依据零件本身与整机的设计目标选定合适的建模方案。该方法既能避免设计思路卡顿，也能防止后期改图时 CAD 模型出错。
+</Aside>
+
+<ContentFigure src="../img/1a/side profile.webp" alt="方管上层结构草图" width="50%">方管上层框架结构草图</ContentFigure>
+
+观看下面的视频演示，学习这种草图绘制方法。
+
+<ContentFigure src="_b2Gf8IiEEA">在管材端面上建草图</ContentFigure>
+
+看完演示后，**试着完成方管上层框架结构**：在横梁端面上建草图，并用 `use` 工具把布局草图里的线投影到新草图中。
+
+### 要求
+
+- 方管框架在草图和拉伸中**不要新增任何尺寸**
+- 在 Tube Converter 中把壁厚改为 1/16"，并把 “centered on tube” （以管材为中心）改为 “auto offset”（自动偏移）
+
+<Aside type="caution" title="Warning（警告）：管材偏移">
+管材边缘与孔位之间的距离，在底盘传动和一般结构中的要求并不相同。普通方管若用 “centered on tube”，孔距会不对。只有底盘框梁才用 “Centered on tube”（居中模式）！
+</Aside>
+
+---
+
+### 收尾
+
+完成后**休息 5 分钟**。
+
+回来后再**检查并修正**发现的问题。完成后对照参考答案，**想想你的思路与解答有哪些不同。**
 
 <LinkButton href="https://cad.onshape.com/documents/5f1057b0e7579ff9dd5811fe/w/4c6a1a1d9747b8ea76b238a3/e/b89eed09a1d075135ee83667" center>
-  Solution Document
+  解答文档
 </LinkButton>
 
-Follow the short video below to learn how to rename your features, then rename the sketches and features in your part studio. Moving forward, we want to **always name our sketches and features**.
+观看下面的短视频，学习如何重命名特征，然后在零件工作室中给草图和特征命名。之后请**始终为草图和特征命名**。
 
-<ContentFigure src="ELdwPyFnm4Y">Renaming features in Onshape</ContentFigure>
+<ContentFigure src="ELdwPyFnm4Y">在 Onshape 中重命名特征</ContentFigure>
 
 
-After you're done renaming your features, move on to the next exercise.
+特征命名完成后，进入下一个练习。
