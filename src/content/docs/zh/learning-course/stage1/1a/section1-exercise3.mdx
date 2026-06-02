@@ -1,114 +1,114 @@
 ﻿---
-title: "1A: Onshape Fundamentals - Section 1"
-description: Learn sketching fundamentals in Onshape
+title: "1A：Onshape 基础 - 第 1 小节"
+description: 学习 Onshape 草图基础
 ---
 
 
-## Exercise 3: More Extrudes
+## 练习 3：更多拉伸
 
-In this exercise, you'll extrude four rectangles by two inches symmetrically — and turn them into tubes.
-Use just one extrude feature. What happens?
+在本练习中，你需要将四个矩形各对称拉伸 2 英寸，并把它们变成管材。
+只使用一次拉伸特征。会发生什么？
 
-<ContentFigure src="../img/1a/exercise3-rectangles.webp" alt="Starting setup with four rectangles." width="70%">Starting setup with four rectangles.</ContentFigure>
+<ContentFigure src="../img/1a/exercise3-rectangles.webp" alt="起始设置：四个矩形。" width="70%">起始设置：四个矩形。</ContentFigure>
 
-Don't forget: use the Tube Converter after extruding.
-
----
-
-### Looks a bit weird?
-
-If you followed the instructions and used a single extrude, all four rectangles probably merged into one big block.
-In real life, you don't want parts fused together like this unless you meant to.
-
-> Can you figure out how to extrude them **individually** to keep them separate?
-
-If you need to restart, here's a quick video showing how to delete your bad tubes:
-
-<ContentFigure src="2Jzb1Xr6NBE">How to delete extrudes</ContentFigure>
+别忘了：拉伸完成后要使用 Tube Converter。
 
 ---
 
-### Fixed your extrude?
+### 看起来有点奇怪？
 
-Manually doing four extrudes is tedious. There's a better way!
+如果你按说明只做了**一次**拉伸，四个矩形很可能会合并成一个整体的大实体。
+在实际设计中，除非你有意为之，否则你不希望零件像这样焊在一起。
 
-- Delete your old extrudes.
-- Use the `Extrude Individual` Featurescript you added in [required course tools](/learning-course/course-setup/required-course-tools/featurescripts).
-- (Hit `Alt+C` and search "extrude individual" if needed.)
+> 你能想出如何**分别**拉伸它们，让它们保持独立吗？
 
-This tool lets you extrude multiple sketch regions separately, all in one step.
+如果需要重来，下面这段短视频演示如何删除错误的拉伸：
 
-Also, if you click the "Symmetric" option inside Extrude Individual, you can force symmetry.
-
-<ContentFigure src="../img/1a/extrude-individual.webp" alt="Using Symmetric inside Extrude Individual.">Using "Symmetric" inside Extrude Individual.</ContentFigure>
+<ContentFigure src="2Jzb1Xr6NBE">如何删除拉伸特征</ContentFigure>
 
 ---
 
-## Exercise 3.1: Sketching Basics
+### 你的拉伸特征修改好了吗？
 
-In the last exercise, you extruded an existing sketch. Now it's your turn to **create the sketch yourself**.
+手动做四次拉伸会很繁琐。我们有更好的办法！
 
-When we sketch, we use rectangles to represent box tubes in 2D, and use **dimensions** and **constraints** to lock everything into place.
+- 删除之前的拉伸特征。
+- 使用你在[必备课程工具](/learning-course/course-setup/required-course-tools/featurescripts)中添加的 `Extrude Individual` FeatureScript。
+- （如有需要，按 `Alt+C` 搜索 “extrude individual”。）
 
-Follow along with the video below to practice sketching fundamentals in Onshape.
+这个工具可以一步完成多个草图区域的分别拉伸。
 
-<ContentFigure src="ftbpbvuZklc">Sketching fundamentals in Onshape</ContentFigure>
+另外，在 Extrude Individual 中勾选 “Symmetric（对称）” 选项，可以强制对称拉伸。
 
-<Aside type="tip" title="Key Sketching Points">
+<ContentFigure src="../img/1a/extrude-individual.webp" alt="在 Extrude Individual 中使用 Symmetric。">在 Extrude Individual 中使用 “对称”拉伸。</ContentFigure>
 
-- **Dimensions** control distances (like making a rectangle exactly 5 inches wide).
-- **Constraints** define relationships (like locking a rectangle edge to another).
-- **Yellow dotted lines** show automatic constraints — use them!
-- **The Origin** is your anchor. Attach sketches to the origin whenever possible.
-- **Blue is bad** — a blue sketch means it's not fully defined yet. Everything should turn black.
-- **Less is better** — use the fewest dimensions necessary to fully lock down your design.
+---
+
+## 练习 3.1：草图基础
+
+上一练习里，你拉伸的是练习中已有的草图。这次轮到**自己创建草图**。
+
+画草图时，我们用矩形在二维平面上表示方管，并用**尺寸**和**约束**把几何关系固定下来。
+
+跟随下面的视频，在 Onshape 中联系草图基础。
+
+<ContentFigure src="ftbpbvuZklc">Onshape 草图基础</ContentFigure>
+
+<Aside type="tip" title="Tip（提示）：草图要点">
+
+- **尺寸**控制距离（例如让矩形宽度恰好为 5 英寸）。
+- **约束**定义几何关系（例如把某条矩形边固定贴合到另一条边上）。
+- **黄色虚线**表示系统自动生成的约束，要善加利用！
+- **原点**是定位基准，尽可能把草图约束到原点上。
+- **蓝色欠约束**——蓝色表示草图尚未完全定义，应该让草图中的线段都变黑。
+- **越少越好**——用尽可能少的尺寸和约束，把设计草图完全约束住。
 
 </Aside>
 
 ---
 
-### What You Learned
+### 你学到了什么
 
-- How to extrude multiple tubes separately
-- How to create and constrain a sketch
-- How to make rectangles properly
-- How to use basic dimensions and relationships
-- How to mirror using construction lines
+- 如何分别拉伸多根管材
+- 如何创建并约束草图
+- 如何正确画矩形
+- 如何使用基本尺寸和几何关系
+- 如何用构造线做镜像
 
 ---
 
-## Exercise 3.2: Adding Rails
+## 练习 3.2：添加横梁
 
-<ContentFigure src="../img/1a/3-2-sketch.webp" alt="Edit this sketch">Edit this sketch</ContentFigure>
+<ContentFigure src="../img/1a/3-2-sketch.webp" alt="编辑此草图">编辑此草图</ContentFigure>
 
-Now let's apply this to the robot.
+现在把所学的知识应用到实际设计中。
 
-Open the Top Tube Sketch in the Exercise 3.2 part studio and **add two cross tubes** that are **8 inches apart**.
+打开练习 3.2 零件工作室中的 Top Tube Sketch，**添加两根横梁**，两根横梁之间**相距 8 英寸**。
 
-<Aside type="tip">
-Double-click the sketch in the feature tree to edit it.
+<Aside type="tip" title="Tip（提示）">
+在特征树中双击草图即可编辑。
 </Aside>
 
-Draw the new rails yourself. Only use **one new dimension** total.
+请自己画出新的横梁。总共只新增**一个尺寸**。
 
-The only numbers you should see:
+页面上应只出现这些数字：
 
-- 4.25" (gap between modules)
-- 1" (tube width)
-- 8" (distance between cross rails)
+- 4.25"（模块之间的间距）
+- 1"（管材宽度）
+- 8"（两根横梁之间的距离）
 
-<ContentFigure src="../img/1a/drivetrain-crossrail-sketch2.webp" alt="Final cross rail sketch setup." width="60%">Final cross rail sketch setup.</ContentFigure>
+<ContentFigure src="../img/1a/drivetrain-crossrail-sketch2.webp" alt="横梁草图最终设置。" width="60%">横梁草图最终尺寸。</ContentFigure>
 
 ---
 
-### Check Your Work
+### 检查你的作品
 
-Here's an optimized way to sketch it:
+下面是一种更精简的草图画法：
 
-<ContentFigure src="ktKuSFVV10U">Optimized cross rail sketch</ContentFigure>
+<ContentFigure src="ktKuSFVV10U">优化后的横梁草图</ContentFigure>
 
-Compare your approach to the video.
-> What did you do differently?
-> How would you avoid mistakes like that next time?
+把你的做法和视频对比一下。
+> 你和视频里有什么不同？
+> 下次怎样避免类似失误？
 
-After you're done checking your work and reviewing your approach, move on to the next exercise.
+检查完毕并复盘自己的做法后，进入下一个练习。
