@@ -356,10 +356,10 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
                   collapsed: true,
                   items: [
                     { label: '练习 1：铆钉', slug: 'zh/learning-course/stage1/1a/section3-exercise1' },
-                    { label: '练习 2：Swerve 底盘', slug: 'zh/learning-course/stage1/1a/section3-exercise2' },
+                    { label: '练习 2：Swerve（舵轮）底盘', slug: 'zh/learning-course/stage1/1a/section3-exercise2' },
                     { label: '练习 3：加强板/角撑板设置', slug: 'zh/learning-course/stage1/1a/section3-exercise3' },
-                    { label: '练习 4：完整框架', slug: 'zh/learning-course/stage1/1a/section3-exercise4' },
-                    { label: '练习 5：完成框架', slug: 'zh/learning-course/stage1/1a/section3-exercise5' },
+                    { label: '练习 4：底盘框架装配', slug: 'zh/learning-course/stage1/1a/section3-exercise4' },
+                    { label: '练习 5：上层框架装配', slug: 'zh/learning-course/stage1/1a/section3-exercise5' },
                   ],
                 },
               ],
