@@ -1,76 +1,75 @@
 ﻿---
-title: "1A: Onshape Fundamentals - Section 2"
-description: Learn the plate workflow in Onshape
+title: "1A：Onshape 基础 - 第 2 小节"
+description: 学习 Onshape 中的板件工作流程
 ---
 
 import ContentRow from '@components/content/ContentRow.astro';
 
-## Introduction
+## 简介
 
-At this point you should be an expert at making tubing frames of various shapes and sizes. These frames will not stay together without something to attach to. That's where plates come in. This section will be primarily focused around how to model plates for various purposes.
+至此，你应当已经熟练掌握不同外形、规格方管框架的建模方法。仅靠方管型材无法实现框架固定拼装，需要依靠板件完成连接，本章节重点学习各类功能连接板的建模方式。
 
-### What Are Plates?
+### 什么是板件？
 
-In FRC, plates are used everywhere and are made out of a couple different materials.
+在 FRC 中，板件用途很广，材料也有好几种。
 
-Plates have two main functions in FRC: they allow you to **connect structural pieces together** and **mount transmission components like motors, axles, or mechanisms to the frame**. A plate used solely to connect two pieces together is also sometimes referred to as a gusset or bracket.
+板件主要有两个作用：**把结构件连在一起**，以及**把电机、轴、机构等传动零件装到框架上**。只用来连接两块结构的板件，有时也叫加强角板（角撑板）或支架。
 
-Below are two examples of plates being used in FRC.
+下面是 FRC 中板件使用的两个例子。
 
 <ContentRow>
-  <ContentFigure src="../img/1a/9442-plate.webp">Photo Credit: FRC 9442</ContentFigure>
-  <ContentFigure src="../img/1a/604-plate.webp" >Photo Credit: FRC 604</ContentFigure>
+  <ContentFigure src="../img/1a/9442-plate.webp">图片来源：FRC 9442</ContentFigure>
+  <ContentFigure src="../img/1a/604-plate.webp" >图片来源：FRC 604</ContentFigure>
 </ContentRow>
 :::center
-*Gussets being used to mount mechanisms and hold frames together*
+*加强角板（角撑板）用于安装机构，并固定框架*
 :::
 
-### Background
+### 背景知识
 
-Since your tubes are always in 0.5-inch increments, your plates allow you to bridge the gap between uneven distances. This is possible because plates are CNC manufactured allowing for completely arbitrary hole spacings.
+英标方管尺寸总是按 0.5 英寸递增，板件可以弥补间距不对齐的问题。板件通常用 CNC 加工，孔距可以任意布置。
 
-It's this arbitrary hole spacing that is key to think about when designing plates. The purpose of a plate is to place mounting holes where you want them; the material that makes up the plate only exists to position mounting holes and create lines of support, like when using a triangle gusset.
+正是这种任意孔距，才是设计板件时要抓住的重点。板件的作用是把安装孔放在你需要的位置；板料本身只是为了定位这些孔，并形成支撑线，例如三角加强角板就是这样。
 
-A plate sketch is composed of circles for the holes, arcs for larger corner fillets, and lines to complete the shape. When making the shape of a plate think about the shape that would be made by tying a string around all of the mounting holes on a given plate. Here is a video demonstrating this concept for a very basic plate. No need to follow along here, just watch.
+板件草图由圆（孔）、圆弧（大圆角）和直线（轮廓）组成。画板件外形时，可以想像用一根绳子把所有安装孔围起来，绳子形成的形状就是板件轮廓。下面这段视频用一块很简单的板件演示了这个思路，不用跟着做，只要看就好。
 
-<ContentFigure src="mXzX9wmipV8">Plate workflow demonstration</ContentFigure>
+<ContentFigure src="mXzX9wmipV8">板件工作流程演示</ContentFigure>
 
-This video also shows off the `tangent` constraint! This is one of the most frequently used constraints when designing plates since each mounting hole will have an arc around it to form the perimeter of the plate. The tangent constraint allows us to create a tangent line for an arc or circle. This is important to "smooth" out our plate. We don't want sharp edges!
-
----
-
-## Exercise 1: Plate Workflow
-
-**Your task is to make a very simple plate with two bearing holes.** Bearings come up everywhere in FRC to help reduce friction on moving components. This is the same type of plate as shown in the prior video.
-
-To get started, find the "Exercise 1: Plates" part studio in the "Section 2" folder in your copy of the template document and follow the plate workflow below to practice making a couple plate shapes.
-
-<Aside type="example" title="Plate Workflow">
-
-1. Draw an arc around each bearing hole, dimension one of the arcs to be 0.25" away from the hole
-2. Set the two arcs to be equal in radius by using the equal constraint.
-3. Draw lines connecting the arcs
-4. Set the lines tangent to the arcs to align everything.
-
-</Aside>
-
-<Aside type="note">
-
-Constraints can form accidentally when sketching. Part of an arc might accidentally get horizontally or vertically constrained.
-
-**You can delete constraints** by hovering over a sketch entity (line, arc, circle, etc.), clicking the icon of the constraint you want to delete (the involved entities will be highlighted), and clicking the `delete` key on your keyboard.
-
-**Holding shift when creating geometry also turns off auto constraining.**
-If you get stuck you can refer back to the video for guidance.
-
-</Aside>
+视频里还演示了 `tangent`（相切） 约束！画板件时这是最常用的约束之一，每个安装孔周围都会有一段圆弧，用来形成板件外轮廓。`tangent` （相切）约束能让直线与圆弧或圆相切，这对把板件边缘“抹圆”很重要，我们不希望板件出现尖角。
 
 ---
 
-### Complete?
+## 练习 1：板件工作流程
 
-After finishing, delete your plate outline, and **repeat these steps 2-3 times or until the process feels natural** and you do not need to reference the steps. You can close the workflow dropdown if it helps you stop looking at it.
+**你的任务是制作一块非常简单的板件，上面有两个轴承孔。** 轴承在 FRC 里随处可见，用来降低运动零件的摩擦。这块板件与前面视频里的是同一类型。
 
-**Try adding a third bearing hole into the plate!** You will end up making dozens of plates over even just a single FRC season, so getting comfortable with these steps is a must.
+开始前，在你复制的模板文档里，打开 “Section 2” 文件夹中的 “Exercise 1: Plates” Part Studio（零件工作室），按下面的板件工作流程练习，绘制出几种板件外形。
 
-Once you've gotten comfortable with the workflow, feel free to move on to the next exercise.
+<Aside type="example" title="Example（示例）：板件工作流程">
+
+1. 在每个轴承孔周围画一段圆弧，给其中一段圆弧标注尺寸，使其到孔圆圆弧相距 0.25"
+2. 用相等约束，让两段圆弧半径相同
+3. 用直线把两段圆弧连接起来
+4. 用相切约束，让直线与圆弧进行相切
+
+</Aside>
+
+<Aside type="note" title="Note（备注）">
+
+画草图时约束可能会自动生成。某段圆弧可能不小心被加上了水平或竖直约束。（这是因为在绘制时，软件会进行约束捕捉，导致约束自动生成。）
+
+**可以删除约束**：把鼠标悬停在对应的草图实体（直线、圆弧、圆等）上，点击要删除约束图标（相关元素会高亮，显示橙红色），再按键盘上的 `delete` 键。（如果画图时自动生成了约束，可以通过这个方法删除。）
+
+**按住 Shift 绘制几何图形时，会关闭自动约束。** 如果你的操作“卡住了”，可以回看视频进行参考。
+
+</Aside>
+
+---
+
+### 完成了吗？
+
+画完后删掉板件轮廓，**再重复上述步骤 2～3 遍，直到流程变得顺手**，不必再盯着步骤看。可以尝试收起工作流程下拉菜单。
+
+**试着在板件上加第三个轴承孔！** 哪怕只打一个FRC赛季，你也会画很多块板件，所以必须把这套步骤练熟。
+
+熟悉流程后，可以进入下一个练习。
