@@ -371,7 +371,7 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
                 { label: '传动系统简介', slug: 'zh/learning-course/stage1/1b/introduction' },
                 { label: '电机', slug: 'zh/learning-course/stage1/1b/motors' },
                 { label: '轴与轴承', slug: 'zh/learning-course/stage1/1b/shafts-bearings' },
-                { label: '扭矩与速度', slug: 'zh/learning-course/stage1/1b/torque-speed' },
+                { label: '扭矩与转速', slug: 'zh/learning-course/stage1/1b/torque-speed' },
                 { label: '齿轮基础', slug: 'zh/learning-course/stage1/1b/gears' },
                 { label: '练习 1：简单齿轮箱', slug: 'zh/learning-course/stage1/1b/exercise1' },
                 { label: '练习 2：两级齿轮箱', slug: 'zh/learning-course/stage1/1b/exercise2' },

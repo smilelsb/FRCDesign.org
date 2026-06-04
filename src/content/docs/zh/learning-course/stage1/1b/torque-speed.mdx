@@ -1,35 +1,35 @@
 ﻿---
-title: Torque and Speed
-description: Understanding torque and speed relationships
+title: 扭矩与转速
+description: 理解扭矩和转速之间的关系
 ---
 
 
-When designing power transmissions, there are two interlinked quantities that we are trying to modify: torque and speed. Torque refers to the rotational force applied to an object, while speed denotes how quickly that object rotates. In FRC, the unit used for speed is typically Rotations Per Minute (RPM). The units used for torque is typically Newton-Meters (Nm).
+设计传动结构时，我们主要调整两个相互关联的量：扭矩和转速。扭矩指作用在物体上的旋转力矩，转速则表示物体旋转快慢。在 FRC 中，转速通常使用每分钟转数（RPM）表示，扭矩通常使用牛·米（Nm）表示。
 
-<Aside type="note" title="Torque and Speed">
-Speed and torque are inversely related in mechanical systems. This means that as one increases, the other decreases, and vice versa. For example, if speed is decreased by 4x, torque is increased by 4x. This is because of the principle of conservation of energy: the output energy is the same as the input energy (ignoring losses like friction), so if speed is reduced through mechanical means, torque must increase.
+<Aside type="note" title="Note（备注）：扭矩与转速">
+在机械传动系统中，转速和扭矩通常呈反比关系。也就是说，一个增大时，另一个会减小，反之亦然。例如，如果转速降低到原来的 1/4，扭矩就会放大至 4 倍。这来自能量守恒原理：忽略摩擦等损耗时，输出能量等于输入能量。因此，如果通过机械方式降低转速，扭矩就必然增加。
 </Aside>
 
-### Mechanical Advantage
+### 机械优势
 
-Many mechanical systems use the principle of the conservation of energy to convert energy from one form to another to produce either larger forces or faster speeds. ***Mechanical advantage*** is the ratio of output force to input force in a system, whether it's a lever, screw, gears, or pulley, mechanical advantage is used to quantify how the force changes.
+许多机械系统会利用能量守恒原理，把能量从一种形式转换为另一种形式，从而产生更大的力或更快的转速。***机械优势*** 是系统中输出力与输入力的比值。无论是杠杆、螺杆、齿轮、带轮还是链轮，机械优势都用于量化力的变化。
 
-The ratio between the number of teeth of the input and output gear/sprocket/pulley system represents the mechanical advantage of that system. This is also called the ***gear ratio***, and is the key to understanding how to achieve a needed torque or speed from the specified torque and speed of a given motor.
+输入端和输出端齿轮、链轮或同步带轮齿数之间的比例，表示了该系统的机械优势。这也叫做***传动比***，是理解如何从给定电机的扭矩和转速出发，获得所需扭矩或转速的关键。
 
-Gear ratio is typically written in the form `n1:n2`. Since torque and speed are interlinked quantities, the ratio can be understood from the perspective of torque or speed. From the perspective of torque, `n1` is the output torque for `n2` input torque. From the perspective of speed, `n1` is the speed of the input for `n2` speed of the output.
+传动比通常写成 `n1:n2` 的形式。由于扭矩和转速相互关联，这个比值可以从扭矩或转速两个角度理解。从扭矩角度看，`n2` 的输入扭矩会对应 `n1` 的输出扭矩；从转速角度看，`n1` 表示输入转速，`n2` 表示输出转速。
 
-<Aside type="example">
-A system has a gear ratio of 4:1. This means the output torque is 4x the input torque and that the output speed is 1/4 the input speed.
+<Aside type="example" title="Example（示例）">
+某个系统的传动比为 4:1。这意味着输出扭矩是输入扭矩的 4 倍，输出转速是输入转速的 1/4。
 </Aside>
 
-For a single stage transmission (only two transmission components), `n1` is the size of the driven component for `n2` size of the driving component.
+对于单级传动（只有两个传动元件），`n1` 表示从动件的尺寸，`n2` 表示主动件的尺寸。
 
-### Ratio Applications
+### 传动比应用
 
-An arm mechanism needs very low RPM but a lot of torque to control efficiently, so a large *reduction* of speed might be used to increase torque. This depends on the weight and length of the arm, but can be 30:1 up to even 200:1.
+机械臂机构通常需要很低的转速和很大的扭矩，才能高效控制。因此，可能会使用较大的*减速传动*来增加扭矩。具体传动比取决于机械臂的重量和长度，可能从 30:1 到 200:1 不等。
 
-Shooter wheels or intake rollers often have little to no reduction, and in some cases may even need to go faster than the motor's free speed. In this case, an *upduction* can be be used to increase the speed, but the output torque gets lower as a consequence. Upductions typically don't get much higher than 1:2 due to the available motors already having a high speed, low torque output. A 1:2 upduction would double the speed and halve the torque of the input.
+发射轮或拾取滚轮通常几乎不需要减速，有时甚至需要比电机空载转速更快。在这种情况下，可以使用*增速传动*来提高转速，但代价是输出扭矩会降低。由于现有电机本身已经是高转速、低扭矩输出，增速传动通常不会高于 1:2。1:2 的增速传动会让输出转速变为输入转速的两倍，同时让输出扭矩变为输入扭矩的一半。
 
-<Aside type="tip">
-For situations that require higher speed and higher torque than what a single motor can provide, add more motors.
+<Aside type="tip" title="Tip（提示）">
+如果某个机构需要的转速和扭矩都超过单个电机的性能上限，可以增加电机数量并联使用。
 </Aside>
