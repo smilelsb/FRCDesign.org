@@ -1,32 +1,31 @@
 ﻿---
-title: Shafts and Bearings
-description: Understanding shafts and bearings
+title: 轴与轴承
+description: 理解轴和轴承
 ---
 
 
-### Shafts
-Shafts transmit rotational power along an axis, with hex shafts being the most common in FRC. These hexagonal shafts, typically in 1/2" and 3/8" diameters (measured from flat to flat), may sometimes have rounded corners, known as "rounded hex" or "Thunderhex."
+### 轴
+轴用于沿轴线传递旋转动力，其中六角轴是 FRC 中最常见的类型。这类六角轴通常有 1/2" 和 3/8" 两种尺寸（按对边距离测量），部分六角轴的边角会进行圆弧处理，称为圆角六角轴（rounded hex）或 “Thunderhex”。
 
-### Bearings
-Bearings allow shafts to spin independently of plates and/or things to spin independently of shafts. Standard hex shafts use 1/2" hex bearings, while rounded hex shafts can use round bearings for easier assembly.
+### 轴承
+轴承的作用是让传动轴相对连接板自由转动，或是让回转零件相对轴体独立旋转。标准六角轴配套 1/2" 六角轴承；圆角六角轴则可以使用圆孔轴承，装配会更方便。
 
-<ContentFigure src="../img/1b/examples/bearing-and-shaft.webp" alt="Bearing and shaft">A 1/2" rounded hex bearing (Left) and 1/2" rounded hex shaft (Right) (Image Source: WCP)</ContentFigure>
+<ContentFigure src="../img/1b/examples/bearing-and-shaft.webp" alt="轴承和轴">1/2" 圆角六角轴承（左）和 1/2" 圆角六角轴（右）（图片来源：WCP）</ContentFigure>
 
 
+### 示例
 
-### Example
-
-<Aside type="example" title="Example of a Shaft Spinning in a Bearing">
-<ContentFigure src="../img/1b/examples/shaft-spinning.webp" gif alt="Shaft spinning in bearings">A spinning shaft in bearings</ContentFigure>
+<Aside type="example" title="Example（示例）：轴在轴承中旋转">
+<ContentFigure src="../img/1b/examples/shaft-spinning.webp" gif alt="轴在轴承中旋转">在轴承中旋转的轴</ContentFigure>
 </Aside>
 
-### Bushings
-Bushings are a cheap and low friction alternative to bearings and are used with metal shafts such as shoulder bolts, hex shafts, and round tube, mainly to save space. They are made out of a self-lubricating material such as bronze or acetal/delrin and typically used in applications with relatively low RPM, such as for pivots and linkage joints.
+### 衬套
+衬套是一种成本较低、适合在低摩擦环境下使用的轴承替代方案，常与轴肩螺栓、六角轴、圆管等金属轴类零件配合使用，主要用于节省空间。它们通常由青铜、聚甲醛（德尔林 / 赛钢） 等自润滑材料制成，适合相对低转速的应用，例如枢轴和连杆关节。
 
-<ContentFigure src="../img/1b/examples/bushing.webp" alt="Bronze bushing" width="50%">A Bronze Bushing (Image Source: WCP)</ContentFigure>
+<ContentFigure src="../img/1b/examples/bushing.webp" alt="铜衬套" width="50%">铜衬套（图片来源：WCP）</ContentFigure>
 
 
-### Modeling
-The easiest and most parametric way to model shafts is to use the [`Robot Shaft` Featurescript](https://cad.onshape.com/documents/9cffa92db8b62219498f89af/w/06b332ccabc9d2e0aa0abf88/e/2e6e4b559832eeff8391e933), which you learn how to use in the following exercises.
+### 建模
+给轴建模最简单、参数化程度最高的方法，是使用 [`Robot Shaft` FeatureScript（自定义特征脚本）](https://cad.onshape.com/documents/9cffa92db8b62219498f89af/w/06b332ccabc9d2e0aa0abf88/e/2e6e4b559832eeff8391e933)。后续练习会讲解如何使用它。
 
-For bearings, insert your desired bearing from FRCDesignLib.
+对于轴承，则从 FRCDesignLib 中插入所需的轴承即可。
