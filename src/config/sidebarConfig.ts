@@ -368,7 +368,7 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
               label: 'B：动力传动',
               collapsed: true,
               items: [
-                { label: '介绍', slug: 'zh/learning-course/stage1/1b/introduction' },
+                { label: '传动系统简介', slug: 'zh/learning-course/stage1/1b/introduction' },
                 { label: '电机', slug: 'zh/learning-course/stage1/1b/motors' },
                 { label: '轴与轴承', slug: 'zh/learning-course/stage1/1b/shafts-bearings' },
                 { label: '扭矩与速度', slug: 'zh/learning-course/stage1/1b/torque-speed' },
