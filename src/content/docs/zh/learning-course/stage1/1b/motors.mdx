@@ -1,21 +1,20 @@
 ﻿---
-title: Motors
-description: Introduction to motors in FRC
+title: 电机
+description: FRC 电机入门
 ---
 
 
+电机会进行旋转运动！它们将机器人电池提供的电能转化为机械旋转运动。从拾取结构、爬升装置到底盘驱动，只要选择合适的电机，设计合适的传动系统，机器人上的大多数机构都可以按照预期的驱动方式运转。
 
-Motors spin! They transform electrical energy supplied by the robot battery into rotational motion. From intaking to climbing to driving, just about anything on your robot can be moved with the right motor(s).
+<ContentFigure src="../img/1b/examples/motor-lineup.webp" alt="FRC 电机阵容">FRC 中可使用的部分电机。</ContentFigure>
 
-<ContentFigure src="../img/1b/examples/motor-lineup.webp" alt="FRC Motor lineup">Some of the motors available for use in FRC.</ContentFigure>
+### CIM 系列电机
 
-### CIM Class Motors
+在 FRC 中，有多种电机可供选择，它们各自有不同的优势和适用场景。现阶段 FRC 中最常见的一类电机是 “CIM 系列” 电机，包括 CIM、Mini-CIM、VEXpro Falcon 500、WCP Kraken x60、REV NEO、REV NEO Vortex 和 Redux Cu60。虽然这些 CIM 系列电机的转速和功率各不相同，但在CAD建模时有两个共同特点：
 
-In FRC, a number of different motor options are available, all with different advantages and use cases. The most common type of motor found in modern FRC is the "CIM class" motor. This includes the CIM, Mini-CIM, VEXpro Falcon 500, WCP Kraken x60, REV NEO, REV NEO Vortex, and Redux Cu60. While each of the CIM class motors have different speeds and power, they have two traits in common for modeling:
+* 电机外轮廓可以用一个直径 2.5" 的圆表示（有些电机略小，为 60mm/2.362"）。
+* 这些电机有 2 到 11 个不等的安装孔，但全部安装孔均分布在直径 2" 的螺栓分度圆上（见下图）。安装螺纹规格统一为 #10‑32，因为 #10-32 是 FRC COTS（现成商业零件）常用的标准紧固件规格。
 
-* The motors' outer diameters can be represented with a 2.5" diameter circle (some are slightly smaller at 60mm/2.362").
-* The motors have anywhere from 2 to 11 holes for mounting, but all are on a 2" diameter bolt circle (See below image). The holes are #10-32 threaded, as #10-32 is the hardware standard for FRC COTS parts.
+<ContentFigure src="../img/1b/examples/cim-bolt-circle.webp" alt="CIM 螺栓分布圆" width="50%">CIM 系列电机的安装孔位于直径 2" 的螺栓分布圆上。所有安装孔到电机中心的距离都是 1"。</ContentFigure>
 
-<ContentFigure src="../img/1b/examples/cim-bolt-circle.webp" alt="CIM bolt circle" width="50%">Mounting holes for CIM class motors are on a 2" diameter bolt circle. All of the holes are 1" away from the center of the motor.</ContentFigure>
-
-All of the exercises for this stage will use CIM class motors.
+本阶段的所有练习都会使用 CIM 系列电机。
