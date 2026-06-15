@@ -1,120 +1,120 @@
 ﻿---
-title: "Exercise 1: Simple Gearbox"
-description: Model a simple gearbox
+title: "练习 1：简单齿轮变速箱"
+description: 建模一个简单齿轮箱
 ---
 
 
-## Practice Exercises
-Time to practice! Start by **make a copy of the Stage 1B Exercises Document** through the button below, just like you did with the Stage 1A Exercises Document. Each exercise has a folder, a "reference" tab (a preview of what the final model should look like), and a tab or two for doing your exercise in. Solutions are also provided in the 1B Exercise Solutions Document to check your work afterwards.
+## 实操练习
+该开始练习了！和之前使用阶段 1A 练习文档一样，先通过下面的按钮**复制一份阶段 1B 练习文档**。每个练习都有一个文件夹、一个 “reference” 标签页（预览最终模型应有的样子），以及一两个用于完成练习的标签页。1B 练习答案文档中也提供了解答，方便你之后检查自己的成果。
 
-<LinkButton href="https://cad.onshape.com/documents/ce41613fac38db8c00e65020/w/a65651477167d5e36fe871c0/e/755940e52d82bddfdf7be61e" external center>1B Exercises Document (COPY THIS)</LinkButton>
-<LinkButton href="https://cad.onshape.com/documents/c6a8ec29479a2578841fb9f2/w/85094b3baa15a05c873920c9/e/47efe87a05a8318bffd60957" external center>1B Exercise Solutions</LinkButton>
+<LinkButton href="https://cad.onshape.com/documents/ce41613fac38db8c00e65020/w/a65651477167d5e36fe871c0/e/755940e52d82bddfdf7be61e" external center>1B 练习文档（复制这个）</LinkButton>
+<LinkButton href="https://cad.onshape.com/documents/c6a8ec29479a2578841fb9f2/w/85094b3baa15a05c873920c9/e/47efe87a05a8318bffd60957" external center>1B 练习答案</LinkButton>
 
-## Exercise 1: Simple Gearbox
+## 练习 1：简单齿轮变速箱
 
-In this exercise, you will be modeling and assembling a simple single stage gearbox. The goal of this exercise is to introduce how to model a very simple gear transmission. Additionally, you will learn how to use the the [`Robot Shaft` and `Robot Spacer` Featurescripts](https://cad.onshape.com/documents/9cffa92db8b62219498f89af/w/06b332ccabc9d2e0aa0abf88/e/99672d1e329b38e647d90146) and the `Replicate` tool. You will also use the [FRCDesignLib part library](/learning-course/course-setup/required-course-tools/part-library) for components other than fasteners, such as gears and motors.
+在本练习中，你将建模并装配一个简单的单级齿轮箱。本练习的目标是介绍如何建模一个非常简单的齿轮传动。此外，你还会学习如何使用 [`Robot Shaft` （轴）和 `Robot Spacer` （隔套、垫柱）FeatureScript（自定义特征脚本）](https://cad.onshape.com/documents/9cffa92db8b62219498f89af/w/06b332ccabc9d2e0aa0abf88/e/99672d1e329b38e647d90146)，以及 `Replicate`（仿制）工具。你还会使用 [FRCDesignLib 零件库](/learning-course/course-setup/required-course-tools/part-library) 插入齿轮、电机等紧固件以外的零部件。
 
-<Aside type="note">
-Exercise 1 adds hardware (bolts and nuts) to the CAD models. You can read more about hardware standards on the [Design Handbook](/design-handbook/structure/structure/) page.
+<Aside type="note" title="Note（备注）">
+练习 1 会向 CAD（计算机辅助设计）模型中添加紧固件（螺栓和螺母）。你可以在 [设计手册](/design-handbook/structure/structure/) 页面了解更多紧固件标准。
 </Aside>
 
-### Layout Sketches
+### 布局草图（规划草图）
 
-A layout sketch is a sketch that captures the geometry of a design without specifying the exact details.
-They are like the framing of a house, it defines the overall structure and relationships between key components, but doesn't include the finishing details like walls or paint.
-Keeping the key dimensions in a layout sketch makes it easy to adjust when needed. We will utilize layout sketches for almost all designs moving forward.
+布局草图（规划草图）是一种 Sketch（草图）的形式，用来表达设计的几何关系，但不指定所有具体细节。
+它类似房屋的框架，用来定义整体结构和关键部件之间的关系，但不包含墙面、涂装这类最终细节。
+把关键尺寸放在布局草图中，后续需要调整时会更方便。之后几乎所有设计都会使用布局草图完成前期规划。
 
-<Aside type="tip" title="Motor">
-The motor used in this exercise is a CIM-class motor called a Falcon 500. While discontinued for purchase, many teams still own some and they use the same 2" mounting hole pattern that most other FRC motors use, as discussed on the [Motors page](../motors).
+<Aside type="tip" title="Tip（提示）：电机">
+本练习使用的电机是一种 CIM 级电机，型号为 Falcon 500。虽然它已经停产，但许多队伍仍然拥有这类电机；它使用与大多数其他 FRC 电机相同的 2" （2英寸）安装孔位，如 [电机页面](../motors) 中所述。
 </Aside>
 
-### Part Studio Instructions
-**Navigate to the "Exercise #1 Part Studio" tab** in your copied document and **follow the instructions in the slides** to complete the part studio.
+### Part Studio（零件工作室）说明
+在你复制的文档中，**进入 “Exercise #1 Part Studio” 标签页**，并**按照幻灯片中的说明**完成 Part Studio（零件工作室）。
 
 <Slides>
 
   ![](../img/1b/exercises/exercise1/parts-0.webp)
-  Finished Part Studio.
+  完成后的零件工作室。
 
   ![](../img/1b/exercises/exercise1/parts-1.webp)
-  Begin by creating the layout sketch for the gearbox. Draw the pitch circles for the 60T and 12T gears. Set the pitch circles tangent to constrain the center-to-center distance between the gears. Constrain the centers of the two gears to be vertical.
+  先创建齿轮箱的布局草图。画出 60T 和 12T 齿轮的分度圆构造线。将两个分度圆设置为相切，用来约束齿轮之间的中心距。再约束两个齿轮中心点位于同一竖直线上。
 
   ![](../img/1b/exercises/exercise1/parts-2.webp)
-  Add the outline of the motor, a 2.5" diameter circle, around the 12T gear that the motor is attached to. The layout sketch is now finished.
+  在电机连接的 12T 齿轮周围添加电机外轮廓构造线，也就是一个直径 2.5" 的圆。至此，布局草图完成。
 
   ![](../img/1b/exercises/exercise1/parts-3.webp)
-  Create a new sketch for the motor plate. Using the layout as the reference, draw a 1.125" hole for the bearing and a 1.25" hole for the motor boss (the nub that sticks out from the motor). Note that depending on your manufacturing processes and tolerances, you may need to draw your bearing holes slightly larger or smaller than nominal (1.125").
+  为齿轮箱电机安装板创建一个新草图。以布局草图为参考，画出一个 1.125" 的轴承孔，以及一个 1.25" 的电机定位凸台孔（电机上凸出来的那一圈）。注意，根据加工方式和公差不同，你可能需要把轴承孔画得比标称尺寸（1.125"）略大或略小。
 
   ![](../img/1b/exercises/exercise1/parts-4.webp)
-  Add two mounting holes for the motor on a 2" bolt circle. When using only two mounting holes, an alternative to using a circular pattern is to draw and dimension a 2" construction circle, then draw the holes for the bolts on the circle. Make sure to constrain the angle of the holes as well; we used a horizontal constraint.
+  在直径 2" 的螺栓分布圆上添加两个电机安装孔。只使用两个安装孔时，除了使用圆形阵列，也可以画一个直径 2" 的构造圆并标注尺寸，然后在圆上画出螺栓孔。别忘了约束孔位角度；这里使用的是水平约束。
 
   ![](../img/1b/exercises/exercise1/parts-5.webp)
-  Add the four bolt holes for connecting the two plates. Use a center rectangle to create the construction geometry so that only two dimensions are required to constrain the holes.
+  添加用于连接两块板件的四个螺栓孔。使用中心矩形创建构造几何，这样只需要两个尺寸就能约束这些孔。注意，如果板件是对称的，可以只画一半的草图，然后使用草图镜像工具镜像另一半。
 
   ![](../img/1b/exercises/exercise1/parts-6.webp)
-  Using centerpoint arcs, lines, and the sketch mirror tool, draw the outline for the plate around the holes and motor outline. The intelligent placement of the origin along the vertical line of symmetry allows you to use the right plane to mirror the plate outline.
+  使用圆心圆弧、直线和草图镜像工具，围绕孔位和电机外轮廓画出板件外轮廓。由于原点被合理地放在竖直对称线上，你可以使用右平面对板件外轮廓进行镜像，来完成另一半草图。
 
   ![](../img/1b/exercises/exercise1/parts-7.webp)
-  Extrude the motor plate to be 1/4" thick.
+  将齿轮箱电机安装板拉伸为 1/4" 厚。
 
   ![](../img/1b/exercises/exercise1/parts-8.webp)
-  Use the Robot Spacer Featurescript to add #10 free fit, 3/8" OD (automatic), 3/4" long spacer.
+  使用 Robot Spacer FeatureScript 添加一个 #10 自由配合、3/8" 外径（自动）、3/4" 长的隔套（垫柱）。
 
   ![](../img/1b/exercises/exercise1/parts-9.webp)
-  Create the outer plate sketch on the face of the spacer. Use the Use sketch tool to project the holes and edges of the motor plate, but add a round cutout at the top using one of the arc tools. Note that the sketch can be mostly defined by using constraints such as tangent, equal, and vertical.
+  在隔套（垫柱）的另一个面上创建齿轮箱外板草图。使用 `Use`（投影）草图工具投影齿轮箱电机安装板的孔和边线，但需要用某个圆弧工具在顶部添加一个圆弧切口。注意，这个草图大部分可以通过相切、相等、竖直等约束来定义。
 
   ![](../img/1b/exercises/exercise1/parts-10.webp)
-  Extrude the outer plate to be 1/4" thick.
+  将齿轮箱外板拉伸为 1/4" 厚。
 
   ![](https://www.youtube.com/embed/RDXcECn8uSI)
-  Use the Robot Shaft Featurescript to model the output shaft. Follow the settings used.
+  使用 Robot Shaft FeatureScript 建模输出轴。按照视频中使用的设置操作。
 
   ![](../img/1b/exercises/exercise1/parts-0.webp)
-  Finished part studio. Name the key sketches and features. Set the name, material (6061 Aluminum), and appearance of the plates and spacer by right clicking the parts in the part list. The shaft has its material automatically determined from the Robot Shaft Featurescript.
+  完成后的零件工作室。给关键草图和特征命名。在零件列表中右键点击板件和隔套（垫柱），设置它们的名称、材料（6061 铝）和外观。轴的材料会由 Robot Shaft FeatureScript 自动确定。
 </Slides>
 
-### Assembly Instructions
+### Assembly（装配体）说明
 
-When putting together the assembly, **you may have some difficulty mating the motor pinion gear** to the motor shaft.
+组装装配体时，**你可能会觉得把电机小齿轮配合到电机轴上有些困难**。
 
-You can **lock the visible mate connectors on a face by holding the `Shift` key before going to press on a mate connector** that isn't physically on the face. Watch the video below for a tutorial.
+有些Mate（配合）连接器并不会直接显示出来，我们可以通过**按住 `Shift` 键来锁定该面上所有可见的配合连接器**，从而选中这些连接器。观看下面的视频了解具体操作。
 
-<ContentFigure src="zI8wBHeTfdc">Using the Shift key to lock mate inferences while mating</ContentFigure>
+<ContentFigure src="zI8wBHeTfdc">配合时使用 Shift 键锁定配合连接器</ContentFigure>
 
 
-**Now navigate to the "Exercise #1 Assembly" tab** in your copied document and **follow the instructions in the slides** to complete the exercise.
+现在，在你复制的文档中**进入 “Exercise #1 Assembly” 标签页**，并**按照幻灯片中的说明**完成装配体。
 
 <Slides>
   ![](../img/1b/exercises/exercise1/assy-0.webp)
-  Final assembly.
+  最终装配体。
 
   ![](https://www.youtube.com/embed/kChIFuuLahU)
-  Insert the part studio into the assembly and fix the gearbox plate. Group mate the two plates together and then mate the spacer to the motor plate. Then, use the Replicate tool to replicate the spacer and its associated mate onto the other spacer locations.
+  将零件工作室对应的零件插入装配体，并固定齿轮箱板。使用“分组配合”将两块板件组合在一起，然后将隔套通过配合，安装到电机板上。接着，使用 Replicate（仿制）工具，把隔套及其关联配合仿制到其他隔套位置。
 
   ![](https://www.youtube.com/embed/gKP-n5eKmjE)
-  Assemble the bearings and shaft using parts from FRCDesignLib.
+  使用 FRCDesignLib 中的零件装配轴承和轴。
 
   ![](https://www.youtube.com/embed/ZJCs0ms3I8A)
-  Assemble the motor and motor pinion gear using parts from FRCDesignLib. You will need to use mate inference locking to fasten the motor to the motor pinion: See the above drop down to learn how.
+  使用 FRCDesignLib 中的零件装配电机和电机小齿轮。你需要使用配合推断锁定功能，将电机与电机小齿轮紧固在一起：具体方法请参考上方的下拉说明。
 
   ![](https://www.youtube.com/embed/mMP-kkl6AuY)
-  Assemble the shaft spacer and gear using parts from FRCDesignLib. Configurable parts will have a blue grid icon in the instance list. Notice how you were able to change the tooth count of the gear from 40T to 60T after mating it. Using configurable components like this makes your models more parametric since you can change the component without needing to re-insert and mate.
+  使用 FRCDesignLib 中的零件装配轴用隔套和齿轮。可配置零件会在实例列表中显示蓝色网格图标。注意，在完成配合之后，你仍然可以把齿轮齿数从 40T 改为 60T。使用这类可配置零件可以让模型更参数化，因为你无需重新插入和重新配合零件，就能修改该零件。
 
   ![](https://www.youtube.com/embed/SytVbO_-BrM)
-  Insert the shaft retention bolts from FRCDesignLib.
+  从 FRCDesignLib 插入轴端固定螺栓。
 
   ![](https://www.youtube.com/embed/D4OWWMYYwWM)
-  Add the motor bolts, gearbox bolts, and nuts using FRCDesignLib parts.
+  使用 FRCDesignLib 零件添加电机螺栓、齿轮箱螺栓和螺母。
 
   ![](../img/1b/exercises/exercise1/assy-0.webp)
-  Finished assembly. Make sure to sort your parts into folders and name your replicate features.
+  完成后的装配体。确保把零件整理到文件夹中，并给仿制特征命名。
 </Slides>
 
-<Aside type="tip" title="Verification">
-Make sure to have you and/or a more experienced member/mentor of your team [**review your CAD!**](/learning-course/stage1/1a/focusing-on-improvement) Your assembly should have 19 Instances and weigh approximately 2.3 lbs.
+<Aside type="tip" title="Tip（提示）：检查">
+请确保由你自己，或队内更有经验的队员/导师来 [**检查你的 CAD！**](/learning-course/stage1/1a/focusing-on-improvement) 你的装配体应包含 19 个实例，重量约为 2.3 lbs。
 </Aside>
 
 
-### Configurable Parts
+### 可配置零件
 
-In this exercise you made your first gearbox. In doing so, you also used part configurations - a powerful tool that allows for variations of the same part. The gears that you inserted from FRCDesignLib were configurable - you were able to easily change the tooth count of the gear without needing to inserting a new component. Try and use configurable parts when they are available to make your models more parametric.
+在本练习中，你完成了自己的第一个齿轮箱。在这个过程中，你也使用了零件配置。零件配置是一项强大的工具，可以让同一个零件拥有不同变体。你从 FRCDesignLib 插入的齿轮就是可配置零件，因此可以轻松修改齿轮齿数，而不需要插入新的零部件。只要有可配置零件可用，就尽量使用它们，让你的模型更加参数化。
