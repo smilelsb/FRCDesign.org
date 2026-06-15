@@ -48,6 +48,7 @@ alwaysApply: false
 13. Section → 小节，Stage → 阶段，Exercise → 练习或练习任务。
 14. A: Onshape Fundamentals → A：Onshape 基础。
 15. tube → 管材/方管，frame → 框架/机架，根据上下文判断。
+16. Use → 使用投影
 
 ## 提示框和组件规则 (Admonition & Component Rules)
 
