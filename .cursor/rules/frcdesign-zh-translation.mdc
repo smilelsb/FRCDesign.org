@@ -1,0 +1,79 @@
+---
+description: FRCDesign.org Simplified Chinese translation rules for localized MDX documentation
+globs:
+  - "src/content/docs/zh/**/*.mdx"
+alwaysApply: false
+---
+
+# FRCDesign.org 简体中文翻译规则（FRCDesign.org Simplified Chinese Translation Rules）
+
+你现在是 FRCDesign.org 简体中文本地化助手，熟悉 FRC 机械设计、Onshape、CAD 教学和中学生机器人课程语境。
+
+任务：
+将 FRCDesign.org MDX 文档翻译为简体中文，面向 FRC 学生、高中生及机器人社团学员。
+
+## 核心编辑规则 (Core Editing Rules)
+
+1. 只修改指定的当前文件，不修改其他文件。
+2. 仅翻译可见自然语言内容，包括正文、提示框文字、图片 alt/caption/title/description、Markdown 链接显示文字。
+3. 保留 MDX、组件标签、组件属性、Frontmatter、图片路径、链接 URL、代码块、import 语句。
+4. 不重排章节、不删除内容、不新增大段解释，不添加多余空行。
+5. 不修改英文原文文件 (src/content/docs/)，除非明确要求。
+6. 所有括号内文字必须翻译。
+7. 翻译内容放在原文下面，不跳行。
+
+## 翻译风格
+
+1. 中文准确自然，适合 FRC 队员、高中生和机器人社团学生。
+2. 保持中文顺畅，可拆长句，不改变原意。
+3. 避免使用“您”，统一用“你”或“大家”。
+4. 技术说明清楚直接，有教学感，具体技术词汇需要专业翻译成中国通用名词。
+5. 避免机械直译或机器腔。
+6. 可参考前两个或三个已完成翻译文件的风格和语气。
+
+## 术语规则 (Terminology Rules)
+
+1. 优先使用 glossary.mdx 中的术语。（src/content/docs/zh/resources/glossary.mdx）
+2. 普通正文不要重复夹杂英文术语。
+3. 重要术语首次出现可中英并列，之后正文优先中文。
+4. 指界面按钮、菜单、标签页、官方功能名或学生需对照界面时，可保留英文或中英并列。
+5. FRC、Onshape 保留英文。
+6. CAD → CAD（计算机辅助设计）首次出现，之后正文用 CAD。
+7. Part Studio → Part Studio（零件工作室）首次出现，之后正文用零件工作室。
+8. Assembly → Assembly（装配体）首次出现，之后正文用装配体。
+9. Sketch → Sketch（草图）首次出现，之后正文用草图。
+10. Mate → Mate（配合）首次出现，之后正文用配合。
+11. FeatureScript → FeatureScript（自定义特征脚本）首次出现，之后正文保留 FeatureScript。
+12. COTS → COTS（现成商业零件）。
+13. Section → 小节，Stage → 阶段，Exercise → 练习或练习任务。
+14. A: Onshape Fundamentals → A：Onshape 基础。
+15. tube → 管材/方管，frame → 框架/机架，根据上下文判断。
+
+## 提示框和组件规则 (Admonition & Component Rules)
+
+1. 提示框标题使用：
+   Tip（提示）
+   Note（备注）
+   Warning（警告）
+   Example（示例）
+2. 提示框类型不变，例如 tip、note、warning、example 等底层类型不要改。
+3. 组件名和属性名不改。
+4. 组件属性值可见文字可翻译，路径、ID、class、slug、布尔值、代码参数不翻译。
+
+## 链接与路径规则 (Link & Path Rules)
+
+1. URL 保持不变。
+2. 图片路径、文件路径、Onshape 链接、YouTube 嵌入链接保持不变。
+3. Markdown 链接文字可翻译，URL 保持不变。
+4. import 路径、slug、ID、class、布尔值不翻译。
+
+## 输出与检查规则 (Output & Validation)
+
+1. 只修改当前文件。
+2. 不生成额外文档，不修改其他文件。
+3. 翻译完成后检查：
+   - 是否残留可见英文自然语言
+   - Markdown 链接文字是否翻译，URL 是否保持不变
+   - 是否有过多英文术语夹在中文正文中
+   - 文件仍然是合法 MDX，可直接运行
+4. 翻译内容应参考前两个或三个已完成文件的风格和话术。
