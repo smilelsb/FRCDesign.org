@@ -1,48 +1,48 @@
 ﻿---
-title: Practice Mechanisms Introduction
-description: Introduction to practice mechanisms
+title: 练习机构介绍
+description: 练习机构入门
 ---
 
 
-Welcome to stage 1C! In this stage, you will be modeling a number of different mechanisms to practice your CAD skills and execution of small details. You will be introduced to new COTS parts and Onshape tips and tricks along the way to help your workflow.
+欢迎来到阶段 1C 阶段！在本阶段，你将建模多种不同机构，用来练习 CAD（计算机辅助设计）技能和细节执行能力。在这个过程中，你会接触新的 COTS（现成商业零件）零部件，也会学习一些 Onshape 使用技巧，帮助你优化工作流程。
 
-Because these mechanisms are designed specifically to help practice skills and introduce concepts, they are modeled out-of-context of a full robot.
-While these mechanisms do include some good design techniques, they are not necessarily complete systems. The models are strictly for CAD practice and not recommended for use on real robots.
+由于这些机构是专门为了练习技能和介绍概念而设计的，建模时并未结合完整机器人整机场景。
+虽然这些机构包含一些优秀的设计方法，但它们不一定是完整系统。这些模型仅用于 CAD 练习，不建议直接用于实际的机器人上。
 
-## Layout Sketches
+## 布局草图
 
-Make sure to use a layout sketch for each mechanism, like the ones introduced in the Stage 1B exercises. Layout sketches are helpful at any scale, letting you define key dimensions in a single sketch, which makes it easy to adjust when needed.
+请确保为每个机构使用布局草图，就像阶段 1B 练习中介绍的那样。布局草图在任何规模的设计中都很有用，它能让你在一个草图中定义关键尺寸，后续需要调整时会更方便。
 
-<Aside type="tip">
-Add the components that drive the design to the layout sketch (i.e. power transmission, game piece path, rollers, etc.) while keeping specific part details in their own sketches and features (i.e. a separate sketch for the bearing holes and plate outline, to be extruded).
+<Aside type="tip" title="Tip（提示）">
+把驱动设计的关键内容放进布局草图中（例如传动机构、策略物道具的路径、滚轮等），而具体零件细节则保留在各自的草图和特征中（例如为轴承孔和板件外轮廓单独创建一个用于拉伸的草图）。
 </Aside>
 
 <Slides>
   ![](../img/1c/exercise1-layout.webp)
-  Exercise 1 layout sketch. Notice that only key geometry details are included in the layout sketch.
+  练习 1 的布局草图。注意，布局草图中只包含关键几何细节。
 
   ![](../img/1c/exercise1-layout-final.webp)
-  Exercise 1 side view. Notice how the layout sketch drives the geometry of the mechanism.
+  练习 1 的侧视图。注意布局草图如何确定机构的几何形状。
 </Slides>
 
-<Aside type="note">
-The concept of layout sketches will be expanded upon later when you start to use them in the context of a robot.
+<Aside type="note" title="Note（备注）">
+后续当你开始在整机机器人建模中实际运用布局草图时，会进一步深入讲解布局草图的相关思路。
 </Aside>
 
-## Maintaining Consistent Origins
+## 保持原点一致
 
-As mentioned in previous sections of Stage 1, you should maintain a consistent origin between your part studio and assembly. You will use the [`Origin Cube` Featurescript](https://cad.onshape.com/documents/321c197a842fc5f1a29e6621/w/fc3cdd5ca7edcd93e02f13cc/e/2b321cb91b74224b9c14b433) to achieve this. **Make sure that the origin cube is always the first feature in any part studio.** The below slides provide a demonstration of how to use the origin cube.
+正如阶段 1 前面几个小节所述，你应该让 Part Studio（零件工作室）和 Assembly（装配体）之间的原点保持一致。你将使用 [`Origin Cube` FeatureScript（自定义特征脚本）](https://cad.onshape.com/documents/321c197a842fc5f1a29e6621/w/fc3cdd5ca7edcd93e02f13cc/e/2b321cb91b74224b9c14b433) 来实现这一点。**请确保 Origin Cube 始终是任何零件工作室中的第一个特征。** 下面的幻灯片演示了如何使用 Origin Cube。
 
 <Slides>
   ![](../img/1c/origin-cube-tutorial/origin-cube-tutorial-1.webp)
-  Place the Origin Cube featurescript as the first feature in the part studio.
+  将 Origin Cube FeatureScript 放在零件工作室的第一个特征位置。
 
   ![](../img/1c/origin-cube-tutorial/origin-cube-tutorial-2.webp)
-  Model your mechanism.
+  建模你的机构。
 
   ![](https://www.youtube.com/embed/H6y1S_cHLKk)
-  Insert the part studio into the assembly with the green checkmark. Group all static parts together with the Origin Cube part, then fasten the mate connector on the Origin Cube to the origin of the assembly.
+  将零件工作室插入装配体。将所有静态零件与 Origin Cube 零件使用分组配合（Group Mate）连接在一起，然后把 Origin Cube 上的配合连接器紧固到装配体原点。
 </Slides>
 
-Following these steps will allow the origin of the assembly to be tied to a part that will never change or disappear. The position of the other parts relative to the origin cube will consistent with the part studio, even when things are changed in the part studio. This will be particularly useful for flexible assemblies, such as an arm or elevator, in stage 2 and beyond.
+按照这些步骤操作，可以让装配体原点绑定到一个永远不会改变或消失的零件上。即使零件工作室中的内容发生变化，其他零件相对于 Origin Cube 的位置也会与零件工作室保持一致。到了阶段 2 及之后，这对于机械臂、升降机构等可移动的机构装配体时会特别有用。
 

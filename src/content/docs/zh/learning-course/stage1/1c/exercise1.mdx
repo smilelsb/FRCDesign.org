@@ -1,159 +1,160 @@
 ﻿---
-title: "Exercise 1: Flat Intake"
-description: Model a flat intake
+title: "练习 1：平直拾取机构"
+description: 建模一个平直拾取机构
 ---
 
 import ContentRow from '@components/content/ContentRow.astro';
 
-In this exercise, you will be modeling a sort of flat game piece manipulator. This mechanism features live-axle compliant wheels, a belt reduction, and tube plugs.
+在本练习中，你将建模一种较为平直的策略物道具拾取机构。这个机构包含转轴柔性轮、同步带减速传动和管塞等设计元素。
 
-## Tube Plugs
-Tube plugs are a great way to build simple and robust structures.
-Many vendors including [WCP](https://wcproducts.com/products/tube-plugs), [REV](https://www.revrobotics.com/MAXTube-Endcaps/), [Andymark](https://www.andymark.com/products/tube-plugs), and [Last Anvil](https://lastanvil.com/products/1-x-1-x-0-0625-end-cap) offer in various tubing sizes.
-They can be used to connect plates to the open face of tubes or to connect tubes to each other without the use of a gusset.
+## 管塞
+管塞是一种构建简单、结构可靠的零件。
+包括 [WCP](https://wcproducts.com/products/tube-plugs)、[REV](https://www.revrobotics.com/MAXTube-Endcaps/)、[Andymark](https://www.andymark.com/products/tube-plugs) 和 [Last Anvil](https://lastanvil.com/products/1-x-1-x-0-0625-end-cap) 在内的许多供应商，都提供适用于不同管材尺寸的管塞。
+它们可以用来把板件连接到管材开口面上，也可以在不使用加强板的情况下把管材彼此连接起来。
 
-<Aside type="example" title="Tube Plugs">
+<Aside type="example" title="Example（示例）：管塞">
 <ContentRow>
-  <ContentFigure src="../img/1c/flat-intake/high-tide-tube-plugs.webp" alt="Tube to tube connection" />
-  <ContentFigure src="../img/1c/flat-intake/miso-tube-plug.webp" alt="Tube to plate connection" />
+  <ContentFigure src="../img/1c/flat-intake/high-tide-tube-plugs.webp" alt="管材与管材连接" />
+  <ContentFigure src="../img/1c/flat-intake/miso-tube-plug.webp" alt="管材与板件连接" />
 </ContentRow>
 
-Tube plugs can be used to create gusset-less tube to tube (left) and tube to plate (right) connections. (Photo Credits: FRC 4414, FRC 9442)
+管塞可用于实现无加强板的管材与管材连接（左）以及管材与板件连接（右）。（图片来源：FRC 4414、FRC 9442）
 </Aside>
 
-## Bolt and Rivet Usage
-Throughout the exercises in 1C you'll pick up several usage techniques for bolts and rivets for different kinds of structures and materials in order to build a strong intuition.
+## 螺栓和铆钉的使用
 
-Bolts are strong, and people often use more bolts and rivets than are necessary. When using only bolts, usually you can use 3-4 to fasten corners of a part and be fine, but you may prefer to use rivets to minimize weight or because they don't go all the way through a tube. In these cases, you can use a number of rivets easily spaced out as long as you have at least **one bolt/nut pair per attachment to prevent the rivets from loosening over time**. This is done for both this exercise and exercise 8.
+在 1C 的练习中，你会学习几种针对不同结构和材料使用螺栓、铆钉的技巧，从而建立更扎实的工程设计直觉。
 
-<ContentFigure src="../img/1c/flat-intake/bolt-and-rivet.webp" alt="Bolt and rivet usage" />
+螺栓强度很高，但大家往往会使用远超实际所需数量的螺栓与铆钉。如果只使用螺栓，通常用 3 到 4 颗固定零件角部就足以满足强度需求。但如果想要最大限度减轻重量，或是不希望紧固件贯穿铝型材，就可以选用铆钉。在这种场景下，可以均匀排布多颗铆钉，只要每个连接处至少有**一组螺栓/螺母来防止铆钉随时间松动**即可。本练习和练习 8 都会采用这种做法。
 
-## Part Studio Instructions
+<ContentFigure src="../img/1c/flat-intake/bolt-and-rivet.webp" alt="螺栓和铆钉的使用" />
 
-**Navigate to the "Exercise #1 Part Studio" tab** in your copied document and **follow the instructions in the slides** to complete the part studio for this exercise.
+## Part Studio（零件工作室）说明
+
+在你复制的文档中，**进入 “Exercise #1 Part Studio” 标签页**，并**按照幻灯片中的说明**完成本练习的零件工作室。
 
 <Slides>
   ![](../img/1c/flat-intake/parts-0.webp)
-  Final Part Studio.
+  最终零件工作室。
 
   ![](../img/1c/flat-intake/parts-1.webp)
-  Start the layout sketch on the Right plane. Begin by sketching the shape of the bottom tube.
+  在右平面上开始绘制布局草图。先画出底部管材的形状。
 
   ![](../img/1c/flat-intake/parts-2.webp)
-  Draw a rectangle on top of the tube to represent the floor of this intake
+  在管材上方画一个矩形，表示这个拾取机构的底板。
 
   ![](../img/1c/flat-intake/parts-3.webp)
-  Create a circle to represent the wheels, and a circle to represent the motor. Use the origin cube belt ctc function to position them correctly, this is similar to the layout sketch in 1B Exercise 3
+  创建一个圆表示轮子，再创建一个圆表示电机。使用 Origin Cube 的同步带中心距函数来正确定位它们，这与 1B 练习 3 中的布局草图类似。
 
   ![](../img/1c/flat-intake/parts-4.webp)
-  Draw the pitch circles for both pulleys and add connecting lines for them to represent the belt path. Use the origin cube PulleyPD function to define the pulley circles
+  画出两个同步带轮的分度圆，并添加连接线表示同步带路径。使用 Origin Cube 的 PulleyPD 函数定义同步带轮的分度圆。
 
   ![](../img/1c/flat-intake/parts-5.webp)
-  Draw a rectangle to represent a 2x1 tube. This should be dimensioned above from the wheels and aligned with the edge of the bottom tube.
+  画一个矩形表示 2"×1" 管材。这个矩形尺寸标注在滚轮的上方，切数值6边缘与底部管材边缘对齐。
 
   ![](../img/1c/flat-intake/parts-6.webp)
-  Create a new sketch using a mate connector offset from the origin. This sketch should be offset in the "Right" direction as shown.
+  以偏离原点的配合连接器为基准新建草图，该草图需按图示向 ** 右（Right）** 方向偏移
 
   ![](../img/1c/flat-intake/parts-7.webp)
-  Transfer the rectangles for the tubes from the layout sketch using the "Use" tool. Make sure these are not construction lines as you will need to extrude them.
+  使用 “Use”（使用投影）工具，从布局草图中投影管材矩形。确保这些线不是构造线，因为之后需要将它们拉伸。
 
   ![](../img/1c/flat-intake/parts-8.webp)
-  Extrude the bottom tube by 1" towards the origin and apply Tube Converter to it
+  将底部管材朝原点方向拉伸 1"，并对它应用 Tube Converter。
 
   ![](../img/1c/flat-intake/parts-9.webp)
-  Start a sketch on the Right side of the 1x1 tube. Make sure to disable imprinting. Add circles centered on the motor and wheel circles from the layout sketch. Also transfer the CTC line with the use tool.
+  在 1"×1" 管材的右侧开始绘制草图。确保选择打勾 **Disable imprinting（禁用压印）**。以布局草图中的电机圆和轮子圆为中心添加圆。同时使用 “Use”（使用投影）工具投影两个圆的中心点连线。
 
   ![](../img/1c/flat-intake/parts-10.webp)
-  Create the bolt circle pattern by drawing a circle on the CTC line, then use the pattern tool to duplicate it around the motor center point. This pattern should have 8 holes, and have a diameter of 2" to match the standard 2" motor bolt circle. We only need 3 of the 8 holes on this pattern so make the rest construction holes.
+  在中心距线上画一个圆，然后使用阵列工具围绕电机中心点阵列这个圆，从而创建螺栓分布圆阵列。这个阵列应包含 8 个孔，直径为 2"，以匹配标准 2" 电机螺栓分布圆。我们只需要这个阵列中的 3 个孔，因此把其余孔设为构造孔。
 
   ![](../img/1c/flat-intake/parts-11.webp)
-  Add mounting holes along the bottom tube, spaced 2" apart. Add two more hole centered on the top tube spaced 1" apart.
+  沿底部管材添加安装孔，孔距为 2"。再在顶部管材中心线上添加两个孔，孔距为 1"。
 
   ![](../img/1c/flat-intake/parts-12.webp)
-  Draw the plate outline around the holes. Draw arcs around all of the edge holes and connect them with tangent lines.
+  围绕这些孔绘制板件外轮廓。在所有边缘孔周围绘制圆弧，并用相切线连接它们。
 
   ![](../img/1c/flat-intake/parts-13.webp)
-  Extrude to create the plate. If you properly disabled imprinting on slide 9 you should only have one face to select to extrude this plate.
+  通过拉伸创建板件。如果你在第 9 张幻灯片中正确选择打勾 **Disable imprinting（禁用压印）**，那么拉伸这块板件时应该只需要选择一个面。
 
   ![](../img/1c/flat-intake/parts-14.webp)
-  Mirror this plate across the Right plane to create a reference plate. You should color this plate an abnormal color so it is easily distinguishable from the main plate. Name this reference plate "zREF Plate". This will make it appear at the bottom of the insert menu, making it harder to accidentally use in the assembly.
+  以右基准平面为镜像面镜像这块板件，创建一块参考板。你应给这块板设置一个不常用的颜色，便于和主板件区分。将这块参考板命名为 **zREF Plate**。这样它会出现在插入菜单底部，降低在装配体中误用它的可能性。
 
   ![](../img/1c/flat-intake/parts-15.webp)
-  Extrude the top tube shape. Make sure to use the "Up to Face" setting to extrude the tube parametrically to the reference plate.
+  拉伸顶部管材形状。确保使用 “Up to Face”（到面）设置，将管材以参数化方式拉伸到参考板。
 
   ![](../img/1c/flat-intake/parts-16.webp)
-  Use Tube Converter on this new tube.
+  对这根新管材使用 Tube Converter。
 
   ![](../img/1c/flat-intake/parts-17.webp)
-  Make a sketch on top of the 1x1 tube, again making sure to disable imprinting. Sketch the plate as shown.
+  在 1"×1" 管材顶部创建草图，同样确保选择打勾 **Disable imprinting（禁用压印）**。按图示绘制板件，并拉伸。
 
   ![](../img/1c/flat-intake/parts-18.webp)
-  Use the `Belt & Chain Gen` Featurescript to make a belt between the motor and wheel holes. Pay close attention to the starting offset and the construction circles you select.
+  使用 `Belt & Chain Gen` FeatureScript（自定义特征脚本）在电机孔和滚轮孔之间创建同步带。仔细注意起始偏移量，以及选择对应的构造圆。
 
   ![](../img/1c/flat-intake/parts-19.webp)
-  Create the wheel shaft using the Robot Shaft Featurescript. The start mate connector should be placed in the middle of the belt and run up to the left face of the reference plate. The shaft should be offset from the end by 1/16" to account for the bearing flange. The shaft should also have a starting offset of 9/32" to put it through the wheel pulley.
+  使用 Robot Shaft FeatureScript 创建轮轴。起始配合连接器应放在同步带中间，并延伸到参考板左侧面。轴应从端部偏移 1/16"，为轴承法兰留出空间。轴还应设置 9/32" 的起始偏移，使其穿过轮子同步带轮。
 
   ![](../img/1c/flat-intake/parts-20.webp)
-  Now that our parts are all done, we can pocket the side plate. Create a sketch on the Right side of the plate, and draw the rib lines. The top left line is dimensioned away from the top bolt holes.
+  现在所有零件都完成了，可以给侧板做镂空减重。在板件右侧创建草图，并绘制加强筋线。左上方的线相对于顶部螺栓孔中心标注尺寸。
 
   ![](../img/1c/flat-intake/parts-21.webp)
-  Use the Part Lighten Featurescript to pocket the plate. Select the face of the plate, and the entire rib line sketch as shown.
+  使用 Part Lighten FeatureScript 对板件进行镂空减重。按图示选择板件表面和整个加强筋线草图。
 
   ![](../img/1c/flat-intake/parts-0.webp)
-  Make sure to organize your part studio features into appropriate folders.
+  确保将零件工作室中的特征整理到合适的文件夹中。
 </Slides>
 
-## Assembly Instructions
+## Assembly（装配体）说明
 
-**Next, navigate to the "Exercise #1 Assembly" tab** in your copied document and **follow the instructions in the slides** to complete this exercise.
+接下来，在你复制的文档中**进入 “Exercise #1 Assembly” 标签页**，并**按照幻灯片中的说明**完成本练习。
 
 <Slides>
   ![](../img/1c/flat-intake/assy-0.webp)
-  Final assembly.
+  最终装配体。
 
   ![](https://www.youtube.com/embed/H6y1S_cHLKk)
-  Insert the part studio and delete the reference plate. Group all of these components together, and fasten the origin cube to the assembly origin
+  插入零件工作室中的所有零件，并删除参考板。将这些零件组配合在一起，并把 Origin Cube 紧固到装配体原点。
 
   ![](https://www.youtube.com/embed/_CIzPllEGyU)
-  Use the Assembly Mirror tool to copy the bottom tube and plate over to the other side. You can use a mate connector in the middle of the origin cube's edge as a mirror plane
+  使用 Assembly Mirror（装配体镜像）工具，将底部管材和板件复制到另一侧。你可以使用 Origin Cube 边线中点处的配合连接器作为镜像平面。
 
   ![](https://www.youtube.com/embed/pz9FJVzkWjg)
-  Insert 2x1 Tube plugs with a the 1/16" Sleeve to fit the top tube. Mate these tube plugs to the ends of the top tube.
+  插入带 1/16" Sleeve（套筒）的 2x1 管塞，使其适配顶部管材。将这些管塞配合到顶部管材两端。
 
   ![](https://www.youtube.com/embed/aNM9l2OV1fY)
-  Insert the motor, pulley and shaft spacers. Assemble the motor shaft parts together and mate it to the side plate on the Right side.
+  插入电机、带轮和轴用隔套。将电机轴上的零件装配在一起，并将其配合到右侧的侧板上。
 
   ![](https://www.youtube.com/embed/iQ3y-yqWeA4)
-  Insert two hex bearings for the wheel shaft and mate them to the plates.
+  为轮轴插入两个六角轴承，并将它们配合到板件上。
 
   ![](https://www.youtube.com/embed/RMAst7Xcz4Y)
-  Insert a 1" Hex Spacer and a 2" Compliant wheel. Mate them together, and then to the right bearing. Use a Linear Pattern to copy the wheel and spacer across the shaft. Put a final 1/2" Spacer at the end of the wheels to fully constrain them.
+  插入一个 1" 六角隔套和一个 2" 柔性轮。先将它们配合在一起，再配合到右侧轴承上。使用 Linear Pattern（线性阵列）沿轴复制轮子和隔套。最后在轮子末端放置一个 1/2" 隔套，使它们完全约束。
 
   ![](https://www.youtube.com/embed/xrIZ7Ph1DAo)
-  Insert shaft end screws and mate one to each side of the wheel shaft.
+  插入轴端螺钉，并在轮轴两端各配合一个。
 
   ![](https://www.youtube.com/embed/quIf3misSe4)
-  Use nuts, bolts and rivets to fasten the structure pieces together. You can make use of assembly mirror to speed up the process since the fasteners are mostly symmetrical.
+  使用螺母、螺栓和铆钉将结构件紧固在一起。由于紧固件大多对称，可以利用装配体镜像来加快过程。
 
   ![](../img/1c/flat-intake/assy-0.webp)
-  Finish your assembly by organizing the parts into folders and naming your replicates.
+  最后，将零件整理到文件夹中，并为仿制特征命名，完成装配体。
 </Slides>
 
-<Aside type="tip" title="Verification">
-Make sure to have you and/or a more experienced member/mentor of your team [**review your CAD!**](/learning-course/stage1/1a/focusing-on-improvement)
+<Aside type="tip" title="Tip（提示）：检查">
+请确保由你自己，或队内更有经验的队员/导师来 [**检查你的 CAD（计算机辅助设计）！**](/zh/learning-course/stage1/1a/focusing-on-improvement)
 </Aside>
 
-## Parametric Modeling
+## 参数化建模
 
-Some of the steps we took to complete this exercise could have been simplified.
-For instance, we didn't necessarily *need* to make the shaft properly positioned/aligned in the part studio.
-We didn't *need* to use an "Up to face" extrude for the upper tube.
+本练习中的一些步骤其实可以简化。
+例如，我们不一定*必须*在零件工作室中让轴的位置和对齐关系完全正确。
+我们也不一定*必须*对上方管材使用 “Up to Face”（到面）拉伸。
 
-However, we practice these techniques because, while they may marginally increase modeling time upfront, they can save ***significant*** amounts of time when going back and editing.
-CAD is an iterative process - your models and designs won't be perfect the first time around, so making your model easier to modify and more robust to changes (e.g., changing the width of this intake) will save you time and effort in the long run.
-As you use best practices, they'll become second nature.
+不过，我们练习这些技巧，是因为它们虽然会略微增加前期建模时间，却能在后续返回修改时节省***大量***时间。
+CAD 是一个迭代过程，你的模型和设计不可能第一次就完美。因此，让模型更容易修改、面对变化更稳健（例如修改这个拾取机构的宽度），从长期来看会节省你的时间和精力。
+随着你不断使用最佳实践，它们会逐渐变成习惯。
 
-<Aside type="note" title="Tweaking Your Model">
-Try playing around to get a feel for what things are and aren't parametric in exercise 1. You can try changing things like the width, length, tube positions, or gear ratio. Which dimensions are easy to change and which are difficult? Which dimension changes cause rebuild or assembly error?
+<Aside type="note" title="Note（备注）：调整你的模型">
+试着改一改练习 1 中的模型，感受哪些内容是参数化的，哪些不是。你可以尝试修改宽度、长度、管材位置或传动比等内容。哪些尺寸容易修改，哪些比较困难？哪些尺寸变化会导致重建错误或装配错误？
 </Aside>
 
