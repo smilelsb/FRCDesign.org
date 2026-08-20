@@ -1,45 +1,45 @@
 ---
-title: Compression & Wrap
-description: Understanding compression and wrap in shooters
+title: 压缩量与包覆
+description: 理解发射机构中的压缩量与包覆
 ---
 
 import ContentRow from '@components/content/ContentRow.astro';
 import ContentRowCaption from '@components/content/ContentRowCaption.astro';
 
-## Compression & Wrap
+## 压缩量与包覆
 
-### Compression
+### 压缩量
 
-The purpose of compression is to efficiently transfer energy from the flywheel to the game piece. The softer the game piece, the more compression is needed for effective energy transfer. Insufficient compression causes slipping, resulting in poor energy transfer, while excessive compression increases power requirements and reduces efficiency. Prototyping is essential to find the right balance. For games with hard game pieces, like in 2017, compression can also be achieved using a foam backing.
+压缩量的作用，是让飞轮能高效地把能量传递给比赛物体。比赛物体越软，通常就需要越大的压缩量才能有效传递能量。压缩量不足会导致打滑，使能量传递效果变差；压缩量过大则会提高功率需求并降低效率。因此，制作原型并测试对于找到合适平衡非常重要。对于较硬的比赛物体，例如 2017 年比赛中的物体，也可以通过泡沫背板来实现压缩。
 
-### Wrap
+### 包覆
 
-Wrap refers to the duration the game piece stays in contact with the flywheel. A longer wrap time allows for more consistent energy transfer. For the underlying physics, see [Impulse](https://en.wikipedia.org/wiki/Impulse_(physics)).
+包覆指比赛物体与飞轮保持接触的持续时间。更长的接触时间可以带来更稳定的能量传递。其背后的物理概念可以参考 [冲量](https://en.wikipedia.org/wiki/Impulse_(physics))。
 
-<Aside type="video" title="Not Enough Compression/Contact Time" collapse>
+<Aside type="video" title="压缩量/接触时间不足" collapse>
   <ContentFigure src="5OoCSAgqm3s" width="40%">
-    This is what it may look like if you do not have enough compression. See how loud the shooter is compared to how far the shot actually goes. Warning: loud audio and swearing.
+    如果压缩量不足，发射效果可能会像这样。注意发射机构声音很大，但实际发射距离并不远。警告：音量较大，并包含脏话。
   </ContentFigure>
 </Aside>
 
-<Aside type="video" title="Good Contact Time and Compression" collapse>
+<Aside type="video" title="良好的接触时间和压缩量" collapse>
   <ContentFigure src="9DEJG6eoeaQ" width="40%">
-    This is what it looks like if you have good contact time and compression with the exact same robot. Warning: loud audio.
+    在同一台机器人上，如果接触时间和压缩量合适，发射效果会像这样。警告：音量较大。
   </ContentFigure>
 </Aside>
 
-[Stealth wheels](https://www.andymark.com/products/stealth-wheels-options), solid roller wheels such as [WCP Solid Roller Wheels](https://wcproducts.com/products/solid-roller-wheels), and Colson wheels are chosen commonly because of their lack of compression and soft grippy silicone surface. These are all good options for shooter wheels to prototype in a build season.
+[Stealth 轮](https://www.andymark.com/products/stealth-wheels-options)、[WCP 实心滚轮](https://wcproducts.com/products/solid-roller-wheels) 这类实心滚轮，以及 Colson 轮都很常见，因为它们自身压缩量较小，并且具有柔软、抓地力强的硅胶表面。这些都是赛季搭建原型时不错的发射轮选择。
 
-### Reference Design
+### 参考设计
 
-The example design uses 4 inch diameter roller wheels. The diameter allows for enough contact time while being small enough to reasonably package.
+示例设计使用直径 4 英寸的滚轮。这个直径既能提供足够接触时间，又足够小，便于合理布置。
 
-### Feeder
+### 供球机构
 
-A wheel or set of belts is commonly used to feed game pieces into the flywheel. The design depends on the game and the specific feeding strategy. For instance, in the 2020 game, it is advantageous to power both sides of the feeder due to the sticky nature of the power cell. In the example, a single compliant wheel is employed to direct the game pieces into the shooter.
+通常会使用一个轮子或一组同步带，将比赛物体送入飞轮。具体设计取决于比赛和供球策略。例如在 2020 年比赛中，由于 Power Cell 表面较粘，让供球机构两侧都具备动力会更有优势。在示例中，使用一个柔性轮将比赛物体导入发射机构。
 
 <ContentRow>
-  <ContentFigure src="../img/2a/2910shooter.webp" alt="Team 2910 shooter feeding game pieces" width="50%" />
-  <ContentFigure src="../img/2a/1690shooter.webp" alt="Team 1690 shooter feeding game pieces" width="44%" />
-  <ContentRowCaption>Observe how the game pieces are fed into 2910's and 1690's robot.</ContentRowCaption>
+  <ContentFigure src="../img/2a/2910shooter.webp" alt="2910 队发射机构供入比赛物体" width="50%" />
+  <ContentFigure src="../img/2a/1690shooter.webp" alt="1690 队发射机构供入比赛物体" width="44%" />
+  <ContentRowCaption>观察比赛物体是如何被送入 2910 队和 1690 队机器人的。</ContentRowCaption>
 </ContentRow>

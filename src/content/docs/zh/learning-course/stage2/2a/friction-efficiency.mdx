@@ -1,50 +1,50 @@
 ﻿---
-title: Friction & Efficiency
-description: Understanding friction and efficiency in shooters
+title: 摩擦与效率
+description: 理解发射机构中的摩擦与效率
 ---
 
 
-## Friction & Efficiency
+## 摩擦与效率
 
-Friction reduces efficiency by converting energy into heat and adding unnecessary load to the motor. Excessive friction can prevent the flywheel from reaching speed, causing shot inconsistencies, and may overheat or damage the motors.
+摩擦会把能量转化为热量，并给电机增加不必要的负载，从而降低效率。过大的摩擦可能会让飞轮无法达到目标速度，造成发射不稳定，还可能导致电机过热或损坏。
 
-### Minimizing Friction
+### 减小摩擦
 
-The following are all practices that should be followed to reduce friction.
+以下做法都可以帮助减小摩擦。
 
-#### Belt Tension
-Slightly reduce belt tension by shortening the center-to-center distance (0.01-0.02") to improve efficiency.
+#### 同步带张紧
+通过略微缩短中心距（0.01-0.02"）来稍微降低同步带张力，可以提高效率。
 
-#### Spacers
-Use spacers between components on shafts and bearings. Components should not contact the outer race of the bearing to avoid friction.
+#### 隔套
+在轴上零件和轴承之间使用隔套。零件不应接触轴承外圈，以避免摩擦。
 
-<ContentFigure src="../img/2a/hexspacers.webp" alt="COTS 1/2 hex delrin spacer" width="40%"/>
+<ContentFigure src="../img/2a/hexspacers.webp" alt="COTS 1/2 六角 Delrin 隔套" width="40%"/>
 
-#### Shaft Support
-Don't over-constrain shafts by using more than 2 fixed bearing points to hold a shaft; small misalignments can cause massive friction with the bearings.
+#### 轴支撑
+不要使用超过 2 个固定轴承点来支撑一根轴，避免过约束。即使很小的未对齐，也可能在轴承处造成很大的摩擦。
 
-<Aside type="example">
+<Aside type="example" title="Example（示例）">
 <Slides>
-  ![Overconstrained shaft example](../img/2a/overconstrained-shaft.webp)
-  Example of a shaft being overconstrained by having a fixed bearing in the middle of the shaft.
+  ![轴过约束示例](../img/2a/overconstrained-shaft.webp)
+  轴中间有一个固定轴承，导致轴被过约束的示例。
 
-  ![Properly constrained shaft example](../img/2a/proper-constraint.webp)
-  Example of a shaft being properly constrained with two fixed bearings.
+  ![轴正确约束示例](../img/2a/proper-constraint.webp)
+  使用两个固定轴承正确约束轴的示例。
 </Slides>
 </Aside>
 
-#### Bent Shafts
-Bent shafts reduce efficiency. Prevent bending by avoiding excessive cantilevering and ensuring proper alignment of bearings. Keep pulleys close to bearings.
+#### 弯曲的轴
+弯曲的轴会降低效率。避免过长悬臂，并确保轴承正确对齐，可以防止轴弯曲。让带轮尽量靠近轴承。
 
-#### Tolerance Stackup
-Minimize tolerance stackup, which occurs when multiple parts connect and introduce friction. Improve precision in fabrication or reduce the number of connections. Generally its best to keep belt runs on the same plate. In this design, a single manufactured plate for bearing holes and center-to-center distances helps reduce tolerance stackup.
+#### 公差累积
+尽量减少公差累积。公差累积通常发生在多个零件相互连接时，并可能引入摩擦。可以通过提高加工精度或减少连接数量来改善。一般来说，最好让同步带传动保持在同一块板件上。在这个设计中，轴承孔和中心距都由同一块加工板件决定，有助于减少公差累积。
 
-#### Larger Wheels
-Larger shooter wheels mean lower RPMs are necessary for the same surface speed, which reduces the amount of friction throughout the system. Additionally, gearing your motors down and running them at not max speeds is better for the motor.
+#### 更大的轮子
+更大的发射轮意味着在相同表面速度下所需 RPM 更低，这会降低整个系统中的摩擦。此外，让电机通过减速传动工作，并避免长时间接近最高转速运行，也对电机更好。
 
-#### Last Resort
-If necessary, throw another motor at your shooter. This is the easiest way to deal with your problems in case you have slightly too much friction and need something that works without too much effort.
+#### 最后手段
+如果有必要，可以给发射机构再加一个电机。如果摩擦稍微偏大，而你又需要一个不需要太多调整就能工作的方案，这是最简单的处理方式。
 
-<Aside type="note">
-These tips for reducing friction can be applied to all power transmissions.
+<Aside type="note" title="Note（备注）">
+这些减小摩擦的建议适用于所有动力传动系统。
 </Aside>
