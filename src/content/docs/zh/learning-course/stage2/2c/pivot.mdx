@@ -1,25 +1,25 @@
 ﻿---
-title: Pivot
-description: Understanding pivot design in intakes
+title: 转轴机构
+description: 理解拾取机构中的转轴设计
 ---
 
 
-## Pivot
+## 转轴机构
 
-### Gear Ratio
+### 传动比
 
-The pivot is powered by a single Kraken motor on a 2-stage MAXplanetary gearbox. The 4:1 stages in the MAXplanetary (16:1) and the 12:48 sprocket reduction make a total of 42:1 overall reduction for the pivot.
+转轴机构由一个 Kraken 电机和两级 MAXPlanetary 行星齿轮箱驱动。MAXPlanetary 中的两个 4:1 级（合计 16:1）与 12:48 链轮减速共同构成约 42:1 的转轴机构总减速比。
 
-You can assess whether you want this much reduction on your own mechanism by using an arm calculator, but around 30:1 to 42:1 should be good for most intakes.
+你可以使用机械臂计算器评估自己的机构是否需要这么大的减速比，不过对于大多数拾取机构，约 30:1 到 42:1 通常比较合适。
 
-### Pivot Design
+### 转轴设计
 
-The MAXplanetary uses a 1:1 belt/pulley to transfer rotation to a long cross-axle. All custom pulleys have pockets for COTS metal inserts to prevent them from stripping. There are sprockets on either end of this cross axle, with chain going up to sprockets attached to the arm. This setup is to ensure both sides of the intake are moved up and down equally so there's no weird twisting forces on the intake.
+MAXPlanetary 使用 1:1 同步带和带轮，将旋转传递到一根较长的横向轴。所有自定义带轮都带有用于安装 COTS 金属嵌件的凹槽，防止带轮接口损坏。这根横向轴两端各有一个链轮，链条向上连接到安装在拾取臂上的链轮。这种布置可以确保拾取机构两侧同步升降，避免机构受到异常扭转载荷。
 
-### Backlash and Sensor Feedback
+### 回程间隙与传感器反馈
 
-To reduce backlash in the system, the 1:1 belt/pulley is exact center-center distance and the chains are tensioned with inline tensioners. Large sprockets on the output of the arms are good as well for more teeth engagement with the chain.
+为了减小系统中的回程间隙，1:1 同步带和带轮采用精确中心距，链条则通过直列式张紧器张紧。机械臂输出端使用大型链轮也很有帮助，因为这样能让更多链轮齿与链条啮合。
 
-For controlling the intake position, no absolute encoder is needed. You can zero the position when it is stowed and against the hardstop or have it rest on the ground when the robot is turned on, and use the relative encoder to take it to a specific position down.
+控制拾取机构位置时不需要绝对编码器。你可以在机构收起并抵住硬限位时将位置归零，也可以让机构在机器人开机时放在地面上，然后使用相对编码器将其移动到指定的放下位置。
 
-<ContentFigure src="../img/2c/pivot.webp" alt="Reference Design Intake Pivot" width="20%"/>
+<ContentFigure src="../img/2c/pivot.webp" alt="参考设计中的拾取机构转轴" width="20%"/>

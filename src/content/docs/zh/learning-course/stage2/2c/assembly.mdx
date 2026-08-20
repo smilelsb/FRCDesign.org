@@ -1,27 +1,27 @@
 ﻿---
-title: Assembly
-description: Assembling the intake
+title: 装配体
+description: 装配拾取机构
 ---
 
 
-## Assembly
+## Assembly（装配体）
 
-Just like the dead axle pivot, this subsystem contains a static part and a moving part. Again, we want to separate them into rigid (no movement) assemblies, then combine them at the top level.
+与死轴转轴机构一样，这个子系统也包含静止部分和运动部分。我们同样需要将它们分别放入刚性（无运动）装配体，再在顶层将它们组合起来。
 
-### Base Assembly
+### 基座装配体
 
-Create an assembly for the static parts, insert the parts and origin cube from the part studio with the green checkmark, and group them together. Fasten the origin cube to the origin. Add the rest of the parts from the part studio, FRCDesignLib, and standard content, using replicate and patterns when you can.
+为静止部分创建一个装配体，使用绿色对勾从零件工作室插入零件和 Origin Cube，并将它们组配合在一起。将 Origin Cube 紧固到原点。添加零件工作室、FRCDesignLib 和标准内容中的其余零件，并在可以的时候使用 Replicate（仿制）和阵列。
 
-<ContentFigure src="../img/2c/staticAssembly.webp" alt="Finished Static Assembly" width="60%"/>
+<ContentFigure src="../img/2c/staticAssembly.webp" alt="完成后的静止装配体" width="60%"/>
 
-### Arm Assembly
+### 拾取臂装配体
 
-Create an assembly for the intake arms and do the same thing as above to complete the assembly and make it rigid. For the rollers, insert them from FRCDesignLib (Latheless Roller).
+为拾取臂创建一个装配体，并采用与上面相同的方法完成装配，使其成为刚性装配体。滚轮从 FRCDesignLib 中插入（Latheless Roller）。
 
-<ContentFigure src="../img/2c/intakeArms.webp" alt="Finished Intake Arms Assembly" width="60%"/>
+<ContentFigure src="../img/2c/intakeArms.webp" alt="完成后的拾取臂装配体" width="60%"/>
 
-### Top Level Assembly
+### 顶层装配体
 
-Now create a top level assembly and insert the static assembly (fasten to the origin) and intake arm assembly. Create a revolute mate between the mate connectors from the origin cubes in both assemblies and add a limit to it. This completes the slapdown intake assembly.
+现在创建一个顶层装配体，插入静止装配体（紧固到原点）和拾取臂装配体。在两个装配体的 Origin Cube 配合连接器之间创建 Revolute Mate（旋转配合），并为其添加限位。这样就完成了下翻式拾取机构装配体。
 
-<ContentFigure src="../img/2c/intakeTopLevel.webp" alt="Finished Top Level Intake Assembly" width="60%"/>
+<ContentFigure src="../img/2c/intakeTopLevel.webp" alt="完成后的顶层拾取机构装配体" width="60%"/>
