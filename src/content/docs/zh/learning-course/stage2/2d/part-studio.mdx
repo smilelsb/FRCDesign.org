@@ -1,45 +1,45 @@
 ﻿---
-title: Part Studio
-description: Modeling the elevator in Part Studio
+title: 零件工作室
+description: 在 Part Studio 中建模升降机构
 ---
 
 
-## Part Studio
+## Part Studio（零件工作室）
 
-1. Add the `Origin Cube` feature and derive the main layout sketches if you made them in a separate part studio.
-2. Use extrude individual to create the tubes (without creating only duplicates; this means only the bottoms of stages on one side).
-3. Convert the extrusions into tubes.
+1. 添加 `Origin Cube` 特征。如果主布局草图是在单独的零件工作室中创建的，则将它们派生进来。
+2. 使用单独拉伸创建方管（不要创建纯粹重复的几何；也就是说，只创建单侧各级段的底部方管）。
+3. 将拉伸实体转换为方管。
 
-<Aside type="tip" title="Converting Extrusions into Tubes">
-Tube converter is the easiest way to do this, as demonstrated before, but the hole pattern can break things and be misaligned pretty easily if the dimensions of the elevator end up changing. The most parametric way is to shell the tubes manually, then use a mix of sketches and linear patterns to create the hole pattern. This way you can build design intent into the hole pattern so it won't be misaligned with anything when dimensions change.
+<Aside type="tip" title="Tip（提示）：将拉伸实体转换为方管">
+如前面演示的那样，Tube Converter 是完成这项工作的最简单方法。不过，如果升降机构尺寸发生变化，孔阵列很容易失效或错位。参数化程度最高的方法是手动抽壳方管，再结合草图和线性阵列创建孔阵列。这样可以把设计意图加入孔阵列，确保尺寸变化时不会与其他内容错位。
 
-To create parametric hole patterns, you can start by using the [Measure Value featurescript](https://cad.onshape.com/documents/77baa8153589a7fc5f289829/w/cffd0f2a7077380d5378a885/e/d3174bf5315e6aafcb889367) from CADSHARP to measure the length of the tube. You create your first hole at the top of the tube, then create a feature pattern or sketch pattern down the length of the tube with the distance of 0.5" and the instance count set to `((#frame_side_tube/inch)*2)-1`. This method keeps the hole count parametric to the length of the tube.
+要创建参数化孔阵列，可以先使用 CADSHARP 的 [Measure Value FeatureScript](https://cad.onshape.com/documents/77baa8153589a7fc5f289829/w/cffd0f2a7077380d5378a885/e/d3174bf5315e6aafcb889367) 测量方管长度。在方管顶部创建第一个孔，然后沿方管长度创建特征阵列或草图阵列，将间距设为 0.5"，实例数量设为 `((#frame_side_tube/inch)*2)-1`。这种方法可以让孔数量随方管长度参数化变化。
 </Aside>
 
-4. Transform and copy the tubes to complete the structure.
+4. 变换并复制方管，完成整体结构。
 
-<Aside type="tip">
-At this point, as design lead, you could create mate connectors, subassemblies, and top level assembly, and hand off the elevator to other people to parallelize the process if that's how your team works.
+<Aside type="tip" title="Tip（提示）">
+此时，如果你是设计负责人，可以创建配合连接器、子装配体和顶层装配体，然后把升降机构交给其他队员继续处理，以便并行推进设计流程——如果你们队伍采用这种分工方式的话。
 </Aside>
 
-5. Model any unique crushblocks
+5. 建模所有独特的防压块
 
-<Aside type="note">
-Crushblocks and tube plugs are commonly used for most superstructures and elevators nowadays. Find out what they are and why they're useful on [the design handbook page about structure](/design-handbook/structure/structure/).
+<Aside type="note" title="Note（备注）">
+如今，大多数上层结构和升降机构都会使用防压块和管塞。你可以在[设计手册的结构页面](/design-handbook/structure/structure/)了解它们是什么，以及它们为什么有用。
 </Aside>
 
-<ContentFigure src="../img/2d/tubesAndCrushblocks.webp" alt="Finished elevator tubes" />
+<ContentFigure src="../img/2d/tubesAndCrushblocks.webp" alt="完成后的升降机构方管" />
 
-6. Decide where you want your rigging (rope) and model it with a path, profile, and sweep.
-7. Derive the [TTB chain comb](https://www.thethriftybot.com/products/elevator-25h-chain-drive-kit) into place on a first stage tube. This is for knowing how much to space the chain off from the tubes.
-8. Sketch the chain transmission and crossmember, including the bearing holes for the sprockets.
-9. Create the plates and tube for the crossmember. The clamp for the rigging will be mounted to the crossmember, but it's also for the rigidity of the base stage.
-10. Derive the [TTB cable clamp](https://www.thethriftybot.com/products/elevator-dyneema-pulley-kit) into place on the crossmember and create mounting holes for it, and a crushblock if bolting all the way through the tube.
-11. Add holes for the tube plugs on the crossmember.
-12. Create the chain transmission, including the chain, any custom spacers, and axles
-13. Derive some maxplanetary parts to build the gearbox around. Create spacers and mounting for both maxplanetaries. Make sure to leave them easily accessible and replaceable
-14. Add plates at the bottom of the elevator to support the MAXplanetary shafts.
-15. Optionally, derive nut strips and a ratchet plate for the carriage and create the shaft for the rigging to be tied to.
-16. Create a reference mate in the middle of the base tube, owned by the origin cube, to later mate the subassemblies together with.
+6. 确定绕绳系统（绳索）的位置，并使用路径、轮廓和扫掠进行建模。
+7. 将 [TTB 链条固定梳](https://www.thethriftybot.com/products/elevator-25h-chain-drive-kit)派生到第一级段方管上的正确位置，用于确定链条需要与方管保持多大间距。
+8. 绘制链传动和横梁草图，包括链轮所需的轴承孔。
+9. 创建横梁的板件和方管。绕绳系统的夹板将安装在横梁上，而横梁也用于提高基础级段的刚性。
+10. 将 [TTB 绳索夹板](https://www.thethriftybot.com/products/elevator-dyneema-pulley-kit)派生到横梁上的正确位置，为其创建安装孔；如果螺栓完全穿过方管，还要创建防压块。
+11. 在横梁上添加管塞安装孔。
+12. 创建链传动，包括链条、所有自定义隔套和轴。
+13. 派生一些 MAXPlanetary 零件，并围绕它们构建齿轮箱。为两个 MAXPlanetary 创建隔套和安装结构，确保它们易于接触和更换。
+14. 在升降机构底部添加板件，用于支撑 MAXPlanetary 输出轴。
+15. 可选：为滑台派生螺母条和棘轮板，并创建用于系紧绕绳的轴。
+16. 在基础方管中间创建一个归属于 Origin Cube 的参考配合连接器，供之后连接各子装配体。
 
-<ContentFigure src="../img/2d/elevatorPartStudio.webp" alt="Finished elevator part studio" />
+<ContentFigure src="../img/2d/elevatorPartStudio.webp" alt="完成后的升降机构零件工作室" />

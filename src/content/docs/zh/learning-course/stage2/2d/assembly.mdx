@@ -1,35 +1,35 @@
 ﻿---
-title: Assembly
-description: Assembling the elevator
+title: 装配体
+description: 装配升降机构
 ---
 
 
-## Assembly
+## Assembly（装配体）
 
-Because this subsystem has multiple moving parts, just like the dead axle pivot and slapdown intake, separate rigid subassemblies should be created for each stage.
+与死轴转轴机构和下翻式拾取机构一样，这个子系统包含多个运动部件，因此应为每个级段创建独立的刚性子装配体。
 
-### Base Stage Assembly
+### 基础级段装配体
 
-Create an assembly for the static parts and follow the typical process for inserting them and creating a rigid body (origin cube, group, fasten to origin). Add the rest of the parts by duplicating existing parts, FRCDesignLib, and standard content, using replicate and patterns when you can.
+为静止部分创建一个装配体，并按照典型流程插入零件、创建刚性体（Origin Cube、组配合、紧固到原点）。通过复制现有零件，并从 FRCDesignLib 和标准内容中插入零件来添加其余部分；可以时使用 Replicate（仿制）和阵列。
 
-<ContentFigure src="../img/2d/frameSubassembly.webp" alt="Finished base stage assembly" />
+<ContentFigure src="../img/2d/frameSubassembly.webp" alt="完成后的基础级段装配体" />
 
-### First Stage Assembly
+### 第一级段装配体
 
-Do the same thing for the first stage subassembly.
+使用相同方法完成第一级段子装配体。
 
-<ContentFigure src="../img/2d/stage1Subassembly.webp" alt="Finished first stage assembly" />
+<ContentFigure src="../img/2d/stage1Subassembly.webp" alt="完成后的第一级段装配体" />
 
-### Carriage Assembly
+### 滑台装配体
 
-And finally the carriage subassembly.
+最后完成滑台子装配体。
 
-<ContentFigure src="../img/2d/carriageSubassembly.webp" alt="Finished carriage assembly" />
+<ContentFigure src="../img/2d/carriageSubassembly.webp" alt="完成后的滑台装配体" />
 
-### Top Level Assembly
+### 顶层装配体
 
-Now create the top level assembly, insert the subassemblies (fasten the origin cube of the static assembly to the origin), and use the reference mates on the origin cubes from the separate subassemblies to create slider mates with limits to define the motion of the elevator.
+现在创建顶层装配体并插入各子装配体（将静止装配体的 Origin Cube 紧固到原点），再使用不同子装配体 Origin Cube 上的参考配合连接器创建带限位的 Slider Mate（滑动配合），定义升降机构的运动。
 
-<ContentFigure src="../img/2d/elevatorTopLevel.webp" alt="Finished Top Level Elevator Assembly" />
+<ContentFigure src="../img/2d/elevatorTopLevel.webp" alt="完成后的顶层升降机构装配体" />
 
-Because it's a cascade elevator, you can use the "Linear Relation" assembly tool between the two slider mates with a ratio of 1 to link the motion of the stages together in the same way it would be in real life.
+由于这是级联升降机构，可以在两个滑动配合之间使用 `Linear Relation`（线性关系）装配工具，并将比率设为 1，使各级段的运动按照真实机构中的方式联动。
