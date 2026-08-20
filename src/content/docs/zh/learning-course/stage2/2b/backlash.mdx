@@ -1,20 +1,20 @@
 ---
-title: Backlash
-description: Understanding backlash in pivot mechanisms
+title: 回程间隙
+description: 理解转轴机构中的回程间隙
 ---
 
-## Backlash
+## 回程间隙
 
-Especially for pivots, which you want to make as rigid as possible for better control, you want to take steps to reduce the backlash as much as possible.
+对于转轴机构尤其如此：为了获得更好的控制效果，你会希望机构尽可能刚性，因此也应采取措施尽量减小回程间隙。
 
-| **Source** | **Details** | **Solution** |
+| **来源** | **具体情况** | **解决方法** |
 |------------|-------------|--------------|
-| **Hex Interfaces** | Gaps in hex to hex hole interfaces create backlash. | Use shim tape to reduce gaps. |
-| **Sprocket Clocking** | Ensure correct alignment of sprockets to prevent uneven movement. | Align notches on both sides. |
-| **Mounting Slop** | Loose bolt-to-hole interfaces can introduce slop. | Use proper bolting and strong spacers. |
-| **Reduction Stages** | More reduction stages increase backlash. | Keep stages to 3 or fewer for optimal performance. One of the "stages" being the sprocket reduction. |
-| **Chain Stretch** | Chain stretching over time leading to backlash | Periodically check chain tension. If extremely high precision is needed (shooters), utilize a sector gear instead. |
+| **六角接口** | 六角轴与六角孔接口之间的间隙会产生回程间隙。 | 使用垫片胶带减小间隙。 |
+| **链轮相位** | 确保链轮正确对齐，防止运动不均匀。 | 对齐两侧的标记缺口。 |
+| **安装松旷** | 螺栓与孔之间松动的配合会引入间隙。 | 正确安装螺栓，并使用坚固的隔套。 |
+| **减速级数** | 减速级数越多，回程间隙越大。 | 为获得最佳性能，将级数保持在 3 级或更少，其中链轮减速也算一级。 |
+| **链条伸长** | 链条随时间伸长会产生回程间隙。 | 定期检查链条张力。如果需要极高精度（例如发射机构），则改用扇形齿轮。 |
 
-### Reference Design
+### 参考设计
 
-Backlash typically arises as a result of real life tolerances so they are difficult to model in CAD. If the reference design were built in real life, it would utilize shim tape to reduce gear slop, aligned sprockets, and properly tensioned chain to minimize backlash.
+回程间隙通常来自实际制造公差，因此很难在 CAD 中建模。如果将参考设计制造出来，会使用垫片胶带减小齿轮松旷、对齐链轮，并正确张紧链条，以尽量减小回程间隙。

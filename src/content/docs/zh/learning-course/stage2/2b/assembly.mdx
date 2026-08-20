@@ -1,33 +1,33 @@
 ﻿---
-title: Assembly
-description: Assembling the pivot
+title: 装配体
+description: 装配转轴机构
 ---
 
 
-## Assembly
+## Assembly（装配体）
 
-Because this subsystem contains a static part and a moving part, we want to separate them into rigid (no movement) assemblies, then combine them at the top level. This makes load times significantly faster.
+由于这个子系统同时包含静止部分和运动部分，我们需要将它们分别放入刚性（无运动）装配体，再在顶层将它们组合起来。这样可以显著缩短加载时间。
 
-### Base Assembly
+### 基座装配体
 
-Create an assembly for the static parts, insert the parts and origin cube from the part studio with the green checkmark, and group them together. Fasten the origin cube to the origin. Add the rest of the parts from the part studio, FRCDesignLib, and standard content, using replicate and patterns when you can.
+为静止部分创建一个装配体，使用绿色对勾从零件工作室插入零件和 Origin Cube，并将它们组配合在一起。将 Origin Cube 紧固到原点。添加零件工作室、FRCDesignLib 和标准内容中的其余零件，并在可以的时候使用 Replicate（仿制）和阵列。
 
-<ContentFigure src="../img/2b/Dead Axle Subassembly.webp" alt="Finished Base Subassembly" />
+<ContentFigure src="../img/2b/Dead Axle Subassembly.webp" alt="完成后的基座子装配体" />
 
-### Arm Assembly
+### 机械臂装配体
 
-Create an assembly for the arm portion of the mechanism and do the same thing as above to complete the assembly and make it rigid.
+为机构的机械臂部分创建一个装配体，并采用与上面相同的方法完成装配，使其成为刚性装配体。
 
-<ContentFigure src="../img/2b/Arm Subassembly.webp" alt="Finished Arm Subassembly" />
+<ContentFigure src="../img/2b/Arm Subassembly.webp" alt="完成后的机械臂子装配体" />
 
-<Aside type="tip">
-Below is an example of the instance list of a rigid assembly. Notice the icon in the top left indicating it's rigid. You can tell what can still move in the assembly by a "degree of freedom" icon (3 arrows to indicate the 3 axis.)
+<Aside type="tip" title="Tip（提示）">
+下面是刚性装配体实例列表的示例。注意左上角表示其为刚性装配体的图标。你可以通过“自由度”图标（用 3 个箭头表示 3 个轴）判断装配体中哪些部分仍然可以运动。
 
-<ContentFigure src="../img/2b/deadAxleInstanceList.webp" alt="Instance list of a rigid assembly" />
+<ContentFigure src="../img/2b/deadAxleInstanceList.webp" alt="刚性装配体的实例列表" />
 </Aside>
 
-### Top Level Assembly
+### 顶层装配体
 
-Now create a top level assembly and insert the static assembly (fasten to the origin) and intake arm assembly. Create a revolute mate between the mate connectors from the origin cubes in both assemblies and add a limit to it. This completes the deadaxle pivot assembly.
+现在创建一个顶层装配体，插入静止装配体（紧固到原点）和机械臂装配体。在两个装配体的 Origin Cube 配合连接器之间创建 Revolute Mate（旋转配合），并为其添加限位。这样就完成了死轴转轴机构装配体。
 
-<ContentFigure src="../img/2b/Top Level Pivot.webp" alt="Finished Top Level Pivot Assembly" />
+<ContentFigure src="../img/2b/Top Level Pivot.webp" alt="完成后的顶层转轴机构装配体" />
