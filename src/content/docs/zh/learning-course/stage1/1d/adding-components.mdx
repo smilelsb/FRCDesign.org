@@ -1,65 +1,65 @@
 ﻿---
-title: Adding More Components
-description: Adding additional components to the design
+title: 添加更多组件
+description: 向设计中添加额外组件
 sidebar:
   order: 6
 ---
 
 
-## Adding More Components
+## 添加更多组件
 
-When you model more parts in the part studio, you can insert them into the assembly in a similar to fashion to before. Hit insert and immediately click on the green checkmark. Then, edit the initial `Group` you made and add the part to the group. By doing this, you ensure that added parts will always stay in the same place it was modeled in the part studio.
+当你在零件工作室中建模更多零件时，可以用与之前类似的方式将它们插入装配体。点击插入后，立即点击绿色勾选。然后编辑你最初创建的 `Group`（组配合），并将该零件添加到组中。这样可以确保新增零件始终停留在它在零件工作室中建模的位置。
 
-Let's add a gusset to connect the 2"x2" tube to the 2"x1" tube.
+接下来添加一块加强板，将 2"x2" 管材连接到 2"x1" 管材上。
 
-### Instructions
+### 说明
 
-Start by **navigating to the `Drivetrain` Part Studio** in the `Drivetrain` folder. **Follow the instructions in the slides** to add the gusset.
+首先，在 `Drivetrain` 文件夹中**进入 `Drivetrain` Part Studio（零件工作室）**。**按照幻灯片中的说明**添加加强板。
 
-<Aside type="tip" title="Manually Define Mounting Holes">
-When you project the holes off of the tube or use the gusset featurescript, those references can break easily if the tube converter or length of the tube gets changed. Try to dimension manually defined holes from the edge of the tube or only project one hole and use a linear pattern to minimize the amount of things you need to fix if something changes.
+<Aside type="tip" title="Tip（提示）：手动定义安装孔">
+当你从管材投影孔位，或使用加强板 FeatureScript 时，如果 Tube Converter 或管材长度发生变化，这些参考很容易失效。尽量从管材边缘标注手动定义的孔位，或只投影一个孔再使用线性阵列，以减少后续发生变化时需要修复的内容。
 
-<ContentFigure src="../img/1d/define-holes.webp" alt="Manually defined mounting holes" width="60%" border />
+<ContentFigure src="../img/1d/define-holes.webp" alt="手动定义的安装孔" width="60%" border />
 </Aside>
 
 <Slides>
   ![](../img/1d/drivetrain/add-0.webp)
-  Finished drivetrain assembly.
+  完成后的底盘装配体。
 
   ![](../img/1d/drivetrain/add-1.webp)
-  Sketch and extrude a 1/8" thick gusset to connect the crosstube to the top of the frame using the holes shown.
+  根据图示孔位，绘制并拉伸一块 1/8" 厚的加强板，用于将横管连接到框架顶部。
 
   ![](https://www.youtube.com/embed/n8lWSdOV-Ks?controls=1&rel=0&showinfo=0&vq=hd1080)
-  Insert the gusset into the assembly and add it to the Group.
+  将加强板插入装配体，并将它添加到 Group（组配合）中。
 
   ![](../img/1d/drivetrain/add-3.webp)
-  Add 2-1/2" #10-32 bolts to the three holes in the bellypan on each side so they go through the gusset holes on the other side. Add nylock nuts to the holes on the gusset. As you learned in 1C, this is to help prevent rivets from loosening and falling out over time.
+  在每侧底板上的三个孔中添加 2-1/2" #10-32 螺栓，使它们穿过另一侧的加强板孔。在加强板孔位上添加尼龙锁紧螺母。正如你在 1C 中学到的，这有助于防止铆钉随时间松动并脱落。
 
   ![](https://www.youtube.com/embed/CC017qPw2Mk?controls=1&rel=0&showinfo=0&vq=hd1080)
-  Edit the replicate feature to add rivets to the gusset.
+  编辑仿制特征，将铆钉添加到加强板上。
 
   ![](https://www.youtube.com/embed/0O1ojhHTgMI?controls=1&rel=0&showinfo=0&vq=hd1080)
-  Mirror the gusset, bolts, and rivets to the other side of the drivetrain using a mate connector on the origin cube.
+  使用 Origin Cube 上的配合连接器，将加强板、螺栓和铆钉镜像到底盘另一侧。
 
   ![](../img/1d/drivetrain/add-0.webp)
-  Finished drivetrain assembly.
+  完成后的底盘装配体。
 
 </Slides>
 
-Make sure you sort the instances in your assembly into folders (i.e. frame, swerve modules) and name any patterns and replicates used. This will help you locate components in the assembly later down the line.
+确保将装配体中的实例整理到文件夹中（例如框架、舵轮模块），并为用到的阵列和仿制特征命名。这会帮助你之后在装配体中查找零部件。
 
-<Aside type="tip" title="Verification">
-Make sure to have you and/or a more experienced member/mentor of your team [**review your CAD!**](/learning-course/stage1/1a/focusing-on-improvement/)
+<Aside type="tip" title="Tip（提示）：检查">
+请确保由你自己，或队内更有经验的队员/导师来 [**检查你的 CAD（计算机辅助设计）！**](/zh/learning-course/stage1/1a/focusing-on-improvement/)
 
-Your assembly should weigh approximately 37.2lbs.
+你的装配体重量应约为 37.2 lbs。
 
-Your tab manager should have the following tabs and folder:
+你的标签页管理器中应包含以下标签页和文件夹：
 
-<ContentFigure src="../img/1d/tab-manager.webp" alt="Tab manager view" />
+<ContentFigure src="../img/1d/tab-manager.webp" alt="标签页管理器视图" />
 </Aside>
 
-### Level of Detail
+### 细节层级
 
-It should be noted that while modeling every detail of the robot hardware (bolts, rivets, nuts) is beneficial for purchasing and real life assembly purposes, it isn't strictly necessary. Time is a precious resource, especially during build season, so you should spend it on what will give you the biggest return.
+需要注意的是，虽然建模机器人硬件的每一个细节（螺栓、铆钉、螺母）有助于采购和实际装配，但这并非严格必要。时间是宝贵资源，尤其是在建造季，所以你应该把时间投入到回报最大的地方。
 
-More details about best practices for Onshape assemblies are included on the [Assembly Best Practices Page](/best-practices/assembly-setup/).
+关于 Onshape 装配体最佳实践的更多细节，可以查看 [装配最佳实践页面](/best-practices/assembly-setup/)。

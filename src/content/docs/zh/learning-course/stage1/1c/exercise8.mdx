@@ -1,81 +1,81 @@
 ﻿---
-title: "Exercise 8: Indexer Centering"
-description: Model an indexer centering mechanism
+title: "练习 8：索引器居中机构"
+description: 建模一个索引器居中机构
 ---
 
 
-In this exercise, you will be modeling a centering indexer for 9.5" diameter balls, similar to [1678's 2022 indexer](https://www.youtube.com/watch?v=RiUaItTKomU). This mechanism features belts, chain, gear, and tube crush blocks. Be sure to pay attention to the plate sketches when modeling.
+在本练习中，你将建模一个用于 9.5" 直径球的居中索引器，类似于 [1678 队 2022 年的索引器](https://www.youtube.com/watch?v=RiUaItTKomU)。这个机构包含同步带、链条、齿轮和管材防压块。建模时一定要注意板件草图。
 
-## Part Studio Instructions
+## Part Studio（零件工作室）说明
 
-**Navigate to the "Exercise #8 Part Studio" tab** in your copied document and **refer to the solution document** to complete the part studio for this exercise. The **following instruction slides** only provide a general outline and some key details.
+在你复制的文档中，**进入 “Exercise #8 Part Studio” 标签页**，并**参考答案文档**完成本练习的零件工作室。**下面的说明幻灯片**只提供总体流程和一些关键细节。
 
 <Slides>
   ![](../img/1c/indexer-centering/parts-0.webp)
-  Final Part Studio.
+  最终零件工作室。
 
   ![](../img/1c/indexer-centering/parts-1.webp)
-  Begin by creating the layout sketch on the top plane. Just like with the previous exercise, we define the distance between the rollers by mirroring the indexer wheel.
+  先在顶平面上创建布局草图。和上一个练习一样，我们通过镜像索引器轮来定义滚轮之间的距离。
 
   ![](../img/1c/indexer-centering/parts-2.webp)
-  Model the thin-wall 2x1 tubes with Extrude Individual and Tube Converter.
+  使用 Extrude Individual 和 Tube Converter 建模薄壁 2x1 管材。
 
   ![](../img/1c/indexer-centering/parts-3.webp)
-  Model the top plates and bottom plates. The top plates can be modeled in the same sketch since they are on the same plane.
+  建模顶部板件和底部板件。由于顶部板件位于同一平面，可以在同一个草图中建模。
 
   ![](../img/1c/indexer-centering/parts-4.webp)
-  Model a basic crush block that extends into the tube far enough for the first row of holes. Make sure to add the side holes for the bolts to pass through. Chamfer the edges to make it easier to install during IRL assembly.
+  建模一个基础防压块，使其伸入管材的深度足以覆盖第一排孔。确保添加侧向孔，让螺栓能够穿过。给边缘倒角，方便实际装配时安装。
 
   ![](../img/1c/indexer-centering/parts-5.webp)
-  Model the belts using the `Belt & Chain Gen` Featurescript.
+  使用 `Belt & Chain Gen` FeatureScript（自定义特征脚本）建模同步带。
 
   ![](../img/1c/indexer-centering/parts-6.webp)
-  Model the shafts `Robot Shaft` Featurescript. The exact length of the longer shafts is somewhat arbitrary for this exercise, just make them semi long as shown.
+  使用 `Robot Shaft` FeatureScript 建模轴。本练习中较长轴的具体长度没有严格要求，按图示做得稍长一些即可。
 
   ![](../img/1c/indexer-centering/parts-7.webp)
-  Pocket the plates using the `Part Lighten` featurescript. Recall that you can select an entire sketch to automatically select all the ribs.
+  使用 `Part Lighten` FeatureScript 对板件进行减重开槽。回想一下，你可以选择整个草图，从而自动选中所有加强筋。
 
   ![](../img/1c/indexer-centering/parts-0.webp)
-  Finish the part studio by naming your features and organizing them into folders. Assign the part materials accordingly.
+  给特征命名并整理到文件夹中，完成零件工作室。相应地指定零件材料。
 </Slides>
 
-## Assembly Instructions
+## Assembly（装配体）说明
 
-**Next, navigate to the "Exercise #8 Assembly" tab** in your copied document and **refer to the solution document** to complete the assembly for this exercise. The **following instruction slides** only provide a general outline and some key details.
+接下来，在你复制的文档中**进入 “Exercise #8 Assembly” 标签页**，并**参考答案文档**完成本练习的装配体。**下面的说明幻灯片**只提供总体流程和一些关键细节。
 
 <Slides>
   ![](../img/1c/indexer-centering/assy-0.webp)
-  Final assembly.
+  最终装配体。
 
   ![](../img/1c/indexer-centering/assy-1.webp)
-  Add the part studio parts to the assembly. Like before, group mate the rigid components with the Origin Cube and mate the Origin Cube to the assembly origin.
+  将零件工作室零件添加到装配体中。和之前一样，将刚性零部件与 Origin Cube 组配合，并将 Origin Cube 配合到装配体原点。
 
   ![](../img/1c/indexer-centering/assy-2.webp)
-  Insert, fasten, and replicate the 2" long, 3/8" OD plate spacers. Insert, fasten, and replicate the 1.25" long, 3/8" OD motor spacers. Copy and fasten the bottom gear plate to the 2" spacer. Insert, fasten, and replicate the 1/2" rounded hex shaft bearings.
+  插入、紧固并仿制 2" 长、3/8" 外径的板件隔套。插入、紧固并仿制 1.25" 长、3/8" 外径的电机隔套。复制底部齿轮板，并将其紧固到 2" 隔套上。插入、紧固并仿制 1/2" 圆角六角轴承。
 
   ![](../img/1c/indexer-centering/assy-3.webp)
-  Copy, fasten, and replicate the 3D printed crush block to the other tube ends.
+  将 3D 打印防压块复制、紧固并仿制到其他管材端部。
 
   ![](../img/1c/indexer-centering/assy-4.webp)
-  Insert and fasten the motor, motor pulley, 48T 3D printed HTD pulley with 1/2" hex insert, 30T gears, and configurable spacer stacks from FRCDesignLib. Fasten the belt to the pulley. Also fasten the shafts.
+  从 FRCDesignLib 插入并紧固电机、电机带轮、带 1/2" 六角嵌件的 48T 3D 打印 HTD 带轮、30T 齿轮，以及可配置隔套组。将同步带紧固到带轮上。同时紧固轴。
 
   ![](../img/1c/indexer-centering/assy-5.webp)
-  Insert and fasten the bottom belt pulleys.
+  插入并紧固底部同步带带轮。
 
   ![](../img/1c/indexer-centering/assy-6.webp)
-  Insert and fasten the 6" REV Omni-wheels and 1/2" Hex MAXHubs from FRCDesignLib. Fasten the hubs to the wheels and fasten the wheel assemblies to the long shaft ends.
+  从 FRCDesignLib 插入并紧固 6" REV 全向轮和 1/2" 六角 MAXHub。将轮毂紧固到轮子上，并将轮子组件紧固到长轴端部。
 
   ![](../img/1c/indexer-centering/assy-7.webp)
-  Insert, configure, and fasten 1/2" Hex spacers to fill the gap between the wheel's and plates. These can either be stacked COTS spacers, or a single custom spacer depending on preference.
+  插入、配置并紧固 1/2" 六角隔套，用于填充轮子与板件之间的间隙。根据偏好，这些可以是叠放的 COTS 隔套，也可以是单个定制隔套。
 
   ![](../img/1c/indexer-centering/assy-8.webp)
-  Insert, fasten, and replicate all of the required fasteners.
+  插入、紧固并仿制所有所需紧固件。
 
   ![](../img/1c/indexer-centering/assy-0.webp)
-  To finish the assembly, organize your components into folders and name your replicates.
+  最后，将零部件整理到文件夹中，并为仿制特征命名，完成装配体。
 </Slides>
 
-<Aside type="tip" title="Verification">
-Make sure to have you and/or a more experienced member/mentor of your team [**review your CAD!**](/learning-course/stage1/1a/focusing-on-improvement) If everything is present, modeled, and assembled correctly, you should have about 80 instances in your assembly.
+<Aside type="tip" title="Tip（提示）：检查">
+请确保由你自己，或队内更有经验的队员/导师来 [**检查你的 CAD（计算机辅助设计）！**](/zh/learning-course/stage1/1a/focusing-on-improvement) 如果所有内容都存在、建模正确并装配正确，你的装配体中应约有 80 个实例。
 </Aside>
 

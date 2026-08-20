@@ -1,37 +1,37 @@
 ﻿---
-title: Top Down Design
-description: Introduction to top down design methodology
+title: 自顶向下设计
+description: 自顶向下设计方法入门
 sidebar:
   order: 1
 ---
 
 
-## Top Down Design Methodology
+## 自顶向下设计方法
 
-When designing a model in CAD, there are two high level strategies that can be employed: top-down and bottom-up. Top-down design employs high level, low detail sketches to dictate the design, and then refining details and components within that framework. Conversely, bottom-up design involves creating individual components or parts separately and then assembling them to form the final product.
+在 CAD（计算机辅助设计）中设计模型时，可以采用两种高层级策略：自顶向下和自底向上。自顶向下设计使用高层级、低细节的草图来决定整体设计，再在这个框架内细化细节和零部件。相对地，自底向上设计则是分别创建单个组件或零件，然后再把它们装配成最终产品。
 
-Top-down design offers a holistic approach, allowing for better system integration, consistency, and is more parametric. Bottom-up design offers flexibility and independence in designing individual parts. In FRC robot design, top-down approach is favored as system integration is often the most challenging aspect. Top-down ensures that the robot architecture dictates part design.
+自顶向下设计提供了一种整体化方法，有助于更好地进行系统集成、保持一致性，并让模型更参数化。自底向上设计则在单个零件设计上更灵活、更独立。在 FRC 机器人设计中，自顶向下方法通常更受青睐，因为系统集成往往是最困难的部分。自顶向下可以确保由机器人整体架构来驱动零件设计。
 
-### Main Layout Sketch
+### 主布局草图
 
-To achieve this, a ***main layout sketch*** is utilized. Sometimes these are also referred to as "master" sketches. The main layout sketch is a series of sketches that capture the major dimensions of each mechanism, field element interactions, and robot size constraints. Then, the main layout sketch(es) are inserted into each mechanism's part studio and the individual components are then modeled around the imported layout sketch. More information on layout sketches can be found on the [Layout Sketch Best Practices](/best-practices/master-sketch-setup/) page.
+为实现这一点，我们会使用***主布局草图***。有时它们也被称为 “master” 草图。主布局草图是一组草图，用于捕捉各个机构的主要尺寸、与场地元素的交互关系，以及机器人尺寸限制。随后，将主布局草图插入到每个机构的 Part Studio（零件工作室）中，再围绕导入的布局草图建模各个零部件。关于布局草图的更多信息，可以查看 [布局草图最佳实践](/best-practices/master-sketch-setup/) 页面。
 
-<Aside type="example" title="Example Main Layout Sketch">
-<ContentFigure src="../img/1d/example-master-sketch.webp" alt="Example main layout sketch" width="50%">Example of robot main layout sketches. Each mechanism has a number of layout sketches that capture the important details. (Photo Credit: FRC 3647)</ContentFigure>
+<Aside type="example" title="Example（示例）：主布局草图">
+<ContentFigure src="../img/1d/example-master-sketch.webp" alt="主布局草图示例" width="50%">机器人主布局草图示例。每个机构都有若干布局草图，用来捕捉重要细节。（图片来源：FRC 3647）</ContentFigure>
 </Aside>
 
 
-### Origin Placement and Origin Cube
+### 原点放置与 Origin Cube
 
-To fully utilize layout sketch top-down design, we must choose a unified origin for all part studios. Utilizing the same origin as the main layout sketch across all part studios and assemblies is twofold:
+要充分利用布局草图进行自顶向下设计，我们必须为所有零件工作室选择统一原点。在所有零件工作室和 Assembly（装配体）中使用与主布局草图相同的原点，有两个目的：
 
-1. The origin will always be a consistent central point you can reference. This helps keep things parametric too.
-2. To unify the robot CAD and robot software origin point. By having the same origin in CAD and code, the robot can be seamlessly exported to [AdvantageScope](https://github.com/Mechanical-Advantage/AdvantageScope) and camera transformations more easily measured.
+1. 原点始终是一个一致的中心参考点，也有助于保持参数化。
+2. 统一机器人 CAD 和机器人软件中的原点。CAD 和代码使用相同原点后，机器人可以更顺利地导出到 [AdvantageScope](https://github.com/Mechanical-Advantage/AdvantageScope)，相机变换也更容易测量。
 
-<Aside type="note">
-Although definitions may vary from team to team, the origin of an FRC robot is typically defined as ***the center of the drivebase, on floor level***.
+<Aside type="note" title="Note（备注）">
+虽然不同队伍的定义可能略有不同，但 FRC 机器人的原点通常定义为***底盘中心、地面高度处***。
 </Aside>
 
-To achieve this, we use the [`Origin Cube` Featurescript](https://cad.onshape.com/documents/321c197a842fc5f1a29e6621/w/fc3cdd5ca7edcd93e02f13cc/e/df3afdbec8d1356c2af15e4b?renderMode=0&uiState=6637caa6ccbcaa36badca03a) you used throughout 1C. This generates a transparent 2" cube at the origin and provides several useful constants and functions that have already been used in previous stage.
+为实现这一点，我们会使用你在 1C 中一直用到的 [`Origin Cube` FeatureScript（自定义特征脚本）](https://cad.onshape.com/documents/321c197a842fc5f1a29e6621/w/fc3cdd5ca7edcd93e02f13cc/e/df3afdbec8d1356c2af15e4b?renderMode=0&uiState=6637caa6ccbcaa36badca03a)。它会在原点生成一个透明的 2" 立方体，并提供若干有用常量和函数，这些内容在前一阶段已经用过。
 
-The Origin Cube will become very useful later on for assembly mating but for now all you need to remember is that **the Origin Cube should be the first feature in all part studios**. You can read more about the Origin Cube on the [assembly best practices page](/best-practices/assembly-setup/).
+Origin Cube 后续会在装配配合中非常有用。现在你只需要记住：**Origin Cube 应该是所有零件工作室中的第一个特征**。你可以在 [装配最佳实践页面](/best-practices/assembly-setup/) 阅读更多关于 Origin Cube 的内容。

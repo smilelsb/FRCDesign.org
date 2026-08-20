@@ -1,34 +1,34 @@
 ﻿---
-title: Electronics
-description: Learn about robot electronics
+title: 电子元件
+description: 学习机器人电子元件
 ---
 
 
-## Electronics Mounting
+## 电子元件安装
 
-To make wiring the robot and later inspecting the wiring easier, enough space should be left around each electrical component. You should work with your electrical teammates to determine the best location for the various control system parts. Teams typically try to mount their electronics on the bellypan, permitted there is space.
+为了让机器人布线和之后检查线路更方便，每个电气元件周围都应留出足够空间。你应该和电气组队员一起确定各类控制系统部件的最佳位置。在空间允许的情况下，队伍通常会尽量把电子元件安装在底板上。
 
-<Aside type="example">
-<ContentFigure src="../img/1e/elec/elec-example.webp" alt="Example layout of various different electronic components on a bellypan" width="50%">Example layout of various different electronic components on a bellypan. (Photo Credit: FRC 3647)</ContentFigure>
+<Aside type="example" title="Example（示例）">
+<ContentFigure src="../img/1e/elec/elec-example.webp" alt="底板上多种电子元件布局示例" width="50%">底板上多种电子元件的布局示例。（图片来源：FRC 3647）</ContentFigure>
 </Aside>
 
-### Electronic Components
+### 电子元件
 
-A list of typical electrical components found on FRC robots is provided below, as well as a recommended mounting location. Again, mounting locations are highly dependent on the rest of your robot, make sure to always coordinate with your electrical team to decide what is best.
+下面列出了 FRC 机器人上常见的电气元件，以及推荐安装位置。再次强调，安装位置高度取决于机器人其他部分，因此务必始终与电气组协调，决定最合适的方案。
 
 
 <ImageTable minWidth="760px" imageMaxWidth="8rem" imageMaxHeight="6.5rem" imageMinHeight="5rem">
-| **Component** | **Function** | **Suggested Location** | **Image** |
+| **元件** | **功能** | **建议位置** | **图片** |
 |---|---|---|---|
-| REV Power Distribution Hub (PDH) or  CTRE Power Distribution Panel (PDP) | Distributes power to all other components | Bellypan | <ContentFigure src="../img/1e/elec-components/pdh.webp" alt="PDH" /> |
-| Main Breaker | Is used to turn on/off the robot and protect electronics from events with extremely high current drawn | Somewhere easily accessible and close to the PDH and Battery | <ContentFigure src="../img/1e/elec-components/mbreak.webp" alt="Main Breaker" /> |
-| RoboRIO (Retired for 2027)| Central controller for all robot operations | Bellypan | <ContentFigure src="../img/1e/elec-components/rio.webp" alt="RoboRIO" /> |
-| SystemCore | Central controller for all robot operations | Bellypan | <ContentFigure src="../img/1e/elec-components/systemcore.webp" alt="SystemCore" /> |
-| Integrated motor controller (eg: Falcon 500, Kraken X60) | Powers and controls the  integrated motor | No electrical mounting required | <ContentFigure src="../img/1e/elec-components/kx60.webp" alt="Integrated motor controller" /> |
-| Discrete motor controller  (eg: Spark Max, Talon SRX) | Required to power and control some motors  (eg: NEO, CIM) | Near the controlled motor  or on the bellypan | <ContentFigure src="../img/1e/elec-components/smax.webp" alt="Discrete motor controller" /> |
-| Robot Radio | Allows the robot to establish wireless connections to the field or driver station | Follow Vivid Hosting's [radio mounting guidelines](https://frc-radio.vivid-hosting.net/getting-started/usage/mounting-your-radio "Vivid Hosting Radio Mounting Guidelines"). | <ContentFigure src="../img/1e/elec-components/vh109.webp" alt="Robot Radio" /> |
-| Robot Signal Light (RSL) | Indicates whether the robot is on and enabled/disabled | Somewhere easily visible | <ContentFigure src="../img/1e/elec-components/rsl.webp" alt="Robot Signal Light" /> |
-| Inertial Measurement Unit (IMU) | Used to determine robot heading and acceleration | Close to the center is best practice (on Bellypan or VHB tape to attach to RoboRIO) | <ContentFigure src="../img/1e/elec-components/imu.webp" alt="Inertial Measurement Unit" /> |
-| Voltage Regulator Module | Can be used for custom circuits | Bellypan | <ContentFigure src="../img/1e/elec-components/vrm.webp" alt="Voltage Regulator Module" /> |
-| Pneumatics Hub | Controls pneumatic components | Bellypan | <ContentFigure src="../img/1e/elec-components/pcm.webp" alt="Pneumatics Hub" /> |
+| REV Power Distribution Hub (PDH) 或 CTRE Power Distribution Panel (PDP) | 将电源分配给所有其他元件 | 底板 | <ContentFigure src="../img/1e/elec-components/pdh.webp" alt="PDH" /> |
+| 主断路器 | 用于开启/关闭机器人，并在极高电流事件中保护电子元件 | 易于触及且靠近 PDH 和电池的位置 | <ContentFigure src="../img/1e/elec-components/mbreak.webp" alt="主断路器" /> |
+| RoboRIO（2027 年退役）| 机器人所有操作的中央控制器 | 底板 | <ContentFigure src="../img/1e/elec-components/rio.webp" alt="RoboRIO" /> |
+| SystemCore | 机器人所有操作的中央控制器 | 底板 | <ContentFigure src="../img/1e/elec-components/systemcore.webp" alt="SystemCore" /> |
+| 集成式电机控制器（例如 Falcon 500、Kraken X60） | 为集成电机供电并控制它 | 不需要单独电气安装 | <ContentFigure src="../img/1e/elec-components/kx60.webp" alt="集成式电机控制器" /> |
+| 分立式电机控制器（例如 Spark Max、Talon SRX） | 为部分电机供电并控制它们（例如 NEO、CIM） | 靠近被控制的电机，或安装在底板上 | <ContentFigure src="../img/1e/elec-components/smax.webp" alt="分立式电机控制器" /> |
+| 机器人无线电 | 让机器人与场地或驾驶站建立无线连接 | 遵循 Vivid Hosting 的 [无线电安装指南](https://frc-radio.vivid-hosting.net/getting-started/usage/mounting-your-radio "Vivid Hosting 无线电安装指南")。 | <ContentFigure src="../img/1e/elec-components/vh109.webp" alt="机器人无线电" /> |
+| Robot Signal Light (RSL，机器人信号灯) | 指示机器人是否上电以及是否启用/禁用 | 容易看到的位置 | <ContentFigure src="../img/1e/elec-components/rsl.webp" alt="机器人信号灯" /> |
+| 惯性测量单元（IMU） | 用于确定机器人朝向和加速度 | 靠近中心是最佳实践（在底板上，或用 VHB 胶带贴到 RoboRIO 上） | <ContentFigure src="../img/1e/elec-components/imu.webp" alt="惯性测量单元" /> |
+| Voltage Regulator Module（稳压模块） | 可用于自定义电路 | 底板 | <ContentFigure src="../img/1e/elec-components/vrm.webp" alt="稳压模块" /> |
+| Pneumatics Hub（气动控制中心） | 控制气动元件 | 底板 | <ContentFigure src="../img/1e/elec-components/pcm.webp" alt="气动控制中心" /> |
 </ImageTable>

@@ -1,156 +1,156 @@
 ﻿---
-title: "Exercise 3: Ball Shooter"
-description: Model a shooter mechanism
+title: "练习 3：球类发射机构"
+description: 建模一个发射机构
 ---
 
 
-Starting with exercise 3, the instruction slides will only provide part-by-part instructions and key details.
-For exact feature details, you should refer to the exercise solutions document.
-This is to prepare you for later exercises that are gradually less guided.
+从练习 3 开始，说明幻灯片只会提供逐个零件的操作说明和关键细节。
+对于具体特征细节，你应参考练习答案文档。
+这样做是为了帮助你适应后续指导逐渐减少的练习。
 
-In this exercise, you will be modeling a very simple 2.5" ball shooter.
-This mechanism features 3D-printed pulleys, a 3D-printed ramp, and nut strips. Be sure to pay attention to layout sketches when modeling.
+在本练习中，你将建模一个非常简单的 2.5" 球类发射机构。
+这个机构包含 3D 打印带轮、3D 打印坡道和螺母条。建模时一定要注意布局草图。
 
-## 3D-printed Pulleys
-Thus far, you've only utilized COTS pulleys in your assemblies.
-However, 3D-printed pulleys are a fantastic alternative since they are cheaper, readily available (assuming you have a 3D printer), and highly customizable.
+## 3D 打印带轮
+到目前为止，你在装配体中只使用过 COTS（现成商业零件）带轮。
+不过，3D 打印带轮也是非常好的替代方案，因为它们成本更低、容易获得（前提是你有 3D 打印机），并且高度可定制。
 
-3D-printed pulleys can easily be generated using pulley generators, such as the ones included in FRCDesignLib and the Robot Pulley Featurescript.
-However, close attention must be paid to the shaft interface. 3D-printed hex profiles can easily strip out, so a metal insert (Available from vendors like [WCP](https://wcproducts.com/products/adapters) or [Thrifty Bot](https://www.thethriftybot.com/products/qty-5-aluminum-insert-for-3d-printed-parts)) should be used to better transfer torque.
-Take a look below at some examples of 3D-printed pulleys with different types of inserts.
+3D 打印带轮可以通过带轮生成器轻松生成，例如 FRCDesignLib 中包含的工具，以及 Robot Pulley FeatureScript（自定义特征脚本）。
+不过，必须特别注意轴接口。3D 打印六角孔很容易被磨圆或打滑，因此应使用金属嵌件（可从 [WCP](https://wcproducts.com/products/adapters) 或 [Thrifty Bot](https://www.thethriftybot.com/products/qty-5-aluminum-insert-for-3d-printed-parts) 等供应商购买），以更好地传递扭矩。
+下面是几种使用不同嵌件的 3D 打印带轮示例。
 
-<Aside type="example" title="3D-printed Pulley Inserts">
-<ContentFigure src="../img/1c/shooter/3dp-pulleys.webp" alt="3D printed pulleys with various inserts">3D-printed pulleys with hex insert for hex shaft (left), SplineXS insert for Kraken motors (center), and pinion gear insert for NEO/CIM motors (right).</ContentFigure>
+<Aside type="example" title="Example（示例）：3D 打印带轮嵌件">
+<ContentFigure src="../img/1c/shooter/3dp-pulleys.webp" alt="带有不同嵌件的 3D 打印带轮">带六角轴嵌件的 3D 打印带轮（左）、用于 Kraken 电机的 SplineXS 嵌件（中），以及用于 NEO/CIM 电机的小齿轮嵌件（右）。</ContentFigure>
 </Aside>
 
-<Aside type="caution">
-Since 3D-printed pulley bores are easily worn out, you should try to always use a metal insert or a pinion gear insert.
-A cheap alternative to buying COTS inserts is to order them from a laser cutting service like [Fabworks](https://www.fabworks.com). In large quantities (~20 pieces), they only cost around $1 each.
+<Aside type="caution" title="Warning（警告）">
+由于 3D 打印带轮孔很容易磨损，应尽量始终使用金属嵌件或小齿轮嵌件。
+相比购买 COTS 嵌件，一个便宜的替代方案是从 [Fabworks](https://www.fabworks.com) 这类激光切割服务商处订购。批量较大时（约 20 件），单价通常只有约 1 美元。
 </Aside>
 
-## Nut Strips
-Nut strips are a very versatile structural component often used to connect perpendicular plates or a plate to a tube.
-Vendors like [WCP](https://wcproducts.com/products/nut-strips), [REV](https://www.revrobotics.com/3-8in-nut-strips/), and [Last Anvil](https://lastanvil.com/products/nut-strip) carry nut strips in 6" long segments with either #10-32 or #8-32 tapped holes.
-These nut strips are very robust and can be easily cut to any length.
-In the exercise you just completed, the nut strips would allow you to easily mount the shooter onto any surface.
+## 螺母条
+螺母条是一种非常通用的结构件，常用于连接相互垂直的板件，或连接板件与管材。
+[WCP](https://wcproducts.com/products/nut-strips)、[REV](https://www.revrobotics.com/3-8in-nut-strips/) 和 [Last Anvil](https://lastanvil.com/products/nut-strip) 等供应商提供 6" 长的螺母条，孔位为 #10-32 或 #8-32 螺纹孔。
+这些螺母条非常结实，也可以很容易切割成任意长度。
+在你刚完成的练习中，螺母条可以让你轻松把发射机构安装到任意表面上。
 
-<Aside type="example" title="Nut Strips">
-<ContentFigure src="../img/1c/shooter/nut-strips-real.webp" alt="Nut strips in use" width="50%">Nut strips can be used to connect a plate to a tube or a plate to a perpendicular plate. (Photo Credits: FRC 4414)</ContentFigure>
+<Aside type="example" title="Example（示例）：螺母条">
+<ContentFigure src="../img/1c/shooter/nut-strips-real.webp" alt="螺母条使用示例" width="50%">螺母条可用于将板件连接到管材，或将板件连接到垂直板件。（图片来源：FRC 4414）</ContentFigure>
 </Aside>
 
-## Block Motors
-When creating mechanisms, sometimes you need to reference specific COTS components when creating custom parts. While most of the time construction geometry in sketches will suffice (think motor outlines), sometimes you need to make more complex references. Instead of deriving a full detail component into the part studio (which can significantly slow down load times), you can create or derive "block" geometry, like the "block motor" from FRCDesignLib used in this exercise.
+## 块状电机
+创建机构时，有时在制作定制零件时需要参考特定 COTS 零部件。大多数情况下，草图中的构造几何就足够了（例如电机外轮廓），但有时你需要更复杂的参考。与其把完整细节的零部件派生到零件工作室中（这会显著拖慢加载速度），你可以创建或派生“块状”几何，例如本练习中使用的 FRCDesignLib “block motor”。
 
-<ContentFigure src="../img/1c/shooter/block-motor-example.webp" alt="Block motor example" border />
+<ContentFigure src="../img/1c/shooter/block-motor-example.webp" alt="块状电机示例" border />
 
-When inserting a block motor from FRCDesignLib, it is important to use the "Differentiation Variable" because of how Onshape handles derived parts. Assigning a unique value to each block motor prevents these errors in your part studio.
+从 FRCDesignLib 插入块状电机时，使用 “Differentiation Variable”（区分变量）很重要，这是由 Onshape 处理派生零件的方式决定的。为每个块状电机分配唯一值，可以避免零件工作室中出现相关错误。
 
-## Part Studio Instructions
+## Part Studio（零件工作室）说明
 
-**Navigate to the "Exercise #3 Part Studio" tab** in your copied document and **follow the instructions in the slides** to complete the part studio for this exercise.
+在你复制的文档中，**进入 “Exercise #3 Part Studio” 标签页**，并**按照幻灯片中的说明**完成本练习的零件工作室。
 
 <Slides>
   ![](../img/1c/shooter/parts-0.webp)
-  Final Part Studio.
+  最终零件工作室。
 
   ![](../img/1c/shooter/parts-1.webp)
-  Create the layout sketch on the Right plane. Begin by sketching the 4" shooter wheel, 2" feeder wheel, and the ball path.
+  在右平面上创建布局草图。先绘制 4" 发射轮、2" 供球轮和球的路径。
 
   ![](../img/1c/shooter/parts-2.webp)
-  On the right plane, create a new sketch with the belts, pulleys, and motors. The bottom most construction line defines the bottom of our shooter.
+  在右平面上创建一个新草图，绘制同步带、带轮和电机。最下方的构造线定义了发射机构的底部。
 
   ![](../img/1c/shooter/parts-3.webp)
-  Using a mate connector offset 1.375" from the layout sketch plane as the sketch plane, sketch the side plate. Use a circular pattern to sketch the #10-32 clearance holes around the shooter hood.
+  使用一个相对布局草图平面偏移 1.375" 的配合连接器作为草图平面，绘制侧板。使用圆形阵列绘制发射机构弧形导板周围的 #10-32 间隙孔。
 
   ![](../img/1c/shooter/parts-4.webp)
-  Extrude the plate as 1/4", then mirror it across the Right plane. We use a mirror because the opposite side plate is the same except for an extra cutout for the motors.
+  将板件拉伸为 1/4" 厚，然后以右平面为镜像面进行镜像。这里使用镜像，是因为另一侧板件基本相同，只是多了一个用于电机的切口。
 
   ![](../img/1c/shooter/parts-5.webp)
-  Sketch a cutoff boundary to remove the motor mounting from the mirrored plate. Make sure imprinting is enabled. You don't need to sketch the whole region, since the plate outline itself will be used in the extrude.
+  绘制一个切除边界，从镜像板件上移除电机安装区域。确保开启 imprinting。你不需要绘制整个区域，因为板件外轮廓本身会用于拉伸。
 
   ![](../img/1c/shooter/parts-6.webp)
-  Extrude the motor mounting region on the mirrored part to remove the geometry from the part.
+  拉伸镜像零件上的电机安装区域，从零件中切除这部分几何。
 
   ![](../img/1c/shooter/parts-7.webp)
-  Model the large 3D print that goes in between the plates. Try to minimize the amount of dimensions you need by using the layout or part geometry. Use an "Up to face" extrude to ensure that the width is parametric.
+  建模位于两块板件之间的大型 3D 打印件。尽量利用布局草图或零件几何，减少需要标注的尺寸数量。使用 “Up to Face”（到面）拉伸，确保宽度保持参数化。
 
   ![](https://www.youtube.com/embed/rGf0Vt8ahOQ)
-  Use the `Fillet All Edges` Featurescript to add a 3/16" radius fillet to all of the 3D-printed part edges. To select the face of the part, you can utilize the `Isolate` tool, which will make all other components that are not currently selected transparent or hidden.
+  使用 `Fillet All Edges` FeatureScript，为 3D 打印件的所有边添加半径 3/16" 的圆角。要选择该零件的面，可以使用 `Isolate`（隔离）工具，它会让当前未选中的其他零部件变为透明或隐藏。
 
   ![](https://www.youtube.com/embed/DUJ8MbPS4Zg)
-  Insert a block motor from FRCDesignLib. Use the `Transform` feature to transform the block motor to the motor bore.
+  从 FRCDesignLib 插入一个块状电机。使用 `Transform`（变换）特征，将块状电机移动到电机孔位置。
 
   ![](../img/1c/shooter/parts-10.webp)
-  Add the HTD 5mm pitch belts. Double check that the pitch length is a multiple of 5 mm to ensure that the belt has an integer number of teeth.
+  添加 HTD 5mm 齿距同步带。仔细检查节线长度是否为 5 mm 的倍数，以确保同步带齿数为整数。
 
   ![](https://www.youtube.com/embed/wFNDLm2Tisc)
-  Model the shooter wheel and feeder wheel shaft using the `Robot Shaft` featurescript.
+  使用 `Robot Shaft` FeatureScript 建模发射轮轴和供球轮轴。
 
   ![](https://www.youtube.com/embed/L8HWApw3luM)
-  Add a mate connector on the layout sketch for fastening the feeder wheel. Set the owner of the mate connector to the feeder shaft. This mate connector marks the center point between the two plates and will help with assembly.
+  在布局草图上添加一个用于紧固供球轮的配合连接器。将该配合连接器的所有者设置为供球轮轴。这个配合连接器标记了两块板件之间的中心点，有助于后续装配。
 
   ![](../img/1c/shooter/parts-13.webp)
-  Repeat the same steps as before to add a mate connector to the shooter wheel shaft. Make sure you select the shooter wheel shaft as the mate connector owner.
+  重复前面的步骤，为发射轮轴添加配合连接器。确保选择发射轮轴作为配合连接器的所有者。
 
   ![](../img/1c/shooter/parts-0.webp)
-  Finish the part studio by naming your features and organizing them into folders.
+  给特征命名并整理到文件夹中，完成零件工作室。
 </Slides>
 
-## Assembly Instructions
+## Assembly（装配体）说明
 
-**Next, navigate to the "Exercise #3 Assembly" tab** in your copied document and **follow the instructions in the slides** to complete this exercise.
+接下来，在你复制的文档中**进入 “Exercise #3 Assembly” 标签页**，并**按照幻灯片中的说明**完成本练习。
 
 <Slides>
   ![](../img/1c/shooter/assy-0.webp)
-  Final assembly.
+  最终装配体。
 
   ![](../img/1c/shooter/assy-1.webp)
-  Insert all the part studio components. Group all the components except for the shafts and belts. Fasten the Origin Cube to the origin.
+  插入所有零件工作室组件。将除轴和同步带之外的所有零部件组配合在一起。将 Origin Cube 紧固到原点。
 
   ![](https://www.youtube.com/embed/7Zplj3xG83s)
-  Insert and fasten 4.5" long nut strips from the FRCDesignLib app. Pay close attention to which side is fastened to the plate - the nut strip holes on adjacent sides are staggered.
+  从 FRCDesignLib 应用中插入并紧固 4.5" 长的螺母条。请特别注意哪一侧紧固到板件上，因为螺母条相邻两侧的孔是错开的。
 
   ![](../img/1c/shooter/assy-3.webp)
-  Insert and fasten the two NEO motors. Insert, fasten, and replicate the bearings.
+  插入并紧固两个 NEO 电机。插入、紧固并仿制轴承。
 
   ![](https://www.youtube.com/embed/RsCl6xD8tMs)
-  Insert and configure the shooter pulley to be 24T with 1/2" Hex w/ TTB insert. Copy and paste the pulley and TTB insert to create the motor pulley. Using a 3/16" spacer, fasten the shooter pulley to the shooter bearing. Then, fasten the motor pulley to the belt. Finally, use the `Isolate` tool to fasten the 8mm NEO shaft to 1/2" hex adapter.
+  插入并配置发射轮带轮：24T，1/2" 六角孔，带 TTB 嵌件。复制并粘贴该带轮和 TTB 嵌件，创建电机带轮。使用 3/16" 隔套，将发射轮带轮紧固到发射轮轴承上。然后，将电机带轮紧固到同步带上。最后，使用 `Isolate`（隔离）工具，将 8mm NEO 轴紧固到 1/2" 六角转接件上。
 
   ![](https://www.youtube.com/embed/vEuopW1B9r4)
-  Insert and configure the feeder pulley to be 36T with a TTB 1/2" hex insert. Configure the motor pulley to be 18T with a 12T 20DP gear insert. Using a 1/16" spacer, fasten the feeder pulley to the feeder bearing. Then, fasten the motor pulley to the belt. Finally, use the `Isolate` tool to fasten the 12T motor pinion.
+  插入并配置供球轮带轮：36T，带 TTB 1/2" 六角嵌件。将电机带轮配置为 18T，并使用 12T 20DP 齿轮嵌件。使用 1/16" 隔套，将供球轮带轮紧固到供球轮轴承上。然后，将电机带轮紧固到同步带上。最后，使用 `Isolate`（隔离）工具紧固 12T 电机小齿轮。
 
   ![](../img/1c/shooter/assy-6.webp)
-  Fasten the shafts to the pulleys.
+  将轴紧固到带轮上。
 
   ![](https://www.youtube.com/embed/GuyhDXkKwho)
-  Insert and fasten the shooter and feeder wheels to the shaft centering mate connectors. Then, Use the `Measure` tool to measure the gaps between the bearings and the wheels. Create spacers to fill the gaps on the sides of the wheels. Finally, use the `Assembly Mirror` tool to mirror the spacers and the shooter wheel across the feeder wheel's mate connector.
+  将发射轮和供球轮插入并紧固到轴中心配合连接器上。然后，使用 `Measure`（测量）工具测量轴承与轮子之间的间隙。创建隔套填补轮子两侧的间隙。最后，使用 `Assembly Mirror`（装配体镜像）工具，以供球轮的配合连接器为基准镜像隔套和发射轮。
 
   ![](../img/1c/shooter/assy-8.webp)
-  Insert and fasten the 4" SDS Flywheel to the other side of the shooter.
+  将 4" SDS 飞轮插入并紧固到发射机构另一侧。
 
   ![](../img/1c/shooter/assy-9.webp)
-  Insert, fasten, and replicate all of the required fasteners and remaining hardware.
+  插入、紧固并仿制所有所需紧固件和剩余五金件。
 
   ![](../img/1c/shooter/assy-0.webp)
-  Finish your assembly by organizing the parts into folders and naming your replicates. You can also insert and position the ball to visualize it.
+  将零件整理到文件夹中，并为仿制特征命名，完成装配体。你也可以插入球并调整位置，用于可视化检查。
 </Slides>
 
-<Aside type="tip" title="Verification">
-Make sure to have you and/or a more experienced member/mentor of your team [**review your CAD!**](/learning-course/stage1/1a/focusing-on-improvement) Your assembly should have 54 instances.
+<Aside type="tip" title="Tip（提示）：检查">
+请确保由你自己，或队内更有经验的队员/导师来 [**检查你的 CAD（计算机辅助设计）！**](/zh/learning-course/stage1/1a/focusing-on-improvement) 你的装配体应包含 54 个实例。
 </Aside>
 
-## Isolate, Hide, and Make Transparent
+## 隔离、隐藏和设为透明
 
-The Isolate tool hides all other parts except the selected ones, helping focus on specific components.
-The Hide tool removes the selected parts from view, while Make transparent allows you to see through the selected parts without removing it, useful for accessing obscured components.
+`Isolate`（隔离）工具会隐藏除所选零件之外的所有其他零件，帮助你专注于特定零部件。
+`Hide`（隐藏）工具会将所选零件从视图中移除，而 `Make transparent`（设为透明）则可以让你透过所选零件观察，在需要操作被遮挡的零部件时很有用。
 
-Rather than deleting or moving parts, you should use these tools to access the parts you need for your task. If you hide parts, don't forget to un-hide them for the next person!
+与其删除或移动零件，更建议使用这些工具来访问任务所需的零件。如果你隐藏了零件，别忘了在完成后取消隐藏，方便下一个人继续使用！
 
-<Aside type="tip" title="Isolate, Hide, and Make Transparent">
-<ContentFigure src="I1nFphxKVXc">Isolate parts, hide parts, or make parts transparent to help with assembly.</ContentFigure>
+<Aside type="tip" title="Tip（提示）：隔离、隐藏和设为透明">
+<ContentFigure src="I1nFphxKVXc">隔离零件、隐藏零件，或将零件设为透明，都可以帮助完成装配。</ContentFigure>
 </Aside>
 
-<Aside type="tip" title="Keyboard Shortcuts">
-Just like most other tools and constraints in Onshape, hide/show has a nice keyboard shortcut combination. Hover over a part with your cursor or select it and press `y` to hide it. Hover over the same space and press `shift+y` to unhide the part.
+<Aside type="tip" title="Tip（提示）：键盘快捷键">
+和 Onshape 中的大多数其他工具和约束一样，隐藏/显示也有很好用的键盘快捷键组合。将光标悬停在某个零件上，或选中它后按 `y`，即可隐藏该零件。将光标悬停在同一位置并按 `shift+y`，即可取消隐藏该零件。
 </Aside>
 

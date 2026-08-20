@@ -1,25 +1,25 @@
 ﻿---
-title: Project Overview
-description: Overview of the design methodology project
+title: 项目概览
+description: 设计方法项目概览
 sidebar:
   order: 2
 ---
 
 
-## Project Overview
+## 项目概览
 
-In this stage, you will be designing a swerve drivebase. A drivebase is the mobile platform on which all our other mechanisms are designed around and attached to. With the advent of reliable COTS swerve, designing a swerve drivebase has been made significantly easier and has become the most commonly used competitive drivetrain in FRC.
+在本阶段，你将设计一个 Swerve（舵轮）底盘。底盘是机器人可移动的平台，其他所有机构都会围绕它进行设计并安装在它上面。随着可靠的 COTS（现成商业零件）舵轮模块出现，设计舵轮底盘已经变得容易得多，并且舵轮底盘已成为 FRC 中最常用的竞赛底盘形式。
 
-A swerve drivebase is composed of four *swerve modules*. Each module has two motors: one for spinning the wheel and one for steering it. This enables the robot to translate in any direction independent of the rotation of the robot. In this project, we'll be using [SDS MK4i modules](https://www.swervedrivespecialties.com/products/mk4i-swerve-module). There are many other COTS options available, each with their own advantages and tradeoffs.
+舵轮底盘由四个*Swerve 模块*组成。每个模块有两个电机：一个用于驱动车轮旋转，另一个用于控制转向。这让机器人可以在任意方向平移，而不受机器人自身旋转方向限制。在本项目中，我们会使用 [SDS MK4i 模块](https://www.swervedrivespecialties.com/products/mk4i-swerve-module)。市面上还有许多其他 COTS 选项，它们各有优势和取舍。
 
-<ContentFigure src="../img/1d/drivetrain-assembly.webp" alt="Stage 1D swerve drivebase" >Stage 1D swerve drivebase project.</ContentFigure>
+<ContentFigure src="../img/1d/drivetrain-assembly.webp" alt="阶段 1D 舵轮底盘" >阶段 1D 舵轮底盘项目。</ContentFigure>
 
-As with previous exercises, the finished project is available for reference. If you need help, please feel free to ask on [the Discord](https://discord.gg/frcdesign)!
+和之前的练习一样，完成后的项目可供参考。如果需要帮助，欢迎在 [Discord](https://discord.gg/frcdesign) 上提问！
 
-<LinkButton href="https://cad.onshape.com/documents/6c6044229091a87cf359270b/w/ed9648f0c04c639a2561615a/e/67a7ed0c6038787281325a51" external center>1D Drivebase Reference</LinkButton>
+<LinkButton href="https://cad.onshape.com/documents/6c6044229091a87cf359270b/w/ed9648f0c04c639a2561615a/e/67a7ed0c6038787281325a51" external center>1D 底盘参考文档</LinkButton>
 
-### Drivebase Frame
+### 底盘框架
 
-As was introduced in Stage 1A, robot structures are typically constructed out of aluminum box tubing. The drivebase is no exception to this. Most teams will opt to design their box tubing with a standard 0.5" spacing pattern of 0.196" diameter holes. This enables modularity and allows for easy integration of many COTS components like gussets.
+如阶段 1A 中介绍的那样，机器人结构通常由铝制方管构成，底盘也不例外。大多数队伍会选择在方管上设计标准 0.5" 间距、0.196" 直径的孔阵列。这样可以实现模块化，并方便集成许多 COTS 零部件，例如加强板。
 
-Box tubing extrusions can be purchased at most metal suppliers, but many FRC vendors including [WCP](https://wcproducts.com/collections/systems-structure/products/punched-tubing), [TTB](https://www.thethriftybot.com/products/thrifty-box-extrusion), and [REV](https://www.revrobotics.com/MAXTube/) sell box tubing with pre-cut hole patterns which can significantly reduce manufacturing time and equipment requirements.
+方管型材可以从大多数金属供应商处购买，但许多 FRC 供应商，包括 [WCP](https://wcproducts.com/collections/systems-structure/products/punched-tubing)、[TTB](https://www.thethriftybot.com/products/thrifty-box-extrusion) 和 [REV](https://www.revrobotics.com/MAXTube/)，也销售预加工孔阵列的方管，这可以显著减少加工时间和设备需求。

@@ -1,105 +1,105 @@
 ﻿---
-title: "Exercise 6: Direction Swap"
-description: Model a direction swap mechanism
+title: "练习 6：方向反转"
+description: 建模一个方向反转机构
 ---
 
 
-In this exercise, you will be modeling a power transmission with a direction swap gear.
-This mechanism features features a 1:1 gear transmission that inverts the direction of the motor, which can be useful when you want two different shafts to be powered by the same motor but spin in opposite directions.
-Be sure to pay attention to the layout and plate sketches when modeling.
+在本练习中，你将建模一个带方向反转齿轮的动力传动。
+这个机构包含一个 1:1 齿轮传动，用于反转电机输出方向。当你希望同一个电机驱动两根不同的轴，并让它们朝相反方向旋转时，这种设计会很有用。
+建模时一定要注意布局草图和板件草图。
 
-## 3D Printed, COTS, and Custom Aluminum Spacers
-So far, you've used both custom spacers generated with the `Spacer` Featurescript as well as COTS 3/8" OD spacers from FRCDesignLib (the [WCP Aluminum Spacers](https://wcproducts.com/products/aluminum-spacers)).
-There are pros and cons to using COTS or custom spacers that you should discuss with your team.
+## 3D 打印、COTS 和定制铝隔套
+到目前为止，你既使用过 `Spacer` FeatureScript（自定义特征脚本）生成的定制隔套，也使用过 FRCDesignLib 中的 COTS 3/8" 外径隔套（即 [WCP 铝隔套](https://wcproducts.com/products/aluminum-spacers)）。
+使用 COTS 隔套或定制隔套各有优缺点，你应和队伍一起讨论选择。
 
-3D printed spacers are a fantastic option for teams with 3D prints, they are cheap and easy to fabricate.
-If you want to use aluminum spacers but do not have access to machinery to cut them (e.g. a lathe), COTS aluminum spacers can be a good option as they can also be pre-stocked.
-However, they can be pricy and only come in certain lengths, though you can easily get around this by designing for standard spacer lengths.
+对于有 3D 打印能力的队伍，3D 打印隔套是非常好的选择，它们便宜且容易制造。
+如果你想使用铝隔套，但没有设备切割它们（例如车床），COTS 铝隔套也是不错的选择，因为可以提前备货。
+不过，它们价格可能较高，而且只有特定长度。你可以通过按标准隔套长度进行设计，轻松避开这个问题。
 
-<Aside type="example" title="Spacer Stock">
-<ContentFigure src="../img/1c/direction-swap/spacers.webp" alt="Different spacer types">Spacers can be 3D printed (left), purchased as COTS pre-cut spacers (center), or fabricated in-house from spacer stock (right). (Image Source: WCP)</ContentFigure>
+<Aside type="example" title="Example（示例）：隔套原料">
+<ContentFigure src="../img/1c/direction-swap/spacers.webp" alt="不同类型的隔套">隔套可以 3D 打印（左），购买预切割的 COTS 隔套（中），也可以用隔套原料在队内自行加工（右）。（图片来源：WCP）</ContentFigure>
 </Aside>
 
-When modeling, it is recommended to use the `Spacer` Featurescript for spacers that you will fabricate in house (e.g. 3D printing or using [round tube stock](https://wcproducts.com/products/shaft-stock)) and use the configurable FRCDesignLib spacers for COTS spacers.
-This helps make it clear which parts are custom and which are COTS.
+建模时，建议对队内自行制造的隔套使用 `Spacer` FeatureScript（例如 3D 打印，或使用 [圆管原料](https://wcproducts.com/products/shaft-stock) 加工），对 COTS 隔套则使用 FRCDesignLib 中的可配置隔套。
+这样可以清楚区分哪些零件是定制件，哪些是 COTS。
 
-## Part Studio Instructions
+## Part Studio（零件工作室）说明
 
-**Navigate to the "Exercise #6 Part Studio" tab** in your copied document and **refer to the solution document** to complete the part studio for this exercise. The **following instruction slides** only provide a general outline and some key details.
+在你复制的文档中，**进入 “Exercise #6 Part Studio” 标签页**，并**参考答案文档**完成本练习的零件工作室。**下面的说明幻灯片**只提供总体流程和一些关键细节。
 
 <Slides>
   ![](../img/1c/direction-swap/parts-0.webp)
-  Final Part Studio.
+  最终零件工作室。
 
   ![](../img/1c/direction-swap/parts-1.webp)
-  Begin by creating the layout sketch on the right plane.
+  先在右平面上创建布局草图。
 
   ![](../img/1c/direction-swap/parts-2.webp)
-  Using a mate connector offset 0.5" from the Right plane as the sketch plane, sketch the plate. Pay close attention to the clearances used to define the edges of the plate. The location of the two spacers to the left of the motor are driven by the tangency between the 3/8" OD spacer and the 2.5" motor clearance circle.
+  使用一个相对右平面偏移 0.5" 的配合连接器作为草图平面，绘制板件。特别注意用于定义板件边缘的间隙。电机左侧两个隔套的位置由 3/8" 外径隔套与 2.5" 电机间隙圆之间的相切关系驱动。
 
   ![](../img/1c/direction-swap/parts-3.webp)
-  Use a `Driven Dimension` to show the distance between the left gear and the spacer and verify that there is enough clearance. A driven dimension, as opposed to a driving dimension, just reports the distance between the selected elements and is faded gray to indicate that it does not define the sketch geometry.
+  使用 `Driven Dimension`（从动尺寸）显示左侧齿轮与隔套之间的距离，并验证是否有足够间隙。从动尺寸与驱动尺寸不同，它只报告所选元素之间的距离，并以浅灰色显示，表示它不定义草图几何。
 
   ![](../img/1c/direction-swap/parts-4.webp)
-  Mirror the plate across the Right plane and add the motor cutout.
+  以右平面为镜像面镜像板件，并添加电机切口。
 
   ![](../img/1c/direction-swap/parts-5.webp)
-  If you choose to not use COTS spacers, you can use the `Robot Spacer` Featurescript to create the plate spacer.
+  如果你选择不使用 COTS 隔套，可以使用 `Robot Spacer` FeatureScript 创建板件隔套。
 
   ![](../img/1c/direction-swap/parts-6.webp)
-  Model all of the shafts and belts. You should be feeling very comfortable using the `Robot Shaft` and `Belt & Chain Gen` Featurescripts at this point.
+  建模所有轴和同步带。到这里，你应该已经比较熟悉 `Robot Shaft` 和 `Belt & Chain Gen` FeatureScript 的使用了。
 
   ![](../img/1c/direction-swap/parts-7.webp)
-  Pocket the two plates. Since the plates are identical apart from the motor cutout, you can use same sketch to pocket both plates. Only create one sketch with the ribs.
+  对两块板件进行减重开槽。由于两块板件除了电机切口外完全相同，你可以使用同一个草图为两块板件开槽。只需要创建一个包含加强筋的草图。
 
   ![](../img/1c/direction-swap/parts-0.webp)
-  Finish the part studio by naming your features and organizing them into folders. Assign the part materials accordingly.
+  给特征命名并整理到文件夹中，完成零件工作室。相应地指定零件材料。
 </Slides>
 
-## Assembly Instructions
+## Assembly（装配体）说明
 
-**Next, navigate to the "Exercise #6 Assembly" tab** in your copied document and **refer to the solution document** to complete the assembly for this exercise. The **following instruction slides** only provide a general outline and some key details.
+接下来，在你复制的文档中**进入 “Exercise #6 Assembly” 标签页**，并**参考答案文档**完成本练习的装配体。**下面的说明幻灯片**只提供总体流程和一些关键细节。
 
 <Slides>
   ![](../img/1c/direction-swap/assy-0.webp)
-  Final assembly.
+  最终装配体。
 
   ![](../img/1c/direction-swap/assy-1.webp)
-  Add the part studio parts to the assembly. Like before, group mate the rigid components with the Origin Cube and mate the Origin Cube to the assembly origin.
+  将零件工作室零件添加到装配体中。和之前一样，将刚性零部件与 Origin Cube 组配合，并将 Origin Cube 配合到装配体原点。
 
   ![](../img/1c/direction-swap/assy-2.webp)
-  Fasten the spacer to the plate and replicate it.
+  将隔套紧固到板件上，并进行仿制。
 
   ![](../img/1c/direction-swap/assy-3.webp)
-  Insert, fasten, and replicate the bearings. Also insert a 2" flex wheel and Kraken X60 motor from FRCDesignLib.
+  插入、紧固并仿制轴承。同时从 FRCDesignLib 插入一个 2" 柔性轮和 Kraken X60 电机。
 
   ![](../img/1c/direction-swap/assy-4.webp)
-  Insert and fasten the pulleys and spacers. For the pulleys, you can utilize 3D printed HTD pulleys from the FRCDesignLib with 1/2" hex inserts. Also fasten the belts into place.
+  插入并紧固带轮和隔套。对于带轮，可以使用 FRCDesignLib 中带 1/2" 六角嵌件的 3D 打印 HTD 带轮。同时将同步带紧固到位。
 
   ![](../img/1c/direction-swap/assy-5.webp)
-  Insert a configurable spacer stack from FRCDesignLib. The length should be the distance between the pulley and flex wheel. The spacer stack will display an error most likely. This error can be cleared by deselecting the spacer lengths not present in the stack. Alternatively you can make your own stack of COTS spacers, or use a single long custom spacer.
+  从 FRCDesignLib 插入一个可配置隔套组。长度应为带轮与柔性轮之间的距离。隔套组很可能会显示错误。取消选择该隔套组中不存在的隔套长度即可清除错误。你也可以自行组合 COTS 隔套，或使用一个较长的定制隔套。
 
   ![](../img/1c/direction-swap/assy-6.webp)
-  Add in and replicate all of the required fasteners to complete the design.
+  添加并仿制所有所需紧固件，完成设计。
 
   ![](../img/1c/direction-swap/assy-0.webp)
-  To finish the assembly, organize your components into folders and name your replicates.
+  最后，将零部件整理到文件夹中，并为仿制特征命名，完成装配体。
 </Slides>
 
-<Aside type="tip" title="Verification">
-Make sure to have you and/or a more experienced member/mentor of your team [**review your CAD!**](/learning-course/stage1/1a/focusing-on-improvement) Your assembly should about 40 instances.
+<Aside type="tip" title="Tip（提示）：检查">
+请确保由你自己，或队内更有经验的队员/导师来 [**检查你的 CAD（计算机辅助设计）！**](/zh/learning-course/stage1/1a/focusing-on-improvement) 你的装配体应约有 40 个实例。
 </Aside>
 
 
-## Driving and Driven Dimensions
+## 驱动尺寸和从动尺寸
 
-In sketches, driving dimensions define and control the geometry, appearing black and editable.
-Driven dimensions,on the other hand, are light gray and reflect existing geometry without altering it, useful for maintaining design intent like keeping a specific clearance or thickness.
+在草图中，驱动尺寸用于定义和控制几何，显示为黑色并且可编辑。
+相对地，从动尺寸显示为浅灰色，只反映现有几何而不改变它。这对于保持设计意图很有用，例如维持特定间隙或厚度。
 
-To toggle between them, right-click the dimension and select "Driving/Driven" from the context menu - useful when a new dimension would over-constrain the sketch or when you need to inspect geometry without changing it.
+要在两者之间切换，可以右键点击尺寸，并在上下文菜单中选择 “Driving/Driven”。当新增尺寸会导致草图过约束，或你需要在不改变几何的情况下检查尺寸时，这会很有用。
 
-<Aside type="tip" title="Switching Between Driving and Driven Dimensions">
-Right-click the dimension and select "Driving/Driven" from the context menu.
+<Aside type="tip" title="Tip（提示）：切换驱动尺寸和从动尺寸">
+右键点击尺寸，并在上下文菜单中选择 “Driving/Driven”。
 
 <ContentFigure src="PuMO-vLOKvE" />
 </Aside>

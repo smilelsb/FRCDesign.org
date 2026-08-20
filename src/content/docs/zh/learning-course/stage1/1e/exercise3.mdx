@@ -1,34 +1,34 @@
 ﻿---
-title: "Exercise 3: Bellypan Pocketing"
-description: Create bellypan pocketing
+title: "练习 3：底板减重开槽"
+description: 创建底板减重开槽
 ---
 
 
-## Exercise 3: Bellypan Pocketing
+## 练习 3：底板减重开槽
 
-Some teams may choose to pocket their bellypan to reduce weight and make wiring easier. A pocketed bellypan can save around 3-4 lbs. However, this will add significant machining time if you are manufacturing the bellypan yourself or increase cost if you are purchasing the bellypan from a fabrication service (eg: [Fabworks](https://fabworks.com/ "Fabworks Sheet Metal Services")). You should carefully consider the tradeoffs with your team.
+有些队伍可能会选择对底板进行减重开槽，以减轻重量并让布线更方便。开槽后的底板大约可以减轻 3-4 lbs。不过，如果你们自己加工底板，这会显著增加加工时间；如果从加工服务商（例如 [Fabworks](https://fabworks.com/ "Fabworks 钣金加工服务")）购买底板，则可能增加成本。你应该和队伍一起仔细权衡这些取舍。
 
-### Instructions
+### 说明
 
-**If you choose to pocket your bellypan for your drivetrain**, you can **follow the instructions in the slides** which utilize the `Part Lighten` [Featurescript](/resources/featurescripts "Featurescripts Page"). You could also use the `Vent` or `Part Lighten` [Featurescripts](/resources/featurescripts "Featurescripts Page") to pocket the bellypan. While the workflow may vary slightly between each Featurescript, the general idea is the same. A diamond pattern is recommended for strength and ease of modeling.
+**如果你选择为底盘底板进行减重开槽**，可以**按照幻灯片中的说明操作**，其中会使用 `Part Lighten` [FeatureScript](/resources/featurescripts "FeatureScript 页面")。你也可以使用 `Vent` 或 `Part Lighten` [FeatureScript](/resources/featurescripts "FeatureScript 页面") 来为底板开槽。不同 FeatureScript 的工作流程可能略有不同，但总体思路相同。推荐使用菱形图案，因为它强度较好，也更容易建模。
 
 <Slides>
   ![](../img/1e/pocket/pocket-0.webp)
-  Pocketed bellypan.
+  已减重开槽的底板。
 
   ![](../img/1e/pocket/pocket-1.webp)
-  Draw two perpendicular lines that are offset 45 degrees from vertical and a line offset slightly from the edge of the crosstube.
+  绘制两条互相垂直、相对竖直方向偏转 45 度的线，以及一条相对横向方管边缘略微偏移的线。
 
   ![](../img/1e/pocket/pocket-2.webp)
-  Linear pattern the diagonal lines until they completely cover the top portion of the bellypan. These will be the main ribs.
+  对这些斜线进行线性阵列，直到它们完全覆盖底板上半部分。这些线将形成主要加强筋。
 
   ![](../img/1e/pocket/pocket-3.webp)
-  Mirror the top ribs to the bottom of the bellypan.
+  将上半部分加强筋镜像到底板下半部分。
 
   ![](https://www.youtube.com/watch?v=ZvEMMgEf420)
-  Connect any islands that might result from mounting holes being too far from a rib. The video shows a potential workflow that allows you to see the end result of the lighten feature while adding ribs.
+  连接所有可能因安装孔离加强筋太远而形成的孤岛区域。视频展示了一种可行工作流程，让你在添加加强筋时也能看到减重特征的最终效果。
 
   ![](../img/1e/pocket/pocket-0.webp)
-  Use a pocketing Featurescript to pocket the bellypan. Recommended settings are 0.15" wide ribs and 3/16" tool radius.
+  使用减重开槽 FeatureScript 为底板开槽。推荐设置为 0.15" 宽加强筋和 3/16" 刀具半径。
 
 </Slides>

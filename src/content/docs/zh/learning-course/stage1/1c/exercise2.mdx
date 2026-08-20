@@ -1,111 +1,111 @@
 ﻿---
-title: "Exercise 2: Dead Axle Rollers"
-description: Model dead axle rollers
+title: "练习 2：死轴滚轮"
+description: 建模死轴滚轮
 ---
 
 
-In this exercise, you will be modeling some dead axle rollers. To spin things, whether it be rollers, wheels, or even arms, two types of axles can be utilized: "live" and "dead" axles.
+在本练习中，你将建模几个死轴滚轮。要让滚轮、轮子，甚至机械臂等结构旋转，通常可以使用两类轴：活轴和死轴。
 
-## Live and Dead Axle Rollers
+## 活轴与死轴滚轮
 
-You'll learn more about live and dead axle design in Stage 2, but for now, all you need know is that live axle means we power the shaft to spin our mechanism, whereas with dead axle, we directly power the spinning component.
-For live axle, the shaft spins on fixed bearings, while for dead axle, the bearings are on the spinning component. Take a look at the visual below to better understand.
+你会在阶段 2 中更深入学习活轴和死轴设计。现在只需要知道：活轴指我们驱动轴本身，让机构随轴旋转；死轴则是直接驱动旋转零件。
+对于活轴，轴在固定轴承中旋转；对于死轴，轴承安装在旋转零件上。可以看看下面的图示来帮助理解。
 
-<Aside type="example" title="Live vs Dead Axle Rollers">
-<ContentFigure src="../img/1c/dead-axle-rollers/dead-vs-live.webp" alt="Dead vs Live Axle comparison" width="40%">Section view of a dead axle (left) and live axle (right) roller. The dead axle roller sits on bearings and needs to be directly powered (in this case, through the integrated pulley). The live axle roller is powered from a pulley farther down the hex shaft.</ContentFigure>
+<Aside type="example" title="Example（示例）：活轴与死轴滚轮">
+<ContentFigure src="../img/1c/dead-axle-rollers/dead-vs-live.webp" alt="死轴与活轴对比" width="40%">死轴（左）和活轴（右）滚轮的剖视图。死轴滚轮安装在轴承上，需要直接驱动滚轮本体（本例中通过集成带轮驱动）。活轴滚轮则由六角轴上更远位置的带轮驱动。</ContentFigure>
 </Aside>
 
-## Part Studio Instructions
+## Part Studio（零件工作室）说明
 
-**Navigate to the "Exercise #2 Part Studio" tab** in your copied document and **follow the instructions in the slides** to complete the part studio for this exercise.
+在你复制的文档中，**进入 “Exercise #2 Part Studio” 标签页**，并**按照幻灯片中的说明**完成本练习的零件工作室。
 
 <Slides>
   ![](../img/1c/dead-axle-rollers/parts-0.webp)
-  Final Part Studio.
+  最终零件工作室。
 
   ![](../img/1c/dead-axle-rollers/parts-1.webp)
-  Create a new sketch on the right plane for the Layout Sketch. Start by sketching a pivot axle hole with a bolt pattern around it.
+  在右平面上创建一个新草图作为布局草图。先绘制一个枢轴孔，并在其周围绘制螺栓孔阵列。
 
   ![](../img/1c/dead-axle-rollers/parts-2.webp)
-  Sketch the first belt run between rollers to the left of the pivot hole.
+  在枢轴孔左侧绘制滚轮之间的第一段同步带路径。
 
   ![](../img/1c/dead-axle-rollers/parts-3.webp)
-  Create a second belt run of the same length as the first.
+  创建第二段同步带路径，长度与第一段相同。
 
   ![](../img/1c/dead-axle-rollers/parts-4.webp)
-  Add 2" circles around the ends of the belt runs to represent the rollers.
+  在同步带路径两端添加 2" 圆，表示滚轮。
 
   ![](../img/1c/dead-axle-rollers/parts-5.webp)
-  Sketch the motor belt run off the first roller angled back towards the pivot point.
+  从第一个滚轮开始，向枢轴点方向倾斜绘制电机同步带路径。
 
   ![](../img/1c/dead-axle-rollers/parts-6.webp)
-  Add a 60mm circle to represent the motor, this will be useful information when making the plate.
+  添加一个 60mm 圆表示电机，这会在制作板件时提供有用信息。
 
   ![](../img/1c/dead-axle-rollers/parts-7.webp)
-  Create the plate sketch offset from the layout sketch. This is similar to the previous exercise.
+  创建一个相对布局草图偏移的板件草图。这与上一个练习类似。
 
   ![](../img/1c/dead-axle-rollers/parts-8.webp)
-  Start the plate sketch by copying the bolt pattern and pivot axle hole, and adding bolt holes for the rollers. Also add the bolt pattern for the motor, this should be done in the same way as the previous exercise but with a 6 hole pattern. Like before we will only make 3 of these real holes. The rest will be construction circles.
+  开始绘制板件草图时，先复制螺栓孔阵列和枢轴孔，并添加滚轮用螺栓孔。同时添加电机螺栓孔阵列，方法与上一个练习相同，但这里使用 6 孔阵列。和之前一样，我们只保留其中 3 个真实孔，其余设为构造圆。
 
   ![](../img/1c/dead-axle-rollers/parts-9.webp)
-  Draw the plate outline based on the holes created in the previous slide.
+  根据上一张幻灯片中创建的孔绘制板件外轮廓。
 
   ![](../img/1c/dead-axle-rollers/parts-10.webp)
-  Extrude the plate in the "Right" direction.
+  沿 “Right” 方向拉伸板件。
 
   ![](../img/1c/dead-axle-rollers/parts-11.webp)
-  Use Belt & Chain Gen to make the motor belt. The offsets don't matter here since you will be mating the belts to the pulleys.
+  使用 Belt & Chain Gen 创建电机同步带。这里的偏移量并不重要，因为你会在装配体中把同步带配合到带轮上。
 
   ![](../img/1c/dead-axle-rollers/parts-12.webp)
-  Use Belt & Chain Gen to make the first roller belt.
+  使用 Belt & Chain Gen 创建第一条滚轮同步带。
 
   ![](../img/1c/dead-axle-rollers/parts-13.webp)
-  Use Belt & Chain Gen to make the second roller belt.
+  使用 Belt & Chain Gen 创建第二条滚轮同步带。
 
   ![](../img/1c/dead-axle-rollers/parts-0.webp)
-  Finish the part studio by naming your features and organizing them into folders. Assign the plate material to be polycarbonate.
+  给特征命名并整理到文件夹中，完成零件工作室。将板件材料指定为聚碳酸酯。
 </Slides>
 
-## Assembly Instructions
+## Assembly（装配体）说明
 
-**Next, navigate to the "Exercise #2 Assembly" tab** in your copied document and **follow the instructions in the slides** to complete this exercise.
+接下来，在你复制的文档中**进入 “Exercise #2 Assembly” 标签页**，并**按照幻灯片中的说明**完成本练习。
 
 <Slides>
   ![](../img/1c/dead-axle-rollers/assy-0.webp)
-  Final assembly.
+  最终装配体。
 
   ![](https://www.youtube.com/embed/fDDM02mGCvg)
-  Start the assembly by inserting the part studio and grouping the origin cube and plate together. Then fasten the cube to the origin.
+  先插入零件工作室，并将 Origin Cube 和板件组配合在一起。然后把 Origin Cube 紧固到原点。
 
   ![](https://www.youtube.com/embed/0k2pSyg_nA0)
-  Use Assembly Mirror to copy the plate to the other side.
+  使用 Assembly Mirror（装配体镜像）将板件复制到另一侧。
 
   ![](https://www.youtube.com/embed/J_dtYxcaCL8)
-  Insert a roller from FRCDesignLib. Make sure the length is set to 24", and has bolt endcaps set to the HTD option. You can mate the first roller to one of the holes in the side plate. You can replicate the single roller to the other two holes. Make sure you select the whole assembly for the replicate as shown.
+  从 FRCDesignLib 插入一个滚轮。确保长度设置为 24"，并将螺栓端盖设置为 HTD 选项。你可以将第一个滚轮配合到侧板上的某个孔。然后将这个单个滚轮仿制到另外两个孔位。注意，如图所示，仿制时要选择整个装配体。
 
   ![](https://www.youtube.com/embed/DqiNcoXHYNE)
-  Mate the belts to the rollers using the center mate point for the belts, and the roller pulleys.
+  使用同步带的中心配合点和滚轮带轮，将同步带配合到滚轮上。
 
   ![](https://www.youtube.com/embed/BnFXhMRt_us)
-  Insert the Motor, Pulley, Shaft Spacers, and Shaft Bolt. Assemble the motor components together and mate the pulley to the center of the belt.
+  插入电机、带轮、轴用隔套和轴端螺栓。将电机组件装配在一起，并把带轮配合到同步带中心。
 
   ![](https://www.youtube.com/embed/WUW7gB-it7I)
-  Measure the distance between the plate and motor by clicking the face of each component. Copy this distance to your clipboard. Open the FRCDesignLib Inserter and insert a custom round ID spacer with the length you copied. There is no need to change other configurations. Attach this spacer to the plate and use replicate to add it to the other three plate holes.
+  分别点击板件和电机的面，测量它们之间的距离。将这个距离复制到剪贴板。打开 FRCDesignLib Inserter，插入一个自定义圆孔隔套，长度使用刚才复制的数值。其他配置无需修改。将这个隔套连接到板件上，并使用仿制将它添加到另外三个板件孔位。
 
   ![](https://www.youtube.com/embed/FkXr6tEHoSc)
-  Add fasteners to your assembly. Note the use of washers on each bolts When bolting to polycarbonate plates it is best practice to use washers. This helps prevent the plates from cracking. The Rollers should be attached with 1/2" #10-32 bolts, and the motor with 1.75" #10-32 bolts.
+  向装配体添加紧固件。注意，每个螺栓都使用了垫圈。将螺栓连接到聚碳酸酯板件时，最佳实践是使用垫圈，这有助于防止板件开裂。滚轮应使用 1/2" #10-32 螺栓固定，电机应使用 1.75" #10-32 螺栓固定。
 
   ![](../img/1c/dead-axle-rollers/assy-0.webp)
-  Organize your assembly with folders
+  使用文件夹整理你的装配体。
 </Slides>
 
-<Aside type="tip" title="Verification">
-Make sure to have you and/or a more experienced member/mentor of your team [**review your CAD!**](/learning-course/stage1/1a/focusing-on-improvement).
+<Aside type="tip" title="Tip（提示）：检查">
+请确保由你自己，或队内更有经验的队员/导师来 [**检查你的 CAD（计算机辅助设计）！**](/zh/learning-course/stage1/1a/focusing-on-improvement)。
 </Aside>
 
-## Minimizing Unique Part Count
+## 减少独特零件数量
 
-You may have noticed that the 3rd roller has a 24T pulley on both ends despite there only being a belt connected to one end.
-While the configurable roller does allow you to choose no pulley for the end with no belt, it can be advantageous to still keep the pulley in situations like this to reduce the number of unique parts.
-By doing so, all three rollers are identical, making part tracking and spare parts easier.
+你可能已经注意到，第 3 个滚轮两端都有 24T 带轮，尽管只有一端连接了同步带。
+虽然可配置滚轮允许你为没有同步带的一端选择不安装带轮，但在这种情况下保留带轮也有好处，因为这样可以减少独特零件数量。
+这样一来，三个滚轮完全相同，零件追踪和备件准备都会更简单。
 

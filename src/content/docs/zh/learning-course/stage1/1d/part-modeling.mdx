@@ -1,56 +1,56 @@
 ﻿---
-title: Part Studio
-description: Part studio modeling
+title: 零件工作室
+description: 零件工作室建模
 sidebar:
   order: 4
 ---
 
 
-## Deriving Layout Sketches and Part Modeling
+## 派生布局草图和零件建模
 
-Now that you have created the layout sketch, you can begin modeling the individual parts. The critical dimensions of the parts, such as the length of the tubes, will be driven by the layout sketch. This way, the tubes will automatically update with any changes in the size of the drivebase in the layout sketch.
+现在你已经创建了布局草图，可以开始建模单个零件了。零件的关键尺寸，例如管材长度，会由布局草图驱动。这样一来，只要布局草图中的底盘尺寸发生变化，管材就会自动更新。
 
-### Instructions
+### 说明
 
-Start by **creating a new folder tab in your Document called `Drivetrain`**. Then, **create a new part studio called `Drivetrain`** within the `Drivetrain` folder. **Follow the instructions in the slides** to complete the part studio. Remember that the Origin Cube should be the first feature in your part studio.
+首先，**在文档中创建一个名为 `Drivetrain` 的新文件夹标签页**。然后，在 `Drivetrain` 文件夹中**创建一个名为 `Drivetrain` 的新 Part Studio（零件工作室）**。**按照幻灯片中的说明**完成零件工作室。记住，Origin Cube 应该是零件工作室中的第一个特征。
 
 <Slides>
   ![](../img/1d/drivetrain/parts-0.webp)
-  The part studio.
+  零件工作室。
 
   ![](../img/1d/drivetrain/parts-1.webp)
-  Start by inserting the origin cube. Then, use the Derived tool to insert the layout sketches you previously drew from the Main Layout Sketch part studio. This feature will automatically update if changes are made to the layout sketch.
+  先插入 Origin Cube。然后，使用 Derived（派生）工具，从 Main Layout Sketch 零件工作室插入你之前绘制的布局草图。如果布局草图发生变化，这个特征会自动更新。
 
   ![](../img/1d/drivetrain/parts-2.webp)
-  Use the Extrude Individual and Tube Converter Featurescripts to model the tubes. The 2"x1" tubes should be 1/8" wall for strength, while the 2"x2" tube can be 1/16" wall.
+  使用 Extrude Individual 和 Tube Converter FeatureScript（自定义特征脚本）建模管材。为了保证强度，2"x1" 管材应使用 1/8" 壁厚，而 2"x2" 管材可以使用 1/16" 壁厚。
 
   ![](../img/1d/drivetrain/parts-3.webp)
-  Start with one corner of the bellypan. The corner is cut out to create room for the swerve module.
+  从底板的一个角开始。这里切掉角部，为舵轮模块留出空间。
 
   ![](https://www.youtube.com/embed/gk03kkl98NU?controls=1&rel=0&showinfo=0&vq=hd1080)
-  Use the Fillet sketch tool to add a 1" radius sketch fillet on the two internal corners of the cutout.
+  使用 Fillet（圆角）草图工具，在切口的两个内角上添加半径 1" 的草图圆角。
 
   ![](https://www.youtube.com/embed/ivUXyr0Lacs?controls=1&rel=0&showinfo=0&vq=hd1080)
-  Next, use the Circular Pattern sketch tool to pattern the other three corners. Extrude the bellypan to be 1/8" thick.
+  接着，使用 Circular Pattern（圆形阵列）草图工具阵列出另外三个角。将底板拉伸为 1/8" 厚。
 
   ![](../img/1d/drivetrain/parts-6.webp)
-  Use the Fillet All Edges Featurescript to add a 0.25" radius fillet to the remaining edges on the bellypan by selecting the bottom face of the bellypan.
+  选择底板底面，使用 Fillet All Edges FeatureScript 为底板剩余边缘添加半径 0.25" 的圆角。
 
   ![](../img/1d/drivetrain/parts-7.webp)
-  Add the mounting holes for the bellypan. Use a mix of Linear Pattern and Circular Pattern to pattern the 0.196" rivet and bolt holes. As was learned in 1C Exercise 1, bolts can be used to stop rivets from loosening over time.
+  为底板添加安装孔。结合使用 Linear Pattern（线性阵列）和 Circular Pattern（圆形阵列），阵列 0.196" 铆钉孔和螺栓孔。如 1C 练习 1 中所学，螺栓可用于防止铆钉随时间松动。
 
   ![](https://www.youtube.com/embed/mUVoTxoniCY?controls=1&rel=0&showinfo=0&vq=hd1080)
-  Extrude the holes into the bellypan. If the sketch is correctly drawn, you should not need to select each individual hole.
+  将这些孔拉伸切入底板。如果草图绘制正确，你不需要逐个选择每个孔。
 
   ![](../img/1d/drivetrain/parts-0.webp)
-  Finally, name your sketches and organize them into a folder in the feature tree. Additionally, set the material of the bellypan to Aluminum 6061 and name your parts.
+  最后，为草图命名，并在特征树中将它们整理到文件夹中。另外，将底板材料设置为 6061 铝，并为零件命名。
 
 </Slides>
 
-### Derived Feature
+### 派生特征
 
-In this section, you were introduced to the `Derived` feature. This feature is extremely powerful and can be used to import parts from one part studio into another to enable references for modeling. However, you must be careful to not overuse this function as it can significantly slow down your part studios.
+在本小节中，你学习了 `Derived`（派生）特征。这个特征非常强大，可以将一个零件工作室中的零件导入到另一个零件工作室中，用作建模参考。不过，要注意不要过度使用这个功能，因为它会显著拖慢零件工作室。
 
-### Feature Tree Organization
+### 特征树整理
 
-At this point, you should be feeling more and more comfortable with Onshape modeling and using Featurescripts. Always make sure to clean up your feature tree while working to keep it organized and easy to use. You can more learn about feature tree organization on the [Feature Tree Best Practices](/best-practices/feature-tree-setup/) page.
+到这里，你应该已经越来越熟悉 Onshape 建模和 FeatureScript 的使用了。工作过程中务必及时整理特征树，让它保持有序、易用。你可以在 [特征树最佳实践](/best-practices/feature-tree-setup/) 页面了解更多特征树整理方法。

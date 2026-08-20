@@ -1,139 +1,139 @@
 ﻿---
-title: "Exercise 4: Telescoping Hook"
-description: Model a telescoping hook
+title: "练习 4：伸缩钩"
+description: 建模一个伸缩钩
 ---
 
 import ContentRow from '@components/content/ContentRow.astro';
 
-In this exercise, you will be modeling a telescoping climber. This mechanism features [WCP GreyT telescoping bearing blocks](https://wcproducts.com/products/greyt-telescope) and [REV MAXPlanetary](https://www.revrobotics.com/frc/maxplanetary-system/) mounting gearbox plates. Be sure to pay close attention to hook and gearbox sketches when modeling.
+在本练习中，你将建模一个伸缩爬升机构。这个机构使用 [WCP GreyT 伸缩轴承块](https://wcproducts.com/products/greyt-telescope) 和 [REV MAXPlanetary](https://www.revrobotics.com/frc/maxplanetary-system/) 安装齿轮箱板。建模时一定要特别注意钩子和齿轮箱相关草图。
 
-<Aside type="caution">
-From this point on the specific lengths of shafts and offsets of belts may not be provided, you should consider what components are going on the shafts when setting distances. It is always ok to go back and change these lengths later if needed. When you get to making your own mechanisms there wont be a step by step guide for it! These exercises try and gradually pull back the guard rails as your progress to get you ready for build season. If you get stuck feel free to refer to the [solution doc](https://cad.onshape.com/documents/99b4fd36c41bdb5b3e6d5ceb/w/f8e04439667e38aedb8f8196/e/8843ec3a6b3828f461343955), or ask a mentor for help!
+<Aside type="caution" title="Warning（警告）">
+从这里开始，轴的具体长度和同步带偏移量可能不会再全部给出。设置距离时，你需要考虑哪些零部件会安装到轴上。必要时，之后回头修改这些长度也是可以的。当你开始设计自己的机构时，不会有一步一步的详细指南！这些练习会随着你的进步逐渐减少保护性引导，帮助你为建造季做好准备。如果遇到困难，可以参考 [答案文档](https://cad.onshape.com/documents/99b4fd36c41bdb5b3e6d5ceb/w/f8e04439667e38aedb8f8196/e/8843ec3a6b3828f461343955)，或向导师寻求帮助！
 </Aside>
 
-## Leveraging COTS Components
-Using COTS components is crucial in a time-constrained build season.
-Even if you have the capability to fabricate every part, relying on COTS parts allows you to spend your time on more important tasks - like refining designs or testing.
-This helps ensure your time is spent where it makes the most impact, rather than on re-inventing parts that are already readily available.
+## 利用 COTS 零部件
+在时间紧张的建造季中，使用 COTS（现成商业零件）零部件非常关键。
+即使你有能力加工每一个零件，依靠 COTS 零件也能让你把时间投入到更重要的任务上，例如优化设计或测试。
+这样可以确保你的时间用在影响最大的地方，而不是重新发明已经很容易买到的零件。
 
-<Aside type="example" title="Exercise 4 COTS Components">
+<Aside type="example" title="Example（示例）：练习 4 COTS 零部件">
 <ContentRow>
   <ContentFigure src="../img/1c/telescope/greyt.webp" alt="GreyT Telescope" />
   <ContentFigure src="../img/1c/telescope/maxplanetary.webp" alt="MAXPlanetary" />
 </ContentRow>
 
-The telescoping bearing blocks have complex geometry that would be difficult and time consuming to manufacture for most teams. The REV MAXPlanetary is an easy way to get a large gearbox reduction without the need for a custom gearbox. (Photo Credits: WCP, REV)
+伸缩轴承块具有复杂几何形状，对大多数队伍来说制造难度高且耗时。REV MAXPlanetary 可以在不自制齿轮箱的情况下轻松获得较大的减速比。（图片来源：WCP、REV）
 </Aside>
 
-## Crush Blocks
+## 防压块
 
-3D-printed crush blocks can be used to reinforce thin-walled tubing in assemblies where bolts pass through without a plate.
-Since the strength of bolts comes from their clamping force, without anything to support the thin walls, the tube can collapse before achieving proper clamping force.
-Crush blocks distribute the load, allowing for full clamping force while maintaining the tube's structural integrity.
+在螺栓穿过薄壁管材、但没有板件支撑的装配中，可以使用 3D 打印防压块来加强管材。
+螺栓的连接强度来自夹紧力；如果没有任何东西支撑薄壁管材，管材可能在达到合适夹紧力之前就被压塌。
+防压块可以分散载荷，在保持管材结构完整性的同时，让螺栓提供完整夹紧力。
 
-Alternatively, a "crush plate" can also be utilized to distribute the fastener force to achieve a similar effect as a crush block.
+另外，也可以使用“防压板”来分散紧固件受力，实现类似防压块的效果。
 
-<ContentFigure src="../img/1c/telescope/crush-block-plate.webp" alt="Crush block and crush plate" width="30%">Example of a crush block (left) and crush plate (right)</ContentFigure>
+<ContentFigure src="../img/1c/telescope/crush-block-plate.webp" alt="防压块和防压板" width="30%">防压块（左）和防压板（右）示例</ContentFigure>
 
-## Part Studio Instructions
+## Part Studio（零件工作室）说明
 
-**Navigate to the "Exercise #4 Part Studio" tab** in your copied document and **follow the instructions in the slides** to complete the part studio for this exercise.
+在你复制的文档中，**进入 “Exercise #4 Part Studio” 标签页**，并**按照幻灯片中的说明**完成本练习的零件工作室。
 
 <Slides>
   ![](../img/1c/telescope/parts-0.webp)
-  Final Part Studio.
+  最终零件工作室。
 
   ![](../img/1c/telescope/parts-1.webp)
-  Begin by creating a side profile sketch of the telescope tubes on the right plane.
+  先在右平面上创建伸缩管材的侧面轮廓草图。
 
   ![](../img/1c/telescope/parts-2.webp)
-  Use two extrudes to create the solid bodies for the tubes. Then, use the Tube Converter Featurescript (or shell feature) to convert the solid bodies into two thin-wall tubes with no hole pattern.
+  使用两次拉伸创建管材的实体。然后使用 Tube Converter FeatureScript（或抽壳特征），将实体转换为两根没有孔阵列的薄壁管。
 
   ![](../img/1c/telescope/parts-3.webp)
-  Add the holes for the WCP bearing blocks to the inner and outer tubes. The dimensions are from [WCP's documentation](https://docs.wcproducts.com/greyt-telescope/overview-and-features/tubing-hole-pattern).
+  在内管和外管上添加 WCP 轴承块安装孔。尺寸来自 [WCP 文档](https://docs.wcproducts.com/greyt-telescope/overview-and-features/tubing-hole-pattern)。
 
   ![](../img/1c/telescope/parts-4.webp)
-  Model the crush block at the top of the inner tube. Make sure to account for 3D-printing tolerances by giving a little bit of clearance for the crush block inside of the tube. You will add the holes that go through the crush block after you model the hook.
+  建模内管顶部的防压块。注意为 3D 打印公差留出空间，让防压块在管材内部有少量间隙。建模钩子之后，你会再添加穿过防压块的孔。
 
   ![](../img/1c/telescope/parts-5.webp)
-  Sketch the hook. Pay attention to the sketch relations in the solution document.
+  绘制钩子草图。注意答案文档中的草图关系。
 
   ![](../img/1c/telescope/parts-6.webp)
-  Extrude the hook, then extrude the mounting holes to cut through the tube and the crush block. Also add the hook spacer.
+  拉伸钩子，然后拉伸安装孔，切穿管材和防压块。同时添加钩子隔套。
 
   ![](https://www.youtube.com/embed/Kt2l8vujAUE)
-  Model the hook 3d printed spacer. With sketch imprinting enabled, we only need to draw the line for where the 3d printed block starts. There is no need to use the `Use` feature to copy the hook profile into the sketch.
+  建模钩子的 3D 打印隔套。开启草图 imprinting 后，只需要画出 3D 打印块起始位置的线。不需要使用 `Use`（使用投影）特征把钩子轮廓复制到草图中。
 
   ![](../img/1c/telescope/parts-8.webp)
-  Sketch the gearbox mounting plate on the outside of the tube. There should be a small 0.01" gap between the 3/8" clamping spacers and the tube to make sure that the gearbox can be assembled properly. The 13.75 mm construction circle represents the rounded hex spool. A hole will be placed on the point on the left side of the plate.
+  在管材外侧绘制齿轮箱安装板草图。3/8" 夹紧隔套与管材之间应留有 0.01" 小间隙，确保齿轮箱可以正确装配。13.75 mm 构造圆表示圆角六角卷线轮。板件左侧的点上会放置一个孔。
 
   ![](../img/1c/telescope/parts-9.webp)
-  Sketch the pull down string by creating a line tangent to the rounded hex spool. Note that we will use this line to create a sweep of the rope, therefore this line cannot be construction geometry.
+  通过绘制一条与圆角六角卷线轮相切的线，画出下拉绳路径。注意，我们会用这条线创建绳子的扫掠，因此这条线不能是构造几何。
 
   ![](../img/1c/telescope/parts-10.webp)
-  Extrude the plate. This plate will not be pocketed so that the surface clamped to the tube is spreads out the force. Optionally, you could partially pocket it and leave 1/16" of material on the side of the plate clamped against the tube.
+  拉伸板件。这块板不会做减重开槽，以便让夹紧到管材上的表面分散受力。也可以选择局部减重，并在板件贴合管材的一侧保留 1/16" 材料。
 
   ![](../img/1c/telescope/parts-11.webp)
-  Add a 10-32 hole for the bolt that is threaded into the gearbox plate, then mirror the plate to the other side.
+  添加一个 10-32 孔，用于拧入齿轮箱板的螺栓，然后将板件镜像到另一侧。
 
   ![](../img/1c/telescope/parts-12.webp)
-  Model the gearbox spacer and the shaft.
+  建模齿轮箱隔套和轴。
 
   ![](../img/1c/telescope/parts-13.webp)
-  Use the mate connector at the end of the sketched rope line to create a sketch of a 3mm circle lined up with the center of the shaft.
+  使用所绘绳索线末端的配合连接器，创建一个与轴中心对齐的 3mm 圆草图。
 
   ![](../img/1c/telescope/parts-14.webp)
-  Sweep the circle along the vertical line from the gearbox to create a model of the rope.
+  沿齿轮箱引出的竖直线扫掠该圆，创建绳子模型。
 
   ![](../img/1c/telescope/parts-0.webp)
-  Finish the part studio by naming your features and putting them into folders. Also assign materials according to the reference design.
+  给特征命名并放入文件夹中，完成零件工作室。同时根据参考设计指定材料。
 </Slides>
 
-## Assembly Instructions
+## Assembly（装配体）说明
 
-**Next, navigate to the "Exercise #4 Assembly" tab** in your copied document and **follow the instructions in the slides** to complete this exercise.
+接下来，在你复制的文档中**进入 “Exercise #4 Assembly” 标签页**，并**按照幻灯片中的说明**完成本练习。
 
 <Slides>
   ![](../img/1c/telescope/assy-0.webp)
-  Final assembly.
+  最终装配体。
 
   ![](https://www.youtube.com/embed/ch1kZ_IOCjs)
-  Insert the climber components and group only the base stage components together to the Origin Cube. This is because the inner stage moves relative to the base stage, so we cannot group them together.
+  插入爬升机构零部件，并只将基础级零部件与 Origin Cube 组配合在一起。这是因为内级会相对基础级运动，所以不能把它们组配合在一起。
 
   ![](../img/1c/telescope/assy-2.webp)
-  Fasten the inner stage components together.
+  将内级零部件紧固在一起。
 
   ![](https://www.youtube.com/embed/Vt1ld7z8ovI)
-  Insert and fasten the WCP GreyT telescope bearing blocks from the [WCP GreyT telescope document](https://cad.onshape.com/documents/3f21b4b70302525a1e1f2c29/w/8a0cc0fbacf79d2c4a8d3c83/e/4646e6fc60ff8c4fe2a9d4dd), or from FRCDesignLib.
+  从 [WCP GreyT 伸缩机构文档](https://cad.onshape.com/documents/3f21b4b70302525a1e1f2c29/w/8a0cc0fbacf79d2c4a8d3c83/e/4646e6fc60ff8c4fe2a9d4dd) 或 FRCDesignLib 中插入并紧固 WCP GreyT 伸缩轴承块。
 
   ![](https://www.youtube.com/embed/i4Kcsdnsk8A)
-  Use two `Slider` mates to constrain the inner stage. By using two slider mates, one for the bottom and one for the top, the inner stage motion constraint is parametric to length changes in the base stage. We do not need to explicitly specify a travel length.
+  使用两个 `Slider`（滑动）配合约束内级。通过使用两个滑动配合，一个在底部、一个在顶部，内级运动约束会随基础级长度变化保持参数化。我们不需要显式指定行程长度。
 
   ![](../img/1c/telescope/assy-5.webp)
-  Fasten the spacer and replicate it. Insert and fasten the shaft bearing to the plate and shaft. Note that we only require one bearing on the plate since the MAXPlanetary gearbox has another bearing at its output as we do not want to overconstrain the shaft.
+  紧固隔套并进行仿制。将轴承插入并紧固到板件和轴上。注意，板件上只需要一个轴承，因为 MAXPlanetary 齿轮箱输出端已经有另一个轴承；我们不希望过度约束这根轴。
 
   ![](../img/1c/telescope/assy-6.webp)
-  Insert and fasten the MAXPlanetary gearbox and NEO Vortex from FRCDesignLib. We will use the 90 degree output with a 25:1 gear ratio.
+  从 FRCDesignLib 插入并紧固 MAXPlanetary 齿轮箱和 NEO Vortex。这里使用 90 度输出，传动比为 25:1。
 
   ![](../img/1c/telescope/assy-7.webp)
-  Insert, fasten, and replicate all of the required fasteners.
+  插入、紧固并仿制所有所需紧固件。
 
   ![](../img/1c/telescope/assy-8.webp)
-  Close up of the bolt used to pin the gearbox in place. This bolt keeps the gearbox from sliding up and down.
+  用于将齿轮箱固定到位的螺栓特写。这个螺栓可以防止齿轮箱上下滑动。
 
   ![](../img/1c/telescope/assy-0.webp)
-  Finish your assembly by organizing the parts into folders and naming your replicates.
+  将零件整理到文件夹中，并为仿制特征命名，完成装配体。
 </Slides>
 
-<Aside type="tip" title="Verification">
-Make sure to have you and/or a more experienced member/mentor of your team [**review your CAD!**](/learning-course/stage1/1a/focusing-on-improvement) Your assembly should have 27 instances.
+<Aside type="tip" title="Tip（提示）：检查">
+请确保由你自己，或队内更有经验的队员/导师来 [**检查你的 CAD（计算机辅助设计）！**](/zh/learning-course/stage1/1a/focusing-on-improvement) 你的装配体应包含 27 个实例。
 </Aside>
 
-## Section Views
+## 剖视图
 
-Section views are a helpful tool that allow you to reveal the internal features of a part or assembly by slicing through it along a specified plane. You can select a plane, planar face, cylinder, cone, or mate connector to use as the sectioning plane. You can also choose to include or exclude specific parts from the section view.
+剖视图是一个很有用的工具，可以沿指定平面切开零件或装配体，从而显示内部特征。你可以选择平面、平面面、圆柱、圆锥或配合连接器作为剖切平面。也可以选择在剖视图中包含或排除特定零件。
 
-<Aside type="tip" title="Creating a Section View">
-<ContentFigure src="6oiVBMGkCOs">Creating a section view to get a better view of the pinning bolt.</ContentFigure>
+<Aside type="tip" title="Tip（提示）：创建剖视图">
+<ContentFigure src="6oiVBMGkCOs">创建剖视图，以便更清楚地查看定位螺栓。</ContentFigure>
 </Aside>
 

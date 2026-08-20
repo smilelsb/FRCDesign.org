@@ -1,41 +1,41 @@
 ﻿---
-title: Layout Sketch
-description: Creating a layout sketch
+title: 布局草图
+description: 创建布局草图
 sidebar:
   order: 3
 ---
 
 
-## Drivetrain Layout Sketches
+## 底盘布局草图
 
-To begin, you will be creating a layout sketch of the drivetrain. This will dictate the size and position of the drive tubes. The layout will be drawn from the side and top view of the drivetrain. For your swerve drivebase, you will make it 26" x 26".
+首先，你将创建底盘的布局草图。它会决定驱动管材的尺寸和位置。这个布局会从底盘的侧视图和俯视图绘制。你的舵轮底盘尺寸将设为 26" x 26"。
 
-### Instructions
+### 说明
 
-Start by **creating a new Onshape Document called `Stage 1D Robot`** and within it, **a new part studio called `Main Layout Sketch`**. Then, use the `Origin Cube` Featurescript to create an origin cube. **Follow the instructions in the slides** to complete the layout sketch.
+首先，**创建一个名为 `Stage 1D Robot` 的新 Onshape 文档**，并在其中**创建一个名为 `Main Layout Sketch` 的新 Part Studio（零件工作室）**。然后，使用 `Origin Cube` FeatureScript（自定义特征脚本）创建原点立方体。**按照幻灯片中的说明**完成布局草图。
 
 <Slides>
   ![](../img/1d/layout-sketches/layout-0.webp)
-  The final layout sketch.
+  最终布局草图。
 
   ![](../img/1d/layout-sketches/layout-1.webp)
-  Draw the side profile of the drivetrain on the Right Plane. We place the tube 1.75" from the ground, which is the offset from the ground to the bottom of the tube for the MK4i modules. Then, draw the wheel clearance box, which represents the area that the wheel takes up. For the MK4i modules, the box is 4.625" wide.
+  在右平面上绘制底盘侧面轮廓。我们将管材放在距离地面 1.75" 的位置，这是 MK4i 模块从地面到管材底部的偏移量。然后绘制车轮间隙框，表示车轮占用的区域。对于 MK4i 模块，这个框的宽度为 4.625"。
 
   ![](https://www.youtube.com/embed/fE7Zhv1DYt0?controls=1&rel=0&showinfo=0&vq=hd1080)
-  Create the top layout sketch by using the bottom mate connector on the vertical line of the side layout. Utilizing auto-generated mate connectors for sketch planes is a very useful tool to have. Press the "Top" button on the view cube to get a top view.
+  使用侧面布局竖直线底部的配合连接器创建顶部布局草图。利用自动生成的配合连接器作为草图平面，是一个非常有用的技巧。按下视图立方体上的 “Top” 按钮切换到俯视图。
 
   ![](https://www.youtube.com/embed/HfoS699wNPc?controls=1&rel=0&showinfo=0&vq=hd1080)
-  Sketch the top outline of the drive base. Make the rectangle a square and set the side length equal to the length of the side layout tube. This ensures that the size of the top layout always matches the side layout, which makes the design parametric. Notice that the sketch is fully defined despite having no sketch dimensions.
+  绘制底盘的俯视外轮廓。将矩形设为正方形，并让边长等于侧面布局中管材的长度。这样可以确保俯视布局尺寸始终与侧面布局匹配，从而让设计保持参数化。注意，尽管这个草图没有尺寸标注，它仍然是完全定义的。
 
   ![](../img/1d/layout-sketches/layout-4.webp)
-  To sketch the tubes, draw a square 1" smaller than the previous square. This will represent the four 2"x1" tubes that make up the outer frame. Then, draw the top profile of the 2"x2" tube. At the bottom right corner, draw two lines, each offset by 4.25" from the edge. This is the required offset for MK4i modules. Other modules will differ.
+  要绘制管材，先画一个比上一个正方形小 1" 的正方形。它表示组成外框架的四根 2"x1" 管材。然后绘制 2"x2" 管材的顶部轮廓。在右下角绘制两条线，每条线都相对边缘偏移 4.25"。这是 MK4i 模块所需的偏移量，其他模块会有所不同。
 
   ![](https://www.youtube.com/embed/5st3BiDfGdY?controls=1&rel=0&showinfo=0&vq=hd1080)
-  To apply the cutout for all four tubes, we use the Circular Pattern sketch tool to copy the lines to all four corners. For a Circular Pattern we first define the number of instances and then the axis of rotation.
+  为了给四根管材都应用切口，我们使用 Circular Pattern（圆形阵列）草图工具，将这些线复制到四个角。使用圆形阵列时，我们先定义实例数量，再定义旋转轴。
 
   ![](../img/1d/layout-sketches/layout-0.webp)
-  Finally, name your sketches and organize them into folders in the feature tree. Your sketches should all be fully defined.
+  最后，为草图命名，并在特征树中将它们整理到文件夹中。你的所有草图都应完全定义。
 
 </Slides>
 
-As previously explained, this method of top-down modeling is extremely powerful as it enables you to capture the most important dimensions all in one place. However, you should be careful to not over-detail layout sketches. You will be practicing layout sketches all throughout Stage 2, and use them in Stage 3 alongside multi-document practices to design a whole robot.
+如前所述，这种自顶向下建模方法非常强大，因为它能让你把最重要的尺寸集中捕捉在一个地方。不过，也要注意不要在布局草图中加入过多细节。你会在整个阶段 2 中继续练习布局草图，并在阶段 3 中结合多文档实践，用它们设计整台机器人。
