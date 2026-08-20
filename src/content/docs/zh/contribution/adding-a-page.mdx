@@ -1,0 +1,299 @@
+---
+title: 添加页面
+description: 在 FRCDesign.org 上创建并发布新页面所需了解的全部内容。
+---
+
+本页介绍添加新页面的完整技术流程，包括文件结构、frontmatter、图片、组件，以及如何让页面显示在侧栏中。
+
+## 文件结构
+
+所有内容都位于 `src/content/docs/` 中。网站的每个版块分别对应一个子文件夹：
+
+```
+src/content/docs/
+  learning-course/
+  design-handbook/
+  mechanism-examples/
+  best-practices/
+  resources/
+  contribution/
+```
+
+使用小写字母和连字符命名文件，例如 `my-new-page.mdx`。版块落地页使用 `index.mdx`。
+
+页面图片应放在 `.mdx` 文件旁的 `img/` 文件夹中：
+
+```
+src/content/docs/best-practices/
+  assembly-setup.mdx
+  img/
+    assembly.webp
+    originCubeFeature.webp
+```
+
+## Frontmatter
+
+每个页面都以 frontmatter 块开头，其中必须包含 `title` 和 `description`：
+
+```yaml
+---
+title: Page Title
+description: One or two sentence summary for search engines and meta tags.
+---
+```
+
+可选字段：
+
+- **`tableOfContents: false`**：隐藏目录（适用于概览页或索引页）
+- **`prev: false`** / **`next: false`**：移除上一页/下一页导航按钮
+- **`template: splash`**：不带侧栏的全宽布局（用于机构示例页面）
+
+## 更新侧栏
+
+仅创建文件还不够，还必须在 `src/config/sidebarConfig.ts` 中注册该页面，否则它不会显示在导航中。
+
+找到与页面位置对应的版块，然后添加一个条目：
+
+```ts
+{ label: 'Your Page Title', slug: 'section/your-filename' }
+```
+
+例如，要添加位于 `src/content/docs/best-practices/wiring.mdx` 的页面：
+
+```ts
+// In the '/best-practices' section:
+{ label: 'Wiring Best Practices', slug: 'best-practices/wiring' }
+```
+
+要添加可折叠的页面组，请使用 `collapsed` 属性：
+
+```ts
+{
+  label: 'Group Name',
+  collapsed: true,
+  items: [
+    { label: 'First Page', slug: 'section/first-page' },
+    { label: 'Second Page', slug: 'section/second-page' },
+  ],
+},
+```
+
+提交前请运行 `npm run dev`，确认页面已显示在侧栏中。
+
+### 重命名或移动页面
+
+1. 重命名或移动文件
+2. 更新 `src/config/sidebarConfig.ts` 中的 slug
+3. 搜索指向旧路径的内部链接并进行更新
+
+不要无故重命名页面！这会导致外部链接、书签和搜索引擎结果失效。
+
+## 图片
+
+添加图片前，请使用 [squoosh](https://squoosh.app/) 将所有图片压缩为 `.webp` 格式。
+
+将图片放在 `.mdx` 文件旁的 `img/` 文件夹中，并使用相对路径引用：
+
+```mdx
+<ContentFigure src="./img/my-image.webp" alt="Description of the image" />
+```
+
+在标签之间添加文字即可设置说明文字：
+
+```mdx
+<ContentFigure src="./img/my-image.webp" alt="Description" width="80%">
+  Caption text here. Supports **markdown** and [links](url).
+</ContentFigure>
+```
+
+## 视频
+
+将所有视频上传到 YouTube，然后使用视频 ID 或完整 URL 嵌入：
+
+```mdx
+<ContentFigure src="VIDEO_ID" />
+
+<ContentFigure src="https://youtu.be/VIDEO_ID">
+  Optional caption
+</ContentFigure>
+```
+
+## 组件
+
+所有 `.mdx` 文件均可直接使用 `ContentFigure`、`Aside`、`Slides`、`LinkButton` 和 `ImageTable`，无需导入。其他所有组件都必须在文件顶部显式导入：
+
+```mdx
+import ContributorList from '@components/content/ContributorList.astro';
+```
+
+### ContentFigure
+
+用于显示图片、YouTube 视频和 WebP 动画文件。
+
+```mdx
+<ContentFigure src="./img/example.webp" alt="Alt text" />
+<ContentFigure src="./img/example.webp" alt="Alt text" width="60%" border />
+<ContentFigure src="VIDEO_ID" width="80%">Caption</ContentFigure>
+<ContentFigure src="./img/animation.webp" gif />
+```
+
+使用 `align` 更改水平位置（默认为 `center`）：
+
+```mdx
+<ContentFigure src="./img/example.webp" alt="Alt text" align="left" width="50%" />
+```
+
+使用 `captionPosition` 将说明文字放在图片旁边，而不是下方：
+
+```mdx
+<ContentFigure src="./img/example.webp" alt="Alt text" width="60%" captionPosition="right">
+  Caption appears to the right of the image.
+</ContentFigure>
+```
+
+### Aside
+
+用于显示提示、备注、警告和示例的提示框。
+
+```mdx
+<Aside type="tip">A helpful tip.</Aside>
+<Aside type="note">Extra context.</Aside>
+<Aside type="caution">Pay attention to this.</Aside>
+<Aside type="danger">Important warning.</Aside>
+<Aside type="example">An example.</Aside>
+```
+
+使用 `title` 属性添加自定义标题。添加 `collapse` 可使提示框折叠：
+
+```mdx
+<Aside type="note" title="Custom Title" collapse>
+  Hidden by default.
+</Aside>
+```
+
+### Slides
+
+带灯箱效果的分步幻灯片。每个项目都是一张幻灯片，其下一行是说明文字。Slides 支持图片、YouTube 视频和本地视频文件。
+
+```mdx
+<Slides>
+  ![Alt text](./img/step1.webp)
+  Caption for step 1.
+
+  ![Alt text](./img/step2.webp)
+  Caption for step 2.
+
+  ![](https://www.youtube.com/watch?v=VIDEO_ID)
+  Caption for the video slide.
+</Slides>
+```
+
+YouTube URL、`youtu.be/` 短链接和单独的视频 ID（11 个字符）均可使用，也支持本地 `.webm` 和 `.mp4` 文件。
+
+使用 `scale` 属性（0–1，默认为 `0.8`）控制幻灯片占用的栏宽比例：
+
+```mdx
+<Slides scale={0.6}>
+  ![Alt text](./img/step1.webp)
+  Caption for step 1.
+</Slides>
+```
+
+### ContentRow
+
+将多个 `ContentFigure` 元素并排放置在同一行。
+
+```mdx
+<ContentRow>
+  <ContentFigure src="./img/a.webp" alt="A">Caption A</ContentFigure>
+  <ContentFigure src="./img/b.webp" alt="B">Caption B</ContentFigure>
+</ContentRow>
+```
+
+使用 `mediaHeight` 将行内所有图片统一为相同高度，使说明文字对齐；使用 `gap` 控制图片间距：
+
+```mdx
+<ContentRow mediaHeight="18rem" gap="1rem">
+  <ContentFigure src="./img/a.webp" alt="A" />
+  <ContentFigure src="./img/b.webp" alt="B" />
+  <ContentRowCaption>Shared caption for both images. Supports **markdown**.</ContentRowCaption>
+</ContentRow>
+```
+
+`ContentRow` 需要手动导入：
+
+```mdx
+import ContentRow from '@components/content/ContentRow.astro';
+import ContentRowCaption from '@components/content/ContentRowCaption.astro';
+```
+
+### LinkButton
+
+醒目的链接，通常用于 CAD 文档。
+
+```mdx
+<LinkButton href="https://cad.onshape.com/...">CAD Document</LinkButton>
+<LinkButton href="https://cad.onshape.com/..." center>Centered Button</LinkButton>
+```
+
+### ImageTable
+
+用于包装最后一列含有图片的 Markdown 表格，可在窄屏幕上处理水平滚动，并统一图片尺寸。
+
+```mdx
+<ImageTable>
+| Type | Description | Image |
+|---|---|---|
+| **SHCS** | Standard bolt | <ContentFigure src="./img/shcs.webp" alt="SHCS" /> |
+| **BHCS** | Low-profile rounded head | <ContentFigure src="./img/bhcs.webp" alt="BHCS" /> |
+</ImageTable>
+```
+
+对于包含较大或较小图片的表格，可以使用可选属性调整尺寸：
+
+```mdx
+<ImageTable minWidth="760px" imageMaxWidth="8rem" imageMaxHeight="6.5rem" imageMinHeight="5rem">
+```
+
+属性：
+- `minWidth`：启用水平滚动前的最小表格宽度，默认为 `560px`
+- `imageMaxWidth`：最后一列图片的最大宽度，默认为 `7rem`
+- `imageMaxHeight`：最后一列图片的最大高度，默认为 `6rem`
+- `imageMinHeight`：图片列单元格的最小高度，用于保持各行一致，默认为 `4rem`
+
+## 居中内容
+
+使用 `:::center` 指令将文字或其他行内内容居中：
+
+```md
+:::center
+**Centered text or formula**
+:::
+```
+
+## 链接
+
+- **内部链接**：使用根目录相对路径：`[Link Text](/section/page/)`
+- **外部链接**：使用 `LinkButton` 时默认在新标签页打开；Markdown 链接默认在当前标签页打开，除非手动添加 target：`[Link Text](https://example.com){target="_blank" rel="noopener"}`
+- **CAD 文档**：始终使用 `LinkButton`，使其更加醒目
+
+## 目录
+
+目录（TOC）默认关闭，通常无需重新启用。可以在三个层级启用，并按以下优先级应用：
+
+1. **逐页 frontmatter**（优先级最高）：
+   ```yaml
+   tableOfContents: false  # force hide
+   tableOfContents: true   # force show
+   ```
+
+2. **逐目录配置**（`src/config/tocConfig.ts`）：为某一路径下的所有页面启用目录。目前已为 `/design-handbook` 启用。要为其他版块启用，请添加一个条目：
+   ```ts
+   '/your-section': true,
+   // or with custom heading levels:
+   '/your-section': { minHeadingLevel: 2, maxHeadingLevel: 4 },
+   ```
+
+3. **全局默认值**（优先级最低）：全站禁用目录。
+
+目录默认显示 `##`（h2）和 `###`（h3）标题。

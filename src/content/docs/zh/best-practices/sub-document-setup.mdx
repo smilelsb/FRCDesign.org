@@ -1,0 +1,41 @@
+﻿---
+title: 子文档设置
+description: 在 Onshape 中组织机构文档时应遵循的最佳实践。
+---
+
+
+每个子系统文档都应至少包含一个与之对应的 Part Studio（零件工作室）和一个 Assembly（装配体）。
+
+阶段 2A 的基础发射机构是一个没有运动零件的简单子系统，因此只包含一个零件工作室和一个刚性装配体。
+
+<LinkButton href="https://cad.onshape.com/documents/8f093edaad44b5702e92ddd9/w/fefbb7a7af099fc237c1513a/e/84d7075719d34c35b3be9410" center>
+  阶段 2A - 基础发射机构
+</LinkButton>
+
+<ContentFigure src="./img/shooterAssembly.webp" />
+
+### 具有多个自由度的子系统
+
+对于具有多个自由度的子系统，可以将其拆分为多个刚性装配体。子系统中每个独立运动的部分都应有一个“刚性”装配体（其中任何零件都不允许有自由度），而子系统的顶层装配体只负责定义这些部分之间的运动关系。
+
+<Aside type="note">
+插入刚性装配体后，Onshape 会将其视为一个实体，不需要计算其中的配合。这可以大幅缩短顶层装配体的加载时间。你将在[装配体最佳实践](../assembly-setup/)中学习如何将原点立方体应用到这一体系中，从而轻松建立参数化配合。
+</Aside>
+
+例如，可以在升降机构文档中为每一级分别建立一个零件工作室及对应的刚性装配体。这样，升降机构的顶层装配体就会包含各级子装配体以及它们之间的 Slider Mate（滑动配合）。
+
+阶段 2C 的下摆式拾取机构是一个包含静止部分和旋转部分的子系统。按功能划分，它包含一个零件工作室、一个由齿轮箱和枢轴组成的静止装配体、一个由摆臂和滚轮组成的刚性装配体，以及一个将这两个子装配体组合起来的顶层装配体。
+
+<LinkButton href="https://cad.onshape.com/documents/17302d787e092ce11015f7ee/w/f7cf5c02c7655f0328a3a74a/e/f1456325e0175c4c081008c2" center>
+  阶段 2C - 下摆式拾取机构
+</LinkButton>
+
+<ContentFigure src="./img/subassembly.webp" />
+
+阶段 2D 的级联升降机构是一个包含静止部分和两个直线滑动子装配体的子系统。它包含一个零件工作室、一个静止的框架/齿轮箱装配体、分别用于第一级和滑台的装配体，以及一个通过滑动配合将这三个子装配体组合起来的顶层装配体。
+
+<LinkButton href="https://cad.onshape.com/documents/da5aef9e6bf6e869f4a51a45/w/5a0f4a3426876db0ba214277/e/f8fd8133abcb12800eacb5d1" center>
+  阶段 2D 级联升降机构
+</LinkButton>
+
+<ContentFigure src="./img/elevatorAssembly.webp" />

@@ -1,0 +1,149 @@
+---
+title: 贡献机构示例
+description: 向网站贡献机构示例的指南。
+---
+
+[机构示例](/mechanism-examples/)页面最需要外部贡献。你当然可以添加其他队伍的示例，但最理想的方式是添加自己队伍的机构，并深入介绍其设计与表现。如果要添加其他队伍的示例，请尽量采访该队伍，以获取他们的观点和更准确的信息。
+
+**机构示例标准：**
+
+- 必须已被实际制造，并在比赛中使用
+- 必须同时展示优点与缺点。它的设计目标是什么？为什么做出某些决策？制造和装配的难度如何？实际表现怎样？哪些方面效果良好？如果重新设计，又会改变什么？
+- 详细介绍设计的具体部分，例如所用材料和零件及其选择原因、特定机构或工艺等
+- 提供 CAD 和/或实际机器人的详细图片，最好提供在 Onshape 中创建或上传且公开可见的 CAD
+- 如果有适用的其他媒体和链接，也请一并提供
+
+## 添加机构示例
+
+如[贡献方式](/contribution/methods-of-contributing/)中所述，有两种方法：
+
+1. 在其他平台（例如 Google Docs）上编写贡献内容，再由内部贡献者将其添加到网站
+2. 复刻仓库并在 GitHub 上创建拉取请求
+
+第一种方法基本不言自明。如果选择复刻仓库并在 GitHub 上创建拉取请求，请参考[添加页面](/contribution/adding-a-page/)指南完成技术配置，然后按照下面的结构操作。
+
+## 添加机构示例
+
+如果只有一张图片和一个 CAD 链接，就不需要创建独立页面！可以直接将示例添加到相应类别的 `index.mdx` 中。当内容足以编写“设计幕后”小节时，才值得创建完整页面。
+
+### 添加到类别索引（进阶）
+
+要在不创建完整页面的情况下添加 CAD 参考，请在相应类别的 `index.mdx` 中向 `exampleCards` 数组添加条目。首先在文件顶部（其他 import 之后）导入缩略图，然后添加卡片对象：
+
+```mdx
+import myMechImage from './img/your-image.webp';
+```
+
+```ts
+export const exampleCards = [
+  // ...existing entries...
+  {
+    title: "Team XXXX Mechanism Name",
+    href: 'https://cad.onshape.com/...',
+    image: myMechImage,
+    imageAlt: 'Brief description of the image',
+    description: 'One or two sentences about the design.',
+  },
+];
+```
+
+如果索引中尚不存在 `exampleCards`，请添加相应的 export，并在现有介绍网格下方添加一个含有 `<MechanismCardGrid cards={exampleCards} />` 的 `## CAD References` 小节。
+
+### 创建完整页面
+
+在合适的类别文件夹中创建新的 `.mdx` 文件。以下模板可作为起点：
+
+```mdx
+---
+title: Team XXXX Mechanism Name
+description: Brief description of the mechanism.
+template: splash
+---
+
+<ContentFigure src="./img/thumb/main-image.webp" alt="Mechanism name CAD render" width="80%" />
+
+<LinkButton href="https://cad.onshape.com/...">
+  CAD Document
+</LinkButton>
+
+## Behind the Design
+
+Content about the design decisions, tradeoffs, performance, and lessons learned.
+```
+
+### 图片
+
+机构示例页面的图片应放在 `.mdx` 文件旁的 `img/` 文件夹中。机构示例落地页使用的缩略图应放在 `img/thumb/` 中。
+
+请使用 `.webp` 格式，并在添加前通过 [squoosh](https://squoosh.app/) 压缩。
+
+缩略图应使用 **1:1.545 或 1.545:1 的宽高比**。这与 Onshape 使用 tabloid 纸张尺寸时“print”输出的宽高比一致（宽图用横向，长图用纵向）。
+
+<Aside type="tip">
+要将现有图片裁剪为正确的宽高比，可以使用 GIMP（或任意图片编辑器），根据图片短边的像素尺寸计算，并增加像素以达到目标比例。
+</Aside>
+
+## 添加机构类别（可选）
+
+如果要添加的机构类型尚无对应类别，则需要先创建类别。添加类别包含两部分：创建 MDX 内容文件，以及更新用于生成落地页的 Astro 组件。内容文件较为简单；编辑组件则需要具备一定的 TypeScript 基础。
+
+<Aside type="note">
+如果不熟悉 Astro 组件编辑，可以跳过落地页步骤，并在拉取请求或 Google Doc 中注明需要由内部贡献者处理。
+</Aside>
+
+### 内容文件
+
+1. 在 `src/content/docs/mechanism-examples/` 下创建一个以机构类型命名的新文件夹。如果有多个子类型（例如电梯机构分为级联式和连续式），请分别创建子文件夹。
+
+2. 使用以下模板在文件夹中创建一个 `index.mdx` 落地页：
+
+```mdx
+---
+title: Category Name
+description: Description of the mechanism category.
+template: splash
+---
+
+# Category Name
+
+Description of the mechanism category and what examples are included.
+```
+
+3. 在 `src/config/sidebarConfig.ts` 的机构示例版块中添加该类别及其页面。
+
+### 落地页组件（进阶）
+
+[机构示例落地页](/mechanism-examples/)由 `src/components/content/MechanismExamplesLanding.astro` 生成。要让新类别以卡片形式显示在该页面上，请在组件中找到 `categories` 数组并添加新条目：
+
+```ts
+{
+  title: 'Category Name',
+  href: '/mechanism-examples/your-category/',
+  imageAlt: 'Brief image description',
+  description: 'One or two sentences describing the category.',
+  links: [
+    { label: 'Subcategory name', href: '/mechanism-examples/your-category/subtype/' },
+  ],
+},
+```
+
+`links` 数组决定卡片从哪些路径获取 `img/thumb/` 图片。如果该类别没有子类型，请使用类别本身的路径。卡片会自动使用该路径下找到的第一张缩略图，无需额外配置。
+
+## 设置精选深度示例（进阶）
+
+落地页包含一个精选版块，用于突出展示少量内容特别详尽、记录完善的示例。要将示例加入该版块，需要编辑 `src/components/content/MechanismExamplesLanding.astro`，具体是 frontmatter 顶部附近的 `inDepthExamples` 数组：
+
+```ts
+{
+  title: "Team XXXX Mechanism Name",
+  href: '/mechanism-examples/your-category/your-page/',
+  image: imageByLabel('your thumb image filename without extension'),
+  imageAlt: 'Brief image description',
+  category: 'Category label shown on the card',
+  description: 'Two to three sentences summarizing what makes this example worth featuring.',
+},
+```
+
+`imageByLabel` 调用会对缩略图文件名进行宽松匹配。请使用缩略图文件名中具有辨识度的词。由于这属于组件编辑，上述说明同样适用：如果希望由内部贡献者处理，请在拉取请求中注明。
+
+感谢你的贡献！

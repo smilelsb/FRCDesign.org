@@ -1,0 +1,72 @@
+---
+title: 舵轮底盘
+description: FRC 机器人的舵轮底盘示例
+socialCard:
+  image: ./img/2910/2910_2023_dt.webp
+---
+
+import MechanismCardGrid from '@components/content/MechanismCardGrid.astro';
+import dt2910 from './img/2910/2910_2023_dt.webp';
+import dt1678 from './img/1678_2024_dt.webp';
+import dt3005 from './img/3005_2023_dt.webp';
+import dt6328 from './img/6328_2024_dt.webp';
+import dt5460 from './img/5460_2023_dt.webp';
+import dt972 from './img/972_2024_dt.webp';
+
+export const writeupCards = [
+  {
+    title: "2910 的 Charged Up 舵轮底盘",
+    href: './2910_2023_dt/',
+    image: dt2910,
+    imageAlt: '2910 Charged Up 舵轮底盘 CAD 渲染图',
+    description: '一篇舵轮底盘详解，涵盖横向方管、穿线护圈、电子元件布局、底板结构和重量分布。',
+  },
+];
+
+export const exampleCards = [
+  {
+    title: "1678 的 Crescendo 舵轮底盘",
+    href: 'https://cad.onshape.com/documents/9fbc1c0f3ea4398f1ae28aa8/w/522b8dadf85a8dc5d1f8c291/e/24e2d20279c4d96e626dc6be',
+    image: dt1678,
+    imageAlt: '1678 Crescendo 舵轮底盘 CAD 渲染图',
+    description: '采用下沉式框架布局的舵轮底盘，许多 2024 年机器人都使用了这种布局。',
+  },
+  {
+    title: "3005 的 Charged Up 舵轮底盘",
+    href: 'https://cad.onshape.com/documents/f1c0c9ce2309b0be3a22a379/w/c8169ca8774f2b499875ab45/e/b1639093afdfd702347929f0',
+    image: dt3005,
+    imageAlt: '3005 Charged Up 舵轮底盘 CAD 渲染图',
+    description: '围绕 NEO 电机进行空间布局的 REV 舵轮底盘。',
+  },
+  {
+    title: "6328 的 Crescendo 舵轮底盘",
+    href: 'https://cad.onshape.com/documents/3377aeb4f934febff9d3a00f/w/8cbec8d6b9da94869df6d735/e/bc9b31fa0546b4f8b0cf0e0a',
+    image: dt6328,
+    imageAlt: '6328 Crescendo 舵轮底盘 CAD 渲染图',
+    description: '框架采用独特开口设计，为保险杠下方拾取机构留出空间的舵轮底盘。',
+  },
+  {
+    title: "5460 的 Charged Up 舵轮底盘",
+    href: 'https://cad.onshape.com/documents/0b20b359a25b9a8142fe9631/w/263949fda713f005d5add009/e/9ff2797a21aae7b8fea3933c',
+    image: dt5460,
+    imageAlt: '5460 Charged Up 舵轮底盘 CAD 渲染图',
+    description: '采用减重开槽方管的标准 SDS MK4i 舵轮底盘。',
+  },
+  {
+    title: "972 的 Crescendo 舵轮底盘",
+    href: 'https://lgsstudent.onshape.com/documents/0e95e39213c03c7423bfb91b/w/4b99a31cc58cad3a9204fd96/e/6abeeb6af28f118928da9d06',
+    image: dt972,
+    imageAlt: '972 Crescendo 舵轮底盘 CAD 渲染图',
+    description: '采用倒置底板（也称“电子托盘”）安装电子元件的舵轮底盘。',
+  },
+];
+
+底盘是机器人最重要的部分：如果无法移动，就无法得分或防守。所有其他机构也都会搭建在底盘之上。这些示例可以为电子元件布局、底板设计和结构支撑提供实用灵感。
+
+## 深入解析
+
+<MechanismCardGrid cards={writeupCards} />
+
+## CAD 参考
+
+<MechanismCardGrid cards={exampleCards} />

@@ -1,0 +1,130 @@
+﻿---
+title: 贡献方式
+description: 面向公开贡献者的网站贡献指南，包括配置用于编辑的 IDE 和本地预览。
+---
+
+
+## 公开贡献
+
+任何人都可以为网站创作内容，无需了解 Markdown 或 GitHub；不过，我们仍建议你学习使用这两者，以减轻其他贡献者的工作量。
+
+在 [Discord 服务器](https://discord.gg/25pk6Mnh8k)中，前往“website-feedback”论坛频道，填写以下模板并发帖说明你想贡献的内容：
+
+```
+Issue/content:
+Solution or Notes about the execution of the content:
+When do you plan on finishing?:
+Using an alternate platform or forking on Github?:
+```
+
+这样可以避免你把时间花在不会被网站采用的内容上，或重复他人已经开始的工作。
+
+如果你的提议获准开始，内部贡献者会将帖子标记为“green-lit”；如果已有贡献者在处理相关内容或问题，他们也可能引导你前往现有帖子，与其协作并补充内容。
+
+开始工作时，你可以选择：
+
+1. 在 GitHub 上复刻（fork）仓库，并提交拉取请求（pull request）以供审核接收（适合较熟悉编程的贡献者）
+2. 在 Google Docs 或 Notion 等其他平台上编写内容，完成后由内部贡献者将其迁移到网站
+
+## 配置 GitHub 和 VS Code 以参与贡献
+
+### 安装必备软件
+
+请确保下载与你的操作系统（Windows、Mac 或 Linux）相匹配的版本。
+
+如果 Windows 安装程序区分位数，几乎总应选择 64 位版本。
+
+- 最新版本的 [Git](https://git-scm.com/downloads)
+  - 按照对应操作系统的说明操作
+  - 安装时使用所有默认选项
+- [Node.js LTS](https://nodejs.org/)
+  - 下载适用于你的操作系统的 LTS 版本
+  - 安装时使用所有默认选项
+- [VSCode](https://code.visualstudio.com/)
+  - 下载适用于你的操作系统的稳定版本
+  - 安装时使用所有默认选项；是否创建桌面图标可按需选择
+- [GitHub Desktop](https://desktop.github.com/)（可选——也可以使用 VSCode 中的 git 界面）
+  - 安装后，选择“Sign in to GitHub.com”
+  - 登录或注册新的 GitHub 账户，然后点击“Authorize Desktop”
+    - 如果选择注册，则必须在注册最后通过验证码和邮件发送的代码来验证账户
+    - 如果验证码失败，请尝试禁用可能造成干扰的隐私保护扩展
+    - 完成账户的其余设置（可以选择申请 GitHub Education，但这不是必需的，免费版已足够使用）
+    - 如果注册后没有进入授权页面，请返回 GitHub Desktop 应用程序，点击“Cancel”，然后再次选择“Sign in to GitHub.com”
+  - 允许浏览器打开 GitHub Desktop
+  - 点击“Finish”
+
+### 开始编写贡献内容的步骤
+
+**公开贡献者：**
+
+1. 前往仓库网站
+2. 点击右上角附近的“Fork”，然后在下一页点击“Create Fork”
+3. 打开 GitHub Desktop 并选择“Clone a repository from the Internet...”，或在左上角前往 `file -> Clone repository...`
+4. 在“GitHub.com”下，选择你复刻的 `[username]/FRCDesign.org` 仓库，然后点击“Clone”
+5. 仓库克隆完成（即将一份副本下载到你的计算机）后，系统会询问你打算如何使用该复刻仓库。选择“To contribute to the parent project”，然后点击“Continue”
+
+**内部贡献者（已加入主仓库）：**
+
+1. 打开 GitHub Desktop 并选择“Clone a repository from the Internet...”，或在左上角前往 `file -> Clone repository...`
+2. 在“GitHub.com”下，选择主仓库并点击“Clone”
+3. 仓库克隆完成（即将一份副本下载到你的计算机）后，系统会询问你打算如何使用该复刻仓库。选择“To contribute to the parent project”，然后点击“Continue”
+
+**如何编写贡献内容并提交拉取请求**
+
+1. 打开 GitHub Desktop 顶部的“Current branch”下拉菜单，点击“New branch”，为分支命名，然后点击“Create branch”以创建新分支。
+   - 通常应在分支（而不是 main）中修改内容，之后通过所谓的“拉取请求”将这些更改“拉取”并合并到原始 main 分支
+   - 分支名称应与整体修改相关，例如“contributors-guide”或“3A-cleanup”。拉取请求完成后通常会删除该分支，因此名称应足够具体地反映修改内容
+   - 创建新分支后，请点击随即出现的按钮以发布该分支
+2. 点击“Open in Visual Studio Code”以打开 VS Code。
+3. 如果看到“Do you trust the authors of the files in this folder?”弹窗，请勾选“Trust the authors of all files in the parent folder 'GitHub'”旁的复选框（这样以后克隆仓库时不会再弹出此提示），然后点击“Yes, I trust the authors”。
+4. 如果这是你第一次运行 VS Code，请按个人喜好进行设置（主题、扩展等）。
+   - 建议安装“Code Spell Checker”扩展
+   - 在 `file` 菜单中开启自动保存
+5. 完成一组修改。
+
+<Aside type="tip">
+网站的所有文件和文件夹都位于 `src/content/docs` 文件夹中。
+</Aside>
+
+<Aside type="note" title="添加新页面">
+如果创建新的 `.mdx` 文件，还必须在 `src/config/sidebarConfig.ts` 中为其添加条目，否则页面虽已存在，却不会显示在导航中。完整说明请参阅[添加页面](/contribution/adding-a-page/)。
+</Aside>
+
+6. 每当工作告一段落并希望将修改保存到云端时，需要创建所谓的“提交（commit）”，将修改保存到分支。随后还必须“推送（push）”这些提交，才能将其上传到云端，否则它们只会保留在本地。你可以通过 VS Code 或 GitHub Desktop 完成这些操作；这里使用 GitHub Desktop，以便集中管理所有版本控制操作。
+7. 打开 GitHub Desktop，确保侧栏中的“Changes”已选中。侧栏中选中的所有修改都会加入该提交（即修改已为提交“暂存”）。输入提交摘要（说明可选），然后点击“Commit to [branch]”。
+8. 点击按钮，将已经创建的提交推送到云端（按钮可能位于顶部或屏幕中央）。
+
+<Aside type="tip">
+点击“Fetch origin”按钮，会获取其他人已创建并推送到云端的当前分支提交。
+</Aside>
+
+9. 为使你的分支与原始仓库的 main 分支保持同步，请打开屏幕顶部的“branch”菜单，然后点击“Update from main”。如果有提交从 main 拉取到你的分支，可以再次推送以更新云端分支。
+
+<Aside type="tip">
+请务必经常从 main 更新你的分支！否则，你的修改可能与他人对 main 所做的修改产生大量冲突。如果遇到冲突，只需按照 GitHub Desktop 中的提示，在 VS Code 中打开并解决冲突。解决所有冲突后，切回 GitHub Desktop 完成合并。
+</Aside>
+
+10. 当你对这组修改感到满意，准备申请将其加入主网站，并且已经提交所有修改、检查更新且推送全部提交后，请通过 GitHub Desktop 中央的菜单创建拉取请求。随后会打开网站，你可以在其中说明所做的修改和希望合入网站的内容，并关联该拉取请求将解决的 issue。提交后，内部贡献者会审核你的拉取请求：他们可能批准并将其合并到 main 分支，也可能针对合并前需要修正的问题留下评论。
+
+总结一下贡献流程：创建并发布分支、进行修改并创建提交、从 main 更新、推送提交，最后创建拉取请求。
+
+### 如何运行网站本地预览
+
+你可以在本地托管一份网站，以便在编辑时实时预览。
+
+1. 在 VS Code 中打开仓库（所在分支不限）
+2. 如果底部面板尚未显示，请使用快捷键 `Ctrl + J` 将其打开
+3. 点击底部面板右上角 + 号旁的下拉菜单，然后点击“Terminal”
+4. 运行命令 `npm install`，安装所有必需的软件包（仅首次需要）
+5. 运行命令 `npm run dev`，启动开发服务器
+6. 如果一切顺利，终端应提示网站正在类似 `http://localhost:4321` 的地址上提供服务
+
+每次打开 VS Code 进行编辑时，请务必运行 `npm run dev`。
+
+<Aside type="tip">
+点击底部面板中的终端后，可以使用 Ctrl + C 停止本地网站托管。
+</Aside>
+
+<Aside type="note">
+使用 GitHub Desktop 切换分支时，本地预览也会随之切换，不受影响。
+</Aside>

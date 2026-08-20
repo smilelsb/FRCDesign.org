@@ -1,0 +1,50 @@
+﻿---
+title: 1678 队的 Rapid React 发射机构
+description: 一款采用齿条驱动导向罩的球类发射机构
+socialCard:
+  image: ./img/1678/1678_2022_shooter.webp
+---
+
+
+<ContentFigure src="./img/1678/1678_2022_shooter.webp" alt="Citrus 发射机构" width="65%">一体化的导向罩式发射机构与索引机构，设计简洁。该设计经过优化，能够尽可能准确且稳定地发射大型球类比赛物体。</ContentFigure>
+
+### 链接
+
+<LinkButton href="https://cad.onshape.com/documents/5171f477c0b2b518f0252641/w/cbf30882b3a7cbd588a0ad5a/e/a8d11c6d37daaefe163e2d01" center>
+  CAD 文档
+</LinkButton>
+
+## 设计原理
+
+为了尽可能实现稳定而准确的发射，导向罩式球类发射机构都遵循相同的基本设计原则。这些原则可以归纳为以下几点：
+
+- 尽可能延长与所发射比赛物体的接触时间。这样能让比赛物体有更多时间达到飞轮的速度，从而提高发射一致性。
+- 确保发射机构能够以足够的精度瞄准。
+- 确保飞轮具有足够的质量，能够在整个发射过程中保持稳定转速。
+- *在某些情况下，*旋转会带来好处。
+
+进一步了解 2022 年比赛：[Rapid React 比赛发布视频](https://www.youtube.com/watch?v=LgniEjI9cCM)
+
+<ContentFigure src="./img/1678/1678backrollers.webp" alt="1678 队的背侧滚轮" width="40%" captionPosition="right">
+  2022 年的导向罩式发射机构配备背侧滚轮，主要用于控制后旋。2022 年比赛的一项独特要求，是机器人需要将球射入高目标。由于目标的几何形状，许多队伍发现后旋过强会让球从目标中弹出。为了解决这个问题，各队在发射机构中加入了背侧滚轮，并通过传动使其旋转方向与主飞轮相反。
+
+  这样能把球的后旋降低到可控范围，但在某些情况下仍会保留少量后旋。这是由旋转球体的空气动力学特性决定的；得益于[马格努斯效应](https://youtu.be/T9xsTO6ujqM?feature=shared&t=594)，Rapid React 比赛用球的后旋有助于形成更适合进入高目标的弧线，并提高远距离发射时的飞行稳定性。
+</ContentFigure>
+
+
+<ContentFigure src="./img/1678/1678 flywheel.webp" alt="1678 队的飞轮" width="35%" captionPosition="left">
+  导向罩式发射机构的飞轮通常使用 [TTB Urethane Wheels](https://www.thethriftybot.com/products/4-solid-urethane-wheel-1-2-hex-bore-45a-durometer) 或 [Stealth Wheels](https://www.andymark.com/products/stealth-wheels-options)。飞轮必须具有足够的质量，才能在整个发射过程中保持恒定转速，确保每次发射效果一致。增加飞轮质量会增大其[转动惯量](https://www.youtube.com/watch?v=CHQOctEvtTY)，进而提高发射一致性。
+
+  在 Rapid React 和 [Infinite Recharge](https://www.youtube.com/watch?v=gmiYWTmFRVE) 这类可以同时储存并连续发射多个比赛物体的比赛中，具有较大质量的飞轮尤其重要。1678 队 2022 年的发射机构使用两个 SDS 飞轮来提供所需质量。
+</ContentFigure>
+
+
+<ContentFigure src="./img/1678/1678pivot.webp" alt="1678 队的枢轴机构" width="35%" captionPosition="right">
+  转动导向罩式发射机构最常见的方法是使用齿条齿轮机构。1678 队使用了与发射机构“导向罩”一体化的 3D 打印齿条，并让一个较小的齿轮沿导向罩齿条“爬升”。这种简单的设计可以在较大的角度范围内精确驱动导向罩。
+</ContentFigure>
+
+---
+
+## 观看这款发射机构的实际运行
+
+<ContentFigure src="ijiDMVvGc_E"/>

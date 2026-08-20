@@ -1,0 +1,41 @@
+---
+title: 连杆式拾取机构
+description: FRC 机器人的连杆式拾取机构示例
+socialCard:
+  image: ./img/1678_2022_intake.webp
+---
+
+import MechanismCardGrid from '@components/content/MechanismCardGrid.astro';
+import intake1678 from './img/1678_2022_intake.webp';
+import intake4089 from './img/4089_2022_intake.webp';
+import intake6800 from './img/6800_2022_intake.webp';
+
+export const exampleCards = [
+  {
+    title: "1678 的 Rapid React 四连杆拾取机构",
+    href: 'https://cad.onshape.com/documents/85e97134bff4283227dd7814/w/1b7989bff6276a96f0730470/e/3761d128b68089769ab731a0',
+    image: intake1678,
+    imageAlt: '1678 Rapid React 四连杆拾取机构 CAD 渲染图',
+    description: '用于快速拾取比赛用球的四连杆拾取机构。',
+  },
+  {
+    title: "6800 的 Rapid React 拾取机构",
+    href: 'https://cad.onshape.com/documents/a347ccbaf68f245233aadb8b/w/1078dadff6a13b8f52a83991/e/24ed58654cf353cf1731c47c',
+    image: intake6800,
+    imageAlt: '6800 Rapid React 四连杆拾取机构 CAD 渲染图',
+    description: '由电机驱动、采用圆形滚轮的四连杆拾取机构。',
+  },
+  {
+    title: "4089 的 Rapid React 拾取机构",
+    href: 'https://cad.onshape.com/documents/c4f311702e16c0341cee0c56/w/1c145bb51bfdcf02dcd12293/e/574f47c659a7a118ad146a5c',
+    image: intake4089,
+    imageAlt: '4089 Rapid React 四连杆拾取机构 CAD 渲染图',
+    description: '由气缸驱动，并使用导向轮将比赛物体居中的四连杆拾取机构。',
+  },
+];
+
+使用连杆机构展开的越过保险杠式拾取机构，包括四连杆机构。
+
+## CAD 参考
+
+<MechanismCardGrid cards={exampleCards} />

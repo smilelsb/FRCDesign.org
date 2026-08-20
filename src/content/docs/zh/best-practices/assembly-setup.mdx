@@ -1,0 +1,104 @@
+﻿---
+title: Assembly（装配体）最佳实践
+description: 将零件插入装配体并进行组织的最佳实践。
+---
+
+
+假设你已为零件命名，并在文档的其他部分整理好了设计内容，那么创建一个组织良好的装配体就非常简单。
+
+### Origin Cube
+
+`Origin Cube` FeatureScript 会在 Part Studio（零件工作室）的原点处插入一个 2 英寸的透明立方体。该立方体在原点处带有一个 mate connector（配合连接器）。由于这个零件不会发生变化，并且始终位于零件工作室的原点，因此用它将零件编组并固定到原点，会比直接固定零件或使用附着在其他零件上的配合连接器更加**稳健且具有参数化关联**，因为其他零件可能发生变化或被删除。
+
+<LinkButton href="https://cad.onshape.com/documents/321c197a842fc5f1a29e6621/w/fc3cdd5ca7edcd93e02f13cc/e/df3afdbec8d1356c2af15e4b?renderMode=0&uiState=6637caa6ccbcaa36badca03a" center>
+  Origin Cube FeatureScript
+</LinkButton>
+
+<ContentFigure src="./img/originCubeFeature.webp" alt="插入 Origin Cube 特征" width="60%">插入 Origin Cube 特征</ContentFigure>
+
+<Aside type="tip">
+Origin Cube 提供了导入多种实用常量和函数的选项，包括螺栓孔尺寸、齿轮外径以及中心距计算器。
+</Aside>
+
+### 插入零件的流程
+
+如[子文档设置](../sub-document-setup/#subsystems-with-multiple-degrees-of-freedom)中所述，没有自由度的子系统只需要一个装配体，而包含多个运动零件的子系统则要拆分为多个刚性装配体。无论哪种情况，插入零件并完成装配体的流程都很相似。
+
+1. 在零件工作室中创建 Origin Cube
+2. 为一个刚性 subassembly（子装配体）插入相关零件和 Origin Cube
+3. 对所有零件使用 Group（编组）工具
+4. 使用 Fastened Mate（固定配合）将原点处的配合连接器固定到原点
+5. 复制并固定所有重复使用的零件
+6. 插入标准紧固件和 COTS（现成商业零件）
+7. 将实例分类整理到文件夹中（例如管材、Swerve 模块、隔圈）
+
+<Aside type="tip">
+在零件工作室中添加更多零件后，可以通过绿色对勾将它们逐个插入装配体，再双击最初建立的编组并将新零件加入其中，从而无需为其添加配合。这样，新零件相对于其在零件工作室中的设计位置将始终保持不变。
+</Aside>
+
+如果子系统包含多个运动零件（例如越过保险杠式拾取机构或升降机构），请在主布局草图上为每个自由度创建一个配合连接器。它可以是枢轴点，也可以是 Slider Mate（滑动配合）的起点（对于升降机构）。将每个配合连接器的所有者都设为 Origin Cube。
+
+如果还有其他刚性子装配体，请对它们重复上述流程的第 4 至第 7 步。这样，每个子装配体都将保持刚性，其中 Origin Cube 固定在原点，所有零件的位置与零件工作室中的位置相同。每个子装配体还将包含所有者为 Origin Cube 的配合连接器。
+
+接下来创建一个顶层子系统装配体，并将每个子装配体插入其中。将静态子装配体的 Origin Cube 固定到原点，再使用其他配合连接器将其余子装配体配合在一起。
+
+### 示例：阶段 2C——下翻式拾取机构
+
+阶段 2C 的下翻式拾取机构是一个由静态部分和绕轴转动部分组成的子系统。在主布局草图上为该枢轴额外添加了一个配合连接器，其所有者为 Origin Cube。
+
+<LinkButton href="https://cad.onshape.com/documents/17302d787e092ce11015f7ee/w/f7cf5c02c7655f0328a3a74a/e/f1456325e0175c4c081008c2" center>
+  阶段 2C——下翻式拾取机构
+</LinkButton>
+
+<ContentFigure src="./img/slapdown-intake-example/slapdown-intake-mate-connector.webp" />
+
+两个子装配体中都存在这个配合连接器。
+
+<ContentFigure src="./img/slapdown-intake-example/slapdown-intake-static-connectors.webp" />
+
+<ContentFigure src="./img/slapdown-intake-example/slapdown-intake-arm-connectors.webp" />
+
+静态装配体固定在原点，臂装配体则使用两个 Origin Cube 实例共同拥有的枢轴配合连接器进行转动。
+
+<ContentFigure src="./img/slapdown-intake-example/slapdown-intake-top-level.webp" />
+
+### 示例：阶段 2D——级联升降机构
+
+阶段 2D 的级联升降机构是一个包含静态部分和两个直线滑动子装配体的子系统。它包括一个零件工作室、一个静态框架/齿轮箱装配体、第一级和滑台各自的装配体，以及一个通过滑动配合组合这三个子装配体的顶层装配体。
+
+<LinkButton href="https://cad.onshape.com/documents/da5aef9e6bf6e869f4a51a45/w/5a0f4a3426876db0ba214277/e/f8fd8133abcb12800eacb5d1" center>
+  阶段 2D——级联升降机构
+</LinkButton>
+
+<ContentFigure src="./img/elevatorAssembly.webp" />
+
+### 示例：3647 Millennium Falcons 2024 年拾取机构
+
+<ContentFigure src="./img/0200-A.webp" alt="顶层装配体：0200-A-拾取机构。注意这里只有两个配合。旋转配合位于两个拾取机构枢轴配合连接器之间，而这两个连接器分别附着在各自的 Origin Cube 上。" />
+
+<ContentFigure src="./img/0210-A.webp" alt="静态部件装配体：0210-A-拾取机构底座。各部件通过编组配合连接，Origin Cube 则固定到原点。" />
+
+<ContentFigure src="./img/0210-PS.webp" alt="静态部件零件工作室：0210-A-拾取机构底座。请注意从橙色主布局草图派生而来的拾取机构枢轴配合连接器。" />
+
+<ContentFigure src="./img/0220-A.webp" alt="运动部件装配体：0220-A-拾取机构臂。各部件通过编组配合连接，Origin Cube 则固定到原点。" />
+
+<ContentFigure src="./img/0220-PS.webp" alt="运动部件零件工作室：0220-拾取机构臂。请注意从橙色主布局草图派生而来的拾取机构枢轴配合连接器。" />
+
+### 简化模型
+
+请务必尽量减少装配体中的图元数量。图元数量体现了对象的复杂程度以及 Onshape 渲染该对象的难度。图元越多，装配体就越卡顿。
+
+尽可能使用 FRCDesignLib 中的简化模块来减少图元数量，例如电子元件、Swerve 模块、电机等。
+
+<ContentFigure src="L089T-SnQ5A" />
+
+### 其他注意事项
+
+- 从 FRCDesignLib 导入 COTS 零件
+- 使用 **Replicate（复制阵列）工具**添加紧固件！
+- 尽量减少所用配合的数量，以缩短求解时间
+- 使用文件夹保持内容井然有序
+
+下面是一个组织良好的装配体示例：
+
+<ContentFigure src="./img/assembly.webp" />

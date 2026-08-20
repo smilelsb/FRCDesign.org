@@ -1,31 +1,31 @@
 ﻿---
-title: List of Featurescripts
-description: A comprehensive list of FRC-relevant Featurescripts for Onshape to make designing for FRC much easier.
+title: FeatureScript 列表
+description: 汇总适用于 Onshape、与 FRC 相关的 FeatureScript，让 FRC 设计更加轻松。
 ---
 
 import { CardGrid } from '@astrojs/starlight/components';
 import CustomCard from '@components/homepage/CustomCard.astro';
 
-Onshape has its own scripting language to create custom features to automate aspects of design called [Featurescript](https://www.onshape.com/features/custom-features). There are a lot of featurescripts (what we call the custom features) that make designing for FRC much easier.
+Onshape 拥有自己的脚本语言，可以创建自定义特征来自动完成部分设计工作，这种语言称为 [FeatureScript（自定义特征脚本）](https://www.onshape.com/features/custom-features)。有许多 FeatureScript（即自定义特征）可以让 FRC 设计更加轻松。
 
 <Aside type="tip">
-The title of each featurescript or group of featurescripts links to its respective document. Right click the title and click "copy link address" for installing it to your profile using the process described on [the featurescript help page](/resources/featurescript-help/).
+每个 FeatureScript 或 FeatureScript 合集的标题都链接到相应文档。右键单击标题并选择“复制链接地址”，然后按照 [FeatureScript 帮助页面](/resources/featurescript-help/)中的流程将其安装到你的个人资料中。
 </Aside>
 
-## Recommended
-These featurescripts are must haves to enhance your Onshape workflow. Many of these are developed by members of the FRC community and well maintained.
+## 推荐
+这些 FeatureScript 是改善 Onshape 工作流程的必备工具。其中许多由 FRC 社区成员开发，并且维护良好。
 
 <CardGrid>
 <CustomCard title="Origin Cube Featurescript" subTitle="" href="https://cad.onshape.com/documents/321c197a842fc5f1a29e6621/w/fc3cdd5ca7edcd93e02f13cc/e/c66db2b954da7f29d438195a">
 <hr/>
 <ContentFigure src="./img/featurescripts/origin-cube.webp" alt="Origin Cube" width="80%" />
 
-- Used to create an origin reference for assembly mating
-- Optionally import design constants like bolt hole sizes, heat set insert hole sizes, etc
-- Optionally import functions for calculating gear OD, pulley/sprocket pitch & outer diameters, and calculate belt/chain c-c distances
-- See [Assembly Best Practices](/best-practices/assembly-setup/#the-origin-cube) for more information on usage
+- 用于创建装配体配合所需的原点参考
+- 可选择导入螺栓孔尺寸、热熔螺母孔尺寸等设计常量
+- 可选择导入用于计算齿轮外径、带轮/链轮节径和外径，以及皮带/链条中心距的函数
+- 有关使用方法的更多信息，请参阅[装配体最佳实践](/best-practices/assembly-setup/#the-origin-cube)
 
-<Aside type="video" title="Video Example" collapse>
+<Aside type="video" title="视频示例" collapse>
 <ContentFigure src="https://www.youtube.com/watch?v=3m4QLn2aSXQ" />
 </Aside>
 
@@ -35,81 +35,81 @@ These featurescripts are must haves to enhance your Onshape workflow. Many of th
 <hr/>
 <ContentFigure src="./img/featurescripts/belt-chain-gen.webp" alt="Belt & Chain Gen" width="80%" />
 
-- Used in conjunction with Origin Cube FRC Functions to create highly customizable belts and chains
-- Highly parametric - pulley/sprocket tooth count is automatically calculated from sketch pitch diameter.
-- Create multi pulley, double sided belt, and multi sprocket transmissions with options for both toothed and round idlers
+- 与 Origin Cube FRC Functions 配合使用，可创建高度自定义的皮带和链条
+- 高度参数化——可根据草图中的节径自动计算带轮/链轮齿数
+- 可创建多带轮、双面皮带和多链轮传动，并可选用带齿惰轮或光面惰轮
 
-<Aside type="video" title="Video Example" collapse>
+<Aside type="video" title="视频示例" collapse>
 <ContentFigure src="https://www.youtube.com/watch?v=n_kc2RV-qgI" />
 </Aside>
 
 </CustomCard>
-<CustomCard title="Robot Shaft" subTitle="(Alex's Featurescripts)" href="https://cad.onshape.com/documents/9cffa92db8b62219498f89af/w/06b332ccabc9d2e0aa0abf88/e/2e6e4b559832eeff8391e933">
+<CustomCard title="Robot Shaft" subTitle="（Alex 的 FeatureScript）" href="https://cad.onshape.com/documents/9cffa92db8b62219498f89af/w/06b332ccabc9d2e0aa0abf88/e/2e6e4b559832eeff8391e933">
 
 <hr/>
 <ContentFigure src="./img/featurescripts/robot-shaft.webp" alt="Robot Shaft" width="80%" />
 
-- Generates a shaft, with options for hex, rounded hex (13.75mm OD), MAXSpline, etc.
-- Options for retention type on both ends
-- Can be generated in-place and with offsets
+- 生成轴，可选择六角轴、圆角六角轴（外径 13.75 mm）、MAXSpline 等形式
+- 两端均可选择轴向固定方式
+- 可在原位生成并设置偏移
 
 </CustomCard>
-<CustomCard title="Robot Spacer" subTitle="(Alex's Featurescripts)" href="https://cad.onshape.com/documents/9cffa92db8b62219498f89af/w/06b332ccabc9d2e0aa0abf88/e/2e6e4b559832eeff8391e933">
+<CustomCard title="Robot Spacer" subTitle="（Alex 的 FeatureScript）" href="https://cad.onshape.com/documents/9cffa92db8b62219498f89af/w/06b332ccabc9d2e0aa0abf88/e/2e6e4b559832eeff8391e933">
 
 <hr/>
 <ContentFigure src="./img/featurescripts/robot-spacer.webp" alt="Robot Spacer" width="80%" />
 
-- Generates a spacer, with options for round, 3/8" hex, 1/2" hex, MAXSpline, etc.
-- Can be generated in-place and with offsets
+- 生成隔套，可选择圆形、3/8 英寸六角形、1/2 英寸六角形、MAXSpline 等形式
+- 可在原位生成并设置偏移
 
 </CustomCard>
-<CustomCard title="Extrude Individual" subTitle="(Julia's Featurescripts)" href="https://cad.onshape.com/documents/95c00401c440b44ad8799ef5/w/1f1ebce01a3b8eb6fa102975/e/7f62400703032fab9a7a3320">
+<CustomCard title="Extrude Individual" subTitle="（Julia 的 FeatureScript）" href="https://cad.onshape.com/documents/95c00401c440b44ad8799ef5/w/1f1ebce01a3b8eb6fa102975/e/7f62400703032fab9a7a3320">
 
 <hr/>
 <ContentFigure src="./img/featurescripts/extrude-individual.webp" alt="Extrude Individual" width="80%" />
 
-- Can extrude multiple regions as different parts with one feature, even if regions are adjacent
-- Commonly used with tube converter to make punched aluminum tubes from a top view sketch
+- 即使多个区域彼此相邻，也能通过一个特征将它们拉伸为不同零件
+- 通常与 Tube Converter 配合使用，通过俯视草图制作带孔铝管
 
-<Aside type="video" title="Video Example" collapse>
+<Aside type="video" title="视频示例" collapse>
 <ContentFigure src="https://www.youtube.com/watch?v=fetauwXgK3s" />
 </Aside>
 
 </CustomCard>
-<CustomCard title="Tube Converter" subTitle="(Julia's Featurescripts)" href="https://cad.onshape.com/documents/95c00401c440b44ad8799ef5/w/1f1ebce01a3b8eb6fa102975/e/7f62400703032fab9a7a3320">
+<CustomCard title="Tube Converter" subTitle="（Julia 的 FeatureScript）" href="https://cad.onshape.com/documents/95c00401c440b44ad8799ef5/w/1f1ebce01a3b8eb6fa102975/e/7f62400703032fab9a7a3320">
 
 <hr/>
 <ContentFigure src="./img/featurescripts/tube-converter.webp" alt="Tube Converter" width="80%" />
 
-- Converts extrusions into punched tube, with customization and presets for hole pattern, wall thickness, and profile.
-- Can be slow - try moving to the end of the part studio
+- 将拉伸体转换为带孔管材，并可自定义或预设孔型、壁厚和截面
+- 运行速度可能较慢——可以尝试将此特征移到 Part Studio（零件工作室）的末尾
 
-<Aside type="video" title="Video Example" collapse>
+<Aside type="video" title="视频示例" collapse>
 <ContentFigure src="https://www.youtube.com/watch?v=DXHe4AOPSqM" />
 </Aside>
 
 </CustomCard>
-<CustomCard title="Part Lighten" subTitle="(2471 Featurescripts)" href="https://cad.onshape.com/documents/028ca8fb10baf53e1f6fce96/w/b1250a450d0ba88f0a8b1811/e/a8b9e45297aac9f5688c871d">
+<CustomCard title="Part Lighten" subTitle="（2471 的 FeatureScript）" href="https://cad.onshape.com/documents/028ca8fb10baf53e1f6fce96/w/b1250a450d0ba88f0a8b1811/e/a8b9e45297aac9f5688c871d">
 
 <hr/>
 <ContentFigure src="./img/featurescripts/part-lighten.webp" alt="Part Lighten" width="80%" />
 
-- Better control over ribs, cut depth, fillets, etc.
-- Gives a nice estimate of how much weight is being saved
+- 可以更好地控制加强筋、切除深度、圆角等参数
+- 可以较准确地估算减轻的重量
 
-<Aside type="video" title="Video Example" collapse>
+<Aside type="video" title="视频示例" collapse>
 <ContentFigure src="https://www.youtube.com/watch?v=nA4YgMts6Vw" />
 </Aside>
 
 </CustomCard>
-<CustomCard title="FilletXpert (Fillet All Edges)" subTitle="(Julia's Featurescripts)" href="https://cad.onshape.com/documents/95c00401c440b44ad8799ef5/w/1f1ebce01a3b8eb6fa102975/e/7f62400703032fab9a7a3320">
+<CustomCard title="FilletXpert (Fillet All Edges)" subTitle="（Julia 的 FeatureScript）" href="https://cad.onshape.com/documents/95c00401c440b44ad8799ef5/w/1f1ebce01a3b8eb6fa102975/e/7f62400703032fab9a7a3320">
 
 <hr/>
 <ContentFigure src="./img/featurescripts/fillet-all-edges.webp" alt="Fillet All Edges" width="80%" />
 
-- After selecting a face, it adds a fillet to the corners of that face (all edges normal to the selected face)
+- 选择一个面后，为该面的各个角添加圆角（即所有与所选面垂直的边）
 
-<Aside type="video" title="Video Example" collapse>
+<Aside type="video" title="视频示例" collapse>
 <ContentFigure src="https://www.youtube.com/watch?v=MBtSlzxsuqw" />
 </Aside>
 
@@ -119,26 +119,26 @@ These featurescripts are must haves to enhance your Onshape workflow. Many of th
 <hr/>
 <ContentFigure src="./img/featurescripts/spur-gear.webp" alt="Spur Gear" width="80%" />
 
-- Generates a spur gear with with many different options
-- Can be useful for 3D-printed parts and custom sector gears
+- 生成直齿轮，并提供多种选项
+- 适用于 3D 打印零件和自定义扇形齿轮
 
 </CustomCard>
-<CustomCard title="3D Printed Mass" subTitle="(Julia's Featurescripts)" href="https://cad.onshape.com/documents/95c00401c440b44ad8799ef5/w/1f1ebce01a3b8eb6fa102975/e/7f62400703032fab9a7a3320">
+<CustomCard title="3D Printed Mass" subTitle="（Julia 的 FeatureScript）" href="https://cad.onshape.com/documents/95c00401c440b44ad8799ef5/w/1f1ebce01a3b8eb6fa102975/e/7f62400703032fab9a7a3320">
 
 <hr/>
 <ContentFigure src="./img/featurescripts/3D-printed.webp" alt="3D Printed Mass" width="80%" />
 
-- Modifies 3D-printed parts to have accurate mass with given material, infill, and wall thickness
+- 根据指定的材料、填充率和壁厚修改 3D 打印零件，使其质量准确
 
-<Aside type="video" title="Video Example" collapse>
+<Aside type="video" title="视频示例" collapse>
 <ContentFigure src="https://www.youtube.com/watch?v=hEfen1lNLiM" />
 </Aside>
 
 </CustomCard>
 </CardGrid>
 
-## Bundles
-The below links contain several featurescripts each that you can add all at once. The more useful featurescripts from each bundle are demonstrated further below.
+## 合集
+以下每个链接都包含多个可一次性添加的 FeatureScript。每个合集里较实用的 FeatureScript 会在下文进一步演示。
 
 <CardGrid>
 <CustomCard title="Julia's Featurescripts" subTitle="" href="https://cad.onshape.com/documents/95c00401c440b44ad8799ef5/w/1f1ebce01a3b8eb6fa102975/e/7f62400703032fab9a7a3320" />
@@ -155,191 +155,191 @@ The below links contain several featurescripts each that you can add all at once
 
 </CardGrid>
 
-## Other
-Below is a list of other featurescripts that can be useful but are more niche.
+## 其他
+以下是其他一些实用但用途较为特定的 FeatureScript。
 
-### Structure
+### 结构
 
 <CardGrid>
-<CustomCard title="Gusset Generator" subTitle="(Julia's Featurescripts)" href="https://cad.onshape.com/documents/95c00401c440b44ad8799ef5/w/1f1ebce01a3b8eb6fa102975/e/7f62400703032fab9a7a3320">
+<CustomCard title="Gusset Generator" subTitle="（Julia 的 FeatureScript）" href="https://cad.onshape.com/documents/95c00401c440b44ad8799ef5/w/1f1ebce01a3b8eb6fa102975/e/7f62400703032fab9a7a3320">
 
-- Generate a gusset from hole selections
-- **Warning**: Not a very parametric featurescript and causes lag, but can be useful in a pinch
-
-</CustomCard>
-<CustomCard title="Robot Bearing Hat" subTitle="(Alex's Featurescripts)" href="https://cad.onshape.com/documents/9cffa92db8b62219498f89af/w/06b332ccabc9d2e0aa0abf88/e/2e6e4b559832eeff8391e933">
-
-- Creates a custom bearing hat given a set of mounting locations and a bearing hole
-- Can create tapped holes
+- 根据所选孔生成加强板
+- **警告**：此 FeatureScript 的参数化程度不高，并且会造成卡顿，但在需要时仍然很有用
 
 </CustomCard>
-<CustomCard title="Spacer Generator" subTitle="(Julia's Featurescripts)" href="https://cad.onshape.com/documents/95c00401c440b44ad8799ef5/w/1f1ebce01a3b8eb6fa102975/e/7f62400703032fab9a7a3320">
+<CustomCard title="Robot Bearing Hat" subTitle="（Alex 的 FeatureScript）" href="https://cad.onshape.com/documents/9cffa92db8b62219498f89af/w/06b332ccabc9d2e0aa0abf88/e/2e6e4b559832eeff8391e933">
 
-- Generates a spacer, with options for round, 3/8" hex, and 1/2" hex
+- 根据一组安装位置和轴承孔创建自定义轴承座凸缘
+- 可以创建攻丝孔
 
-<Aside type="video" title="Video Example" collapse>
+</CustomCard>
+<CustomCard title="Spacer Generator" subTitle="（Julia 的 FeatureScript）" href="https://cad.onshape.com/documents/95c00401c440b44ad8799ef5/w/1f1ebce01a3b8eb6fa102975/e/7f62400703032fab9a7a3320">
+
+- 生成隔套，可选择圆形、3/8 英寸六角形和 1/2 英寸六角形
+
+<Aside type="video" title="视频示例" collapse>
 <ContentFigure src="https://www.youtube.com/watch?v=Wnz442Dv-uw" />
 </Aside>
 
 </CustomCard>
-<CustomCard title="Electronics Mounting" subTitle="(Julia's Featurescripts)" href="https://cad.onshape.com/documents/95c00401c440b44ad8799ef5/w/1f1ebce01a3b8eb6fa102975/e/7f62400703032fab9a7a3320">
+<CustomCard title="Electronics Mounting" subTitle="（Julia 的 FeatureScript）" href="https://cad.onshape.com/documents/95c00401c440b44ad8799ef5/w/1f1ebce01a3b8eb6fa102975/e/7f62400703032fab9a7a3320">
 
-- Generates hole patterns for different electronic components using center points and mate connectors on sketches
-
-</CustomCard>
-<CustomCard title="MechSketch" subTitle="(TLamp's Featurescripts)" href="https://cad.onshape.com/documents/f46510f08cc311a34733cac2/w/771fa732a483fdc5ac45bfd6">
-
-- Incredibly useful, generates sketch profiles for a variety of things
-- Profiles for COTS parts like Maxspline, TTB inserts, maxtube, motors, and the versa patern
-- Profiles and holes for all electronics
-- Profile generator for pulleys and a spur gears
+- 使用草图中的中心点和配合连接器，为不同电子元件生成孔型
 
 </CustomCard>
-<CustomCard title="Robot Spline Profile" subTitle="(Alex's Featurescripts)" href="https://cad.onshape.com/documents/9cffa92db8b62219498f89af/w/06b332ccabc9d2e0aa0abf88/e/2e6e4b559832eeff8391e933">
+<CustomCard title="MechSketch" subTitle="（TLamp 的 FeatureScript）" href="https://cad.onshape.com/documents/f46510f08cc311a34733cac2/w/771fa732a483fdc5ac45bfd6">
 
-- Creates an inside or outside profile/extrusion of MAXSpline or SplineXL
-- Has all the standard extrude parameters
+- 功能非常实用，可为多种对象生成草图轮廓
+- 可为 Maxspline、TTB inserts、maxtube、电机和 versa patern 等 COTS（现成商业零件）生成轮廓
+- 可为所有电子元件生成轮廓和孔
+- 可为带轮和直齿轮生成轮廓
+
+</CustomCard>
+<CustomCard title="Robot Spline Profile" subTitle="（Alex 的 FeatureScript）" href="https://cad.onshape.com/documents/9cffa92db8b62219498f89af/w/06b332ccabc9d2e0aa0abf88/e/2e6e4b559832eeff8391e933">
+
+- 创建 MAXSpline 或 SplineXL 的内轮廓或外轮廓/拉伸体
+- 包含所有标准拉伸参数
 
 </CustomCard>
 </CardGrid>
 
-### Power Transmissions
+### 动力传动
 
 <CardGrid>
-<CustomCard title="Robot Pulley" subTitle="(Alex's Featurescripts)" href="https://cad.onshape.com/documents/9cffa92db8b62219498f89af/w/06b332ccabc9d2e0aa0abf88/e/2e6e4b559832eeff8391e933">
+<CustomCard title="Robot Pulley" subTitle="（Alex 的 FeatureScript）" href="https://cad.onshape.com/documents/9cffa92db8b62219498f89af/w/06b332ccabc9d2e0aa0abf88/e/2e6e4b559832eeff8391e933">
 
-- Creates a set of pulleys in the part studio given belt curves or mate connectors
+- 根据皮带曲线或配合连接器，在零件工作室中创建一组带轮
 
 </CustomCard>
-<CustomCard title="Belt & Pulley Generation" subTitle="(2471 Featurescripts)" href="https://cad.onshape.com/documents/028ca8fb10baf53e1f6fce96/w/b1250a450d0ba88f0a8b1811/e/a8b9e45297aac9f5688c871d">
+<CustomCard title="Belt & Pulley Generation" subTitle="（2471 的 FeatureScript）" href="https://cad.onshape.com/documents/028ca8fb10baf53e1f6fce96/w/b1250a450d0ba88f0a8b1811/e/a8b9e45297aac9f5688c871d">
 
-- Configurable belt and pulley generation
-- Belt width, pulley tooth count, offset and fit adjustment, belt type, etc.
-- Options for bore and flanges for both pulleys
+- 可配置的皮带和带轮生成功能
+- 可设置皮带宽度、带轮齿数、偏移与配合调整、皮带类型等参数
+- 两个带轮均可设置轴孔和挡边
 
 </CustomCard>
 <CustomCard title="Timing Belt Pulley Generator" subTitle="" href="https://cad.onshape.com/documents/55ae3138e0cd7c325239208b/w/c97698491e3111712f79c19b/e/b08c0071a21e9ab74baaf916">
 
-- Generates GT2 pulleys
+- 生成 GT2 带轮
 
 </CustomCard>
-<CustomCard title="Sprocket" subTitle="(Abhi's Features & Configs)" href="https://cad.onshape.com/documents/96d32fd4fe5341563a402ecd/w/0366fc53bc15b9d91febc38f/e/d7f04278e0325b6d4426ca34">
+<CustomCard title="Sprocket" subTitle="（Abhi 的特征与配置）" href="https://cad.onshape.com/documents/96d32fd4fe5341563a402ecd/w/0366fc53bc15b9d91febc38f/e/d7f04278e0325b6d4426ca34">
 
-- Generate a sprocket for common types of chain
+- 为常见类型的链条生成链轮
 
 </CustomCard>
 <CustomCard title="doesinlinechaintensionerfit" subTitle="" href="https://cad.onshape.com/documents/0a4b1991c2c84d83452b66db/w/16955b48319c55202a97d587/e/2c07d47526c2d94d25697091">
 
-- Calculates whether or not an inline chain tensioner will fit on a chain transmission
-- For when you are too lazy to do basic math
+- 计算直列式链条张紧器能否安装在链传动中
+- 适合不想自己进行基础计算时使用
 
 </CustomCard>
 <CustomCard title="Thrifty Insert" subTitle="" href="https://cad.onshape.com/documents/c54b1ff25af8ec89778cac4f/w/ace59da8ae4ae6dd11eabd2a/e/c4fc9251685f8516e9022bc6">
 
-- Cuts a profile in a part at a given location and depth to fit a [thriftybot insert](https://www.thethriftybot.com/products/qty-5-aluminum-insert-for-3d-printed-parts) into, for 3D-printed parts to stop them from stripping while being driven on an axle.
+- 在零件的指定位置按给定深度切出轮廓，以安装 [Thrifty Bot 嵌件](https://www.thethriftybot.com/products/qty-5-aluminum-insert-for-3d-printed-parts)，防止 3D 打印零件由轴驱动时发生滑牙。
 
 </CustomCard>
-<CustomCard title="Polybelt Generator" subTitle="(2471 Featurescripts)" href="https://cad.onshape.com/documents/028ca8fb10baf53e1f6fce96/w/b1250a450d0ba88f0a8b1811/e/a8b9e45297aac9f5688c871d">
+<CustomCard title="Polybelt Generator" subTitle="（2471 的 FeatureScript）" href="https://cad.onshape.com/documents/028ca8fb10baf53e1f6fce96/w/b1250a450d0ba88f0a8b1811/e/a8b9e45297aac9f5688c871d">
 
-- Generates polycord and pulleys based off of selected points
+- 根据所选点生成聚氨酯圆带和带轮
 
 </CustomCard>
 </CardGrid>
 
-### Pocketing
+### 镂空减重
 
 <CardGrid>
 <CustomCard title="Vent" subTitle="" href="https://cad.onshape.com/documents/702f94d6e4ffb0c64f611f87/w/f6ac7d31494b1215bb9c8a61/e/4bf4eb130870ebdf0008c5a4">
 
-- Used for pocketing and lightening plates
-- Uses sketch regions to determine pocket and rib placement
+- 用于对板件进行镂空减重
+- 使用草图区域确定减重槽和加强筋的位置
 
-<Aside type="video" title="Video Example" collapse>
+<Aside type="video" title="视频示例" collapse>
 <ContentFigure src="https://www.youtube.com/watch?v=8d2p9likmfU" />
 </Aside>
 
 </CustomCard>
-<CustomCard title="Robot Grid" subTitle="(Alex's Featurescripts)" href="https://cad.onshape.com/documents/9cffa92db8b62219498f89af/w/06b332ccabc9d2e0aa0abf88/e/2e6e4b559832eeff8391e933">
+<CustomCard title="Robot Grid" subTitle="（Alex 的 FeatureScript）" href="https://cad.onshape.com/documents/9cffa92db8b62219498f89af/w/06b332ccabc9d2e0aa0abf88/e/2e6e4b559832eeff8391e933">
 
-- Creates a grid of holes on a part (e.g. a bellypan)
-
-</CustomCard>
-<CustomCard title="CheeseIt!" subTitle="(TLamp's Featurescripts)" href="https://cad.onshape.com/documents/f46510f08cc311a34733cac2/w/771fa732a483fdc5ac45bfd6/e/8e9fbf1ac2f0980e4bc34951">
-
-- Advanced lightening pattern generation
-- Isogrid, hexagon, or circle pattern
+- 在零件上创建网格状孔阵列（例如底盘电气底板）
 
 </CustomCard>
-<CustomCard title="PatchIt!" subTitle="(TLamp's Featurescripts)" href="https://cad.onshape.com/documents/f46510f08cc311a34733cac2/w/771fa732a483fdc5ac45bfd6/e/8e9fbf1ac2f0980e4bc34951">
+<CustomCard title="CheeseIt!" subTitle="（TLamp 的 FeatureScript）" href="https://cad.onshape.com/documents/f46510f08cc311a34733cac2/w/771fa732a483fdc5ac45bfd6/e/8e9fbf1ac2f0980e4bc34951">
 
-- Patches specified pockets in a part
+- 生成高级减重图案
+- 可选择等距网格、六边形或圆形图案
+
+</CustomCard>
+<CustomCard title="PatchIt!" subTitle="（TLamp 的 FeatureScript）" href="https://cad.onshape.com/documents/f46510f08cc311a34733cac2/w/771fa732a483fdc5ac45bfd6/e/8e9fbf1ac2f0980e4bc34951">
+
+- 填补零件中指定的减重槽
 
 </CustomCard>
 </CardGrid>
 
-### Manufacturing
+### 制造
 
 <CardGrid>
 <CustomCard title="Auto Layout" subTitle="" href="https://cad.onshape.com/documents/576e01dbe4b0cc2e7f46a55d/w/b7cb6876d1121a6c249f59c7/e/887d6e2324589bfd2058c3e1">
 
-- Given some derived plates, either transformed from an in-context assembly (to maintain part count) or derived from a part studio, it will automatically lay them out into sheets of a given size, sorted by thickness. This is used to prepare a file to route or waterjet parts out of material with a machine.
+- 给定一些派生板件后，无论这些板件是从关联环境装配体转换而来（以保留零件数量），还是从零件工作室派生而来，此功能都会按厚度分类，并自动将其排布到指定尺寸的板材上。这样可以准备好供数控铣削或水刀切割零件的文件。
 
 </CustomCard>
 <CustomCard title="Measure Cut List" subTitle="" href="https://cad.onshape.com/documents/395304920b30c3b382fd312d/w/86481637ad1e9da01b0e5d60/e/e19230df69a29e1fc2259b9d?renderMode=0&tangentEdgeStyle=2&uiState=6642611f3aed1a692ef01f41">
 
-- Creates a table of measurements
-- Great for creating cut lists for parts
+- 创建测量数据表
+- 非常适合为零件创建下料清单
 
 </CustomCard>
 <CustomCard title="Laser Joint" subTitle="" href="https://cad.onshape.com/documents/578830e4e4b0e65410f9c34e/w/d04a088a0a8ab8361a2aa65c/e/dfd5effddfd7f2ecce4b0246">
 
-- Highly configurable featurescript that generates tab joints between overlapping parts
-- Options to make it easier for cnc routers to cut parts
-- Can use for bumper wood corners
+- 高度可配置的 FeatureScript，可在重叠零件之间生成插接结构
+- 提供便于数控铣床切割零件的选项
+- 可用于保险杠木框的转角处
 
 </CustomCard>
 <CustomCard title="Dogbone and Corner Overcut" subTitle="" href="https://cad.onshape.com/documents/51695bc13e3d9fb286023c70/w/f1e387898ad3a323b9fd9a6b/e/3a9512753b299d5fefc39f46">
 
-- Features to make it easier for cnc routers to cut cavities in parts
+- 便于数控铣床在零件上加工凹槽的功能
 
 </CustomCard>
 </CardGrid>
 
-### Onshape Functionality Extensions
+### Onshape 功能扩展
 
 <CardGrid>
-<CustomCard title="Advanced Variables" subTitle="(2471 Featurescripts)" href="https://cad.onshape.com/documents/028ca8fb10baf53e1f6fce96/w/b1250a450d0ba88f0a8b1811/e/a8b9e45297aac9f5688c871d">
+<CustomCard title="Advanced Variables" subTitle="（2471 的 FeatureScript）" href="https://cad.onshape.com/documents/028ca8fb10baf53e1f6fce96/w/b1250a450d0ba88f0a8b1811/e/a8b9e45297aac9f5688c871d">
 
-- Can create a compound variable with path length, angle between edges, distance between planes, angle between planes, distance between points, pulley center distance, and chain center distance
-- Very useful for complex belt and chain runs
-- Include measurements that Onshape can't normally do
+- 可以创建复合变量，其中包含路径长度、边之间的夹角、平面之间的距离、平面之间的夹角、点之间的距离、带轮中心距和链轮中心距
+- 对复杂的皮带和链条走向非常实用
+- 包含 Onshape 通常无法完成的测量
 
 </CustomCard>
 <CustomCard title="Part Color" subTitle="" href="https://cad.onshape.com/documents/d997b0ffc30f659113b10c00/w/a6cc43fb8fa670b2b812e8ea/e/b6db0c9545b9a2df1d7ea546">
 
-- Give color to faces on a part retroactively
-- Can use a variety of different color inputs
-- Can be used for part color configurations
+- 可在零件创建后为其表面着色
+- 支持多种不同的颜色输入方式
+- 可用于配置零件颜色
 
 </CustomCard>
-<CustomCard title="Set Materials" subTitle="(Abhi's Features & Configs)" href="https://cad.onshape.com/documents/96d32fd4fe5341563a402ecd/w/0366fc53bc15b9d91febc38f/e/d7f04278e0325b6d4426ca34">
+<CustomCard title="Set Materials" subTitle="（Abhi 的特征与配置）" href="https://cad.onshape.com/documents/96d32fd4fe5341563a402ecd/w/0366fc53bc15b9d91febc38f/e/d7f04278e0325b6d4426ca34">
 
-- Parametrically set materials and appearances of parts in batches
-
-</CustomCard>
-<CustomCard title="Set Properties" subTitle="(Abhi's Features & Configs)" href="https://cad.onshape.com/documents/96d32fd4fe5341563a402ecd/w/0366fc53bc15b9d91febc38f/e/d7f04278e0325b6d4426ca34">
-
-- Sets properties of parts in batches
+- 以参数化方式批量设置零件的材料和外观
 
 </CustomCard>
-<CustomCard title="2471's Part Numbering" subTitle="(2471 Featurescripts)" href="https://cad.onshape.com/documents/028ca8fb10baf53e1f6fce96/w/b1250a450d0ba88f0a8b1811/e/a8b9e45297aac9f5688c871d">
+<CustomCard title="Set Properties" subTitle="（Abhi 的特征与配置）" href="https://cad.onshape.com/documents/96d32fd4fe5341563a402ecd/w/0366fc53bc15b9d91febc38f/e/d7f04278e0325b6d4426ca34">
 
-- Numbers parts based off of a given standard
+- 批量设置零件属性
+
+</CustomCard>
+<CustomCard title="2471's Part Numbering" subTitle="（2471 的 FeatureScript）" href="https://cad.onshape.com/documents/028ca8fb10baf53e1f6fce96/w/b1250a450d0ba88f0a8b1811/e/a8b9e45297aac9f5688c871d">
+
+- 根据指定标准为零件编号
 
 </CustomCard>
 <CustomCard title="Abhi's Part Numbering" subTitle="" href="https://cad.onshape.com/documents/443e443bb2a37736743bf314/w/6539c7379d36307a6a2cc01d/e/ef4e1b0c40e1dbf2ee36d02e">
 
-- Used for quickly applying a system to number parts
+- 用于快速应用零件编号体系
 
 </CustomCard>
 </CardGrid>
