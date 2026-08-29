@@ -1,8 +1,12 @@
 ---
 import { getPrevNextLinks } from '../config/sidebarConfig';
+import { isChinesePath } from '../config/navConfig';
 
 const pathname = Astro.url.pathname;
 const { prev, next } = getPrevNextLinks(pathname);
+const isChinese = isChinesePath(pathname);
+const previousLabel = isChinese ? '上一页' : 'Previous';
+const nextLabel = isChinese ? '下一页' : 'Next';
 const frontmatter = Astro.locals.starlightRoute.entry.data;
 const showPrev = frontmatter.prev !== false;
 const showNext = frontmatter.next !== false;
@@ -18,7 +22,7 @@ const nextLink = showNext ? next : null;
           <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
         </svg>
         <span>
-          <span class="pagination-label">Previous</span>
+          <span class="pagination-label">{previousLabel}</span>
           <span class="pagination-title">{prevLink.label}</span>
         </span>
       </a>
@@ -26,7 +30,7 @@ const nextLink = showNext ? next : null;
     {nextLink && (
       <a href={nextLink.href} rel="next" class="pagination-link next-link">
         <span>
-          <span class="pagination-label">Next</span>
+          <span class="pagination-label">{nextLabel}</span>
           <span class="pagination-title">{nextLink.label}</span>
         </span>
         <svg aria-hidden="true" class="pagination-arrow" viewBox="0 0 24 24" fill="currentColor">

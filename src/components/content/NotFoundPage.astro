@@ -2,8 +2,8 @@
 import heroBook from '../../assets/home/tilt-book-white.png';
 ---
 
-<section class="not-found-page" aria-labelledby="not-found-title">
-  <div class="not-found-copy">
+<section class="not-found-page">
+  <div class="not-found-copy" data-not-found-language="en">
     <p class="not-found-eyebrow">404</p>
     <h1 id="not-found-title">This page is missing.</h1>
     <p>
@@ -14,6 +14,19 @@ import heroBook from '../../assets/home/tilt-book-white.png';
       <a href="/">Go home</a>
       <a href="/learning-course/">Start learning</a>
       <a href="/mechanism-examples/">Browse mechanisms</a>
+    </div>
+  </div>
+
+  <div class="not-found-copy" data-not-found-language="zh">
+    <p class="not-found-eyebrow">404</p>
+    <h1 id="not-found-title-zh">页面未找到</h1>
+    <p>
+      这个链接可能已失效，页面可能已被移动，或者你要查找的内容仍在开发中。
+    </p>
+    <div class="not-found-actions" aria-label="实用链接">
+      <a href="/zh/">返回首页</a>
+      <a href="/zh/learning-course/">开始学习</a>
+      <a href="/zh/mechanism-examples/">浏览机构示例</a>
     </div>
   </div>
 
@@ -41,6 +54,18 @@ import heroBook from '../../assets/home/tilt-book-white.png';
     display: grid;
     gap: 0.9rem;
     max-width: 42rem;
+  }
+
+  [data-not-found-language='zh'] {
+    display: none;
+  }
+
+  :global(html[data-not-found-locale='zh']) [data-not-found-language='en'] {
+    display: none;
+  }
+
+  :global(html[data-not-found-locale='zh']) [data-not-found-language='zh'] {
+    display: grid;
   }
 
   .not-found-eyebrow {

@@ -431,6 +431,106 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
             },
           ],
         },
+        {
+          label: '第二阶段',
+          collapsed: true,
+          items: [
+            {
+              label: 'A：基础发射机构',
+              collapsed: true,
+              items: [
+                { label: '基础发射机构介绍', slug: 'zh/learning-course/stage2/2a/introduction' },
+                { label: '项目概览', slug: 'zh/learning-course/stage2/2a/project-overview' },
+                {
+                  label: '工程概念',
+                  collapsed: true,
+                  items: [
+                    { label: '结构与刚性', slug: 'zh/learning-course/stage2/2a/structure-rigidity' },
+                    { label: '球的轨迹', slug: 'zh/learning-course/stage2/2a/ball-trajectory' },
+                    { label: '出射速度', slug: 'zh/learning-course/stage2/2a/exit-velocity' },
+                    { label: '压缩量与包覆', slug: 'zh/learning-course/stage2/2a/compression-wrap' },
+                    { label: '旋转控制', slug: 'zh/learning-course/stage2/2a/spin-control' },
+                    { label: '摩擦与效率', slug: 'zh/learning-course/stage2/2a/friction-efficiency' },
+                  ],
+                },
+                { label: '布局草图', slug: 'zh/learning-course/stage2/2a/layout-sketch' },
+                { label: '零件工作室', slug: 'zh/learning-course/stage2/2a/part-studio' },
+                { label: '装配体', slug: 'zh/learning-course/stage2/2a/assembly' },
+                { label: '总结', slug: 'zh/learning-course/stage2/2a/summary' },
+              ],
+            },
+            {
+              label: 'B：死轴转轴机构',
+              collapsed: true,
+              items: [
+                { label: '死轴转轴机构介绍', slug: 'zh/learning-course/stage2/2b/introduction' },
+                { label: '项目概览', slug: 'zh/learning-course/stage2/2b/project-overview' },
+                {
+                  label: '工程概念',
+                  collapsed: true,
+                  items: [
+                    { label: '强度', slug: 'zh/learning-course/stage2/2b/strength' },
+                    { label: '摩擦', slug: 'zh/learning-course/stage2/2b/friction' },
+                    { label: '动力传动', slug: 'zh/learning-course/stage2/2b/power-transmission' },
+                    { label: '张紧', slug: 'zh/learning-course/stage2/2b/tensioning' },
+                    { label: '回程间隙', slug: 'zh/learning-course/stage2/2b/backlash' },
+                  ],
+                },
+                { label: '布局草图', slug: 'zh/learning-course/stage2/2b/layout-sketch' },
+                { label: '零件工作室', slug: 'zh/learning-course/stage2/2b/part-studio' },
+                { label: '装配体', slug: 'zh/learning-course/stage2/2b/assembly' },
+                { label: '总结', slug: 'zh/learning-course/stage2/2b/summary' },
+              ],
+            },
+            {
+              label: 'C：下翻式拾取机构',
+              collapsed: true,
+              items: [
+                { label: '下翻式拾取机构介绍', slug: 'zh/learning-course/stage2/2c/introduction' },
+                { label: '项目概览', slug: 'zh/learning-course/stage2/2c/project-overview' },
+                {
+                  label: '工程概念',
+                  collapsed: true,
+                  items: [
+                    { label: '拾取机构设计黄金法则', slug: 'zh/learning-course/stage2/2c/intake-golden-rules' },
+                    { label: '可靠性', slug: 'zh/learning-course/stage2/2c/robustness' },
+                    { label: '转轴机构', slug: 'zh/learning-course/stage2/2c/pivot' },
+                    { label: '滚轮', slug: 'zh/learning-course/stage2/2c/rollers' },
+                    { label: '惰轴', slug: 'zh/learning-course/stage2/2c/zombie-axles' },
+                  ],
+                },
+                { label: '布局草图', slug: 'zh/learning-course/stage2/2c/layout-sketch' },
+                { label: '零件工作室', slug: 'zh/learning-course/stage2/2c/part-studio' },
+                { label: '装配体', slug: 'zh/learning-course/stage2/2c/assembly' },
+                { label: '总结', slug: 'zh/learning-course/stage2/2c/summary' },
+              ],
+            },
+            {
+              label: 'D：级联升降机构',
+              collapsed: true,
+              items: [
+                { label: '级联升降机构介绍', slug: 'zh/learning-course/stage2/2d/introduction' },
+                { label: '项目概览', slug: 'zh/learning-course/stage2/2d/project-overview' },
+                {
+                  label: '工程概念',
+                  collapsed: true,
+                  items: [
+                    { label: '升降滑块', slug: 'zh/learning-course/stage2/2d/elevator-blocks' },
+                    { label: '链条连接', slug: 'zh/learning-course/stage2/2d/chain-attachment' },
+                    { label: '绕绳系统', slug: 'zh/learning-course/stage2/2d/rigging' },
+                    { label: '绳索夹板', slug: 'zh/learning-course/stage2/2d/cable-clamp' },
+                    { label: '绳索端部', slug: 'zh/learning-course/stage2/2d/cable-ends' },
+                    { label: '驱动系统', slug: 'zh/learning-course/stage2/2d/drive-system' },
+                  ],
+                },
+                { label: '布局草图', slug: 'zh/learning-course/stage2/2d/layout-sketch' },
+                { label: '零件工作室', slug: 'zh/learning-course/stage2/2d/part-studio' },
+                { label: '装配体', slug: 'zh/learning-course/stage2/2d/assembly' },
+                { label: '总结', slug: 'zh/learning-course/stage2/2d/summary' },
+              ],
+            },
+          ],
+        },
         { label: '后续步骤', slug: 'zh/learning-course/next-steps' },
       ],
     },
@@ -455,6 +555,31 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
             { label: 'Stage 1C', slug: 'educators-guide/stage1/stage1c' },
             { label: 'Stage 1D', slug: 'educators-guide/stage1/stage1d' },
             { label: 'Stage 1E', slug: 'educators-guide/stage1/stage1e' },
+          ],
+        },
+      ],
+    },
+  ],
+
+  // 中文版本 Educator's Guide section
+  '/zh/educators-guide': [
+    {
+      label: '教师指南',
+      items: [
+        { label: '教师指南概览', slug: 'zh/educators-guide/introduction' },
+        { label: '各阶段', slug: 'zh/educators-guide/introduction/the-stages' },
+        { label: '准备工作', slug: 'zh/educators-guide/introduction/preparation' },
+        { label: '阶段 0：CAD 入门', slug: 'zh/educators-guide/stage0/overview' },
+        {
+          label: '阶段 1',
+          collapsed: true,
+          items: [
+            { label: '阶段 1 概览', slug: 'zh/educators-guide/stage1' },
+            { label: '阶段 1A：CAD 基础', slug: 'zh/educators-guide/stage1/stage1a' },
+            { label: '阶段 1B：动力传动', slug: 'zh/educators-guide/stage1/stage1b' },
+            { label: '阶段 1C：练习机构', slug: 'zh/educators-guide/stage1/stage1c' },
+            { label: '阶段 1D：设计方法', slug: 'zh/educators-guide/stage1/stage1d' },
+            { label: '阶段 1E：子系统工作流程', slug: 'zh/educators-guide/stage1/stage1e' },
           ],
         },
       ],
@@ -490,6 +615,41 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
           collapsed: true,
           items: [
             { label: 'Designing for Controllability', slug: 'design-handbook/design-writeups/designing-for-controllability' },
+          ],
+        },
+      ],
+    },
+  ],
+
+  // 中文版本 Design Handbook section
+  '/zh/design-handbook': [
+    {
+      label: '设计手册',
+      items: [
+        { label: '概览', slug: 'zh/design-handbook' },
+        {
+          label: '硬件',
+          collapsed: true,
+          items: [
+            { label: '结构', slug: 'zh/design-handbook/structure/structure' },
+            { label: '材料', slug: 'zh/design-handbook/structure/materials' },
+            { label: '紧固件', slug: 'zh/design-handbook/structure/fasteners' },
+            { label: '3D 打印入门', slug: 'zh/design-handbook/structure/intro-to-3d-printing' },
+            { label: '面向 3D 打印的设计', slug: 'zh/design-handbook/structure/design-for-3d-printing' },
+          ],
+        },
+        {
+          label: '动力传动',
+          collapsed: true,
+          items: [
+            { label: '运动部件', slug: 'zh/design-handbook/power-transmission/motion-components' },
+          ],
+        },
+        {
+          label: '设计专题',
+          collapsed: true,
+          items: [
+            { label: '面向可控性的设计', slug: 'zh/design-handbook/design-writeups/designing-for-controllability' },
           ],
         },
       ],
@@ -585,6 +745,95 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
     },
   ],
 
+  // 中文版本 Mechanism Examples section
+  '/zh/mechanism-examples': [
+    {
+      label: '机构示例',
+      items: [
+        { label: '概览', slug: 'zh/mechanism-examples' },
+        {
+          label: '底盘',
+          collapsed: true,
+          items: [
+            {
+              label: '舵轮',
+              collapsed: true,
+              items: [
+                { label: '概览', slug: 'zh/mechanism-examples/drivebase/swerve' },
+                { label: '2910 Charged Up 舵轮底盘', slug: 'zh/mechanism-examples/drivebase/swerve/2910_2023_dt' },
+              ],
+            },
+          ],
+        },
+        {
+          label: '拾取机构',
+          collapsed: true,
+          items: [
+            {
+              label: '下翻式拾取机构',
+              slug: 'zh/mechanism-examples/intake/slapdown',
+              collapsed: true,
+              items: [],
+            },
+            {
+              label: '连杆式拾取机构',
+              slug: 'zh/mechanism-examples/intake/linkage',
+              collapsed: true,
+              items: [],
+            },
+          ],
+        },
+        {
+          label: '比赛物件操控',
+          collapsed: true,
+          items: [
+            {
+              label: '发射机构',
+              collapsed: true,
+              items: [
+                { label: '概览', slug: 'zh/mechanism-examples/shooter' },
+                { label: '1678 队的 Rapid React 发射机构', slug: 'zh/mechanism-examples/shooter/1678_2022_shooter' },
+              ],
+            },
+          ],
+        },
+        {
+          label: '直线伸展机构',
+          collapsed: true,
+          items: [
+            {
+              label: '连续式升降机构',
+              slug: 'zh/mechanism-examples/elevator/continuous',
+              collapsed: true,
+              items: [],
+            },
+            {
+              label: '级联升降机构',
+              slug: 'zh/mechanism-examples/elevator/cascade',
+              collapsed: true,
+              items: [],
+            },
+          ],
+        },
+        {
+          label: '旋转机构',
+          collapsed: true,
+          items: [
+            {
+              label: '转轴机构',
+              collapsed: true,
+              items: [
+                { label: '概览', slug: 'zh/mechanism-examples/pivots' },
+                { label: '6328 A 字形框架转轴机构 2023', slug: 'zh/mechanism-examples/pivots/6328_2023_pivot' },
+                { label: '2910 队 2023 年死轴转轴机构', slug: 'zh/mechanism-examples/pivots/2910_2023_pivot' },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  ],
+
   // Best Practices section
   '/best-practices': [
     {
@@ -600,6 +849,21 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
     },
   ],
 
+  // 中文版本 Best Practices section
+  '/zh/best-practices': [
+    {
+      label: '最佳实践',
+      items: [
+        { label: '概览', slug: 'zh/best-practices' },
+        { label: '文档设置', slug: 'zh/best-practices/document-setup' },
+        { label: '子文档设置', slug: 'zh/best-practices/sub-document-setup' },
+        { label: '布局草图最佳实践', slug: 'zh/best-practices/master-sketch-setup' },
+        { label: '零件工作室最佳实践', slug: 'zh/best-practices/feature-tree-setup' },
+        { label: '装配体最佳实践', slug: 'zh/best-practices/assembly-setup' },
+      ],
+    },
+  ],
+
   // Contribution section
   '/contribution': [
     {
@@ -610,6 +874,20 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
         { label: 'Contributing to Mech. Examples', slug: 'contribution/mechanism-contribution' },
         { label: 'Style Guide', slug: 'contribution/styleguide' },
         { label: 'Contributors', slug: 'contribution/contributors' },
+      ],
+    },
+  ],
+
+  // 中文版本 Contribution section
+  '/zh/contribution': [
+    {
+      label: '贡献指南',
+      items: [
+        { label: '贡献方式', slug: 'zh/contribution/methods-of-contributing' },
+        { label: '添加页面', slug: 'zh/contribution/adding-a-page' },
+        { label: '贡献机构示例', slug: 'zh/contribution/mechanism-contribution' },
+        { label: '贡献风格指南', slug: 'zh/contribution/styleguide' },
+        { label: '网站贡献者', slug: 'zh/contribution/contributors' },
       ],
     },
   ],
@@ -646,6 +924,39 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
       ],
     },
   ],
+
+  // 中文版本 Resources section
+  '/zh/resources': [
+    {
+      label: '资源',
+      items: [
+        { label: '概览', slug: 'zh/resources' },
+        { label: '术语表', slug: 'zh/resources/glossary' },
+        {
+          label: 'CAD 资源',
+          collapsed: true,
+          items: [
+            { label: 'FRCDesignLib', slug: 'zh/resources/frcdesignlib' },
+            { label: 'KrayonCAD', slug: 'zh/resources/krayoncad' },
+            { label: 'FeatureScript 列表', slug: 'zh/resources/featurescripts' },
+            { label: 'FeatureScript 帮助', slug: 'zh/resources/featurescript-help' },
+          ],
+        },
+        {
+          label: '设计挑战',
+          collapsed: true,
+          items: [
+            { label: '概览', slug: 'zh/resources/design-challenges' },
+            { label: '设计挑战 #1：舵轮底盘', slug: 'zh/resources/design-challenges/week1' },
+            { label: '设计挑战 #2：齿轮箱', slug: 'zh/resources/design-challenges/week2' },
+            { label: '设计挑战 #3：球类发射机构', slug: 'zh/resources/design-challenges/week3' },
+            { label: '设计挑战 #4：拾取机构', slug: 'zh/resources/design-challenges/week4' },
+            { label: '设计挑战 #5：倾斜移位', slug: 'zh/resources/design-challenges/week5' },
+          ],
+        },
+      ],
+    },
+  ],
 };
 
 /**
@@ -656,7 +967,7 @@ export function getSidebarForPath(pathname: string): SidebarSection[] {
   // Normalize pathname
   const normalizedPath = pathname.endsWith('/') ? pathname.slice(0, -1) : pathname;
 
-  if (normalizedPath === '/mechanism-examples') {
+  if (normalizedPath === '/mechanism-examples' || normalizedPath === '/zh/mechanism-examples') {
     return [];
   }
 

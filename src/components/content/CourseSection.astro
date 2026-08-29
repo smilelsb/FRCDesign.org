@@ -1,5 +1,6 @@
 ---
 import ContentFigure from './ContentFigure.astro';
+import { isChinesePath } from '../../config/navConfig';
 
 interface Props {
   title: string;
@@ -20,6 +21,7 @@ const {
 } = Astro.props;
 
 const hasImage = Boolean(image);
+const underConstructionLabel = isChinesePath(Astro.url.pathname) ? '（建设中）' : ' (Under Construction)';
 ---
 
 <section class:list={['course-section', hasImage && `image-${imageSide}`, !hasImage && 'no-image']}>
@@ -32,7 +34,7 @@ const hasImage = Boolean(image);
   <div class="course-section-content">
     <h3 class="course-section-title">
       <a href={href}>{title}</a>
-      {underConstruction && <span class="under-construction"> (Under Construction)</span>}
+      {underConstruction && <span class="under-construction">{underConstructionLabel}</span>}
     </h3>
     <ul class="course-section-list">
       <slot />

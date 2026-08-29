@@ -3,7 +3,7 @@ title: 贡献机构示例
 description: 向网站贡献机构示例的指南。
 ---
 
-[机构示例](/mechanism-examples/)页面最需要外部贡献。你当然可以添加其他队伍的示例，但最理想的方式是添加自己队伍的机构，并深入介绍其设计与表现。如果要添加其他队伍的示例，请尽量采访该队伍，以获取他们的观点和更准确的信息。
+[机构示例](/zh/mechanism-examples/)页面最需要外部贡献。你当然可以添加其他队伍的示例，但最理想的方式是添加自己队伍的机构，并深入介绍其设计与表现。如果要添加其他队伍的示例，请尽量采访该队伍，以获取他们的观点和更准确的信息。
 
 **机构示例标准：**
 
@@ -15,12 +15,12 @@ description: 向网站贡献机构示例的指南。
 
 ## 添加机构示例
 
-如[贡献方式](/contribution/methods-of-contributing/)中所述，有两种方法：
+如[贡献方式](/zh/contribution/methods-of-contributing/)中所述，有两种方法：
 
 1. 在其他平台（例如 Google Docs）上编写贡献内容，再由内部贡献者将其添加到网站
 2. 复刻仓库并在 GitHub 上创建拉取请求
 
-第一种方法基本不言自明。如果选择复刻仓库并在 GitHub 上创建拉取请求，请参考[添加页面](/contribution/adding-a-page/)指南完成技术配置，然后按照下面的结构操作。
+第一种方法基本不言自明。如果选择复刻仓库并在 GitHub 上创建拉取请求，请参考[添加页面](/zh/contribution/adding-a-page/)指南完成技术配置，然后按照下面的结构操作。
 
 ## 添加机构示例
 
@@ -79,7 +79,7 @@ Content about the design decisions, tradeoffs, performance, and lessons learned.
 
 缩略图应使用 **1:1.545 或 1.545:1 的宽高比**。这与 Onshape 使用 tabloid 纸张尺寸时“print”输出的宽高比一致（宽图用横向，长图用纵向）。
 
-<Aside type="tip">
+<Aside type="tip" title="Tip（提示）">
 要将现有图片裁剪为正确的宽高比，可以使用 GIMP（或任意图片编辑器），根据图片短边的像素尺寸计算，并增加像素以达到目标比例。
 </Aside>
 
@@ -87,7 +87,7 @@ Content about the design decisions, tradeoffs, performance, and lessons learned.
 
 如果要添加的机构类型尚无对应类别，则需要先创建类别。添加类别包含两部分：创建 MDX 内容文件，以及更新用于生成落地页的 Astro 组件。内容文件较为简单；编辑组件则需要具备一定的 TypeScript 基础。
 
-<Aside type="note">
+<Aside type="note" title="Note（备注）">
 如果不熟悉 Astro 组件编辑，可以跳过落地页步骤，并在拉取请求或 Google Doc 中注明需要由内部贡献者处理。
 </Aside>
 
@@ -113,7 +113,7 @@ Description of the mechanism category and what examples are included.
 
 ### 落地页组件（进阶）
 
-[机构示例落地页](/mechanism-examples/)由 `src/components/content/MechanismExamplesLanding.astro` 生成。要让新类别以卡片形式显示在该页面上，请在组件中找到 `categories` 数组并添加新条目：
+[机构示例落地页](/zh/mechanism-examples/)由 `src/components/content/MechanismExamplesLanding.astro` 生成。要让新类别以卡片形式显示在该页面上，请在组件中找到 `categories` 数组并添加新条目：
 
 ```ts
 {

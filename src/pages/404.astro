@@ -8,7 +8,16 @@ import NotFoundPage from '@components/content/NotFoundPage.astro';
     title: 'Page Not Found',
     template: 'splash',
     hero: {},
-    head: [{ tag: 'meta', attrs: { name: 'robots', content: 'noindex' } }],
+    head: [
+      { tag: 'meta', attrs: { name: 'robots', content: 'noindex' } },
+      {
+        tag: 'script',
+        content: `if (location.pathname === '/zh' || location.pathname.startsWith('/zh/')) {
+          document.documentElement.dataset.notFoundLocale = 'zh';
+          document.title = '页面未找到 | FRCDesign.org';
+        }`,
+      },
+    ],
   }}
 >
   <div class="not-found-outer">

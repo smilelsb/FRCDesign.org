@@ -37,6 +37,7 @@
  * </Slides>
  */
 import { Image } from 'astro:assets';
+import { isChinesePath } from '../../config/navConfig';
 
 // Import all images from both locations for optimization (exclude GIFs - they can exceed pixel limits)
 const contentImages = import.meta.glob<{ default: ImageMetadata }>('/src/content/docs/**/img/**/*.{webp,png,jpg,jpeg}', { eager: true });
@@ -279,6 +280,11 @@ const slidesDataForClient = processedImages.map(slide => ({
 }));
 const slidesData = JSON.stringify(slidesDataForClient);
 const slideId = `slides-${Math.random().toString(36).substr(2, 9)}`;
+const isChinese = isChinesePath(Astro.url.pathname);
+const previousSlideLabel = isChinese ? '上一张幻灯片' : 'Previous slide';
+const nextSlideLabel = isChinese ? '下一张幻灯片' : 'Next slide';
+const closeLightboxLabel = isChinese ? '关闭灯箱' : 'Close lightbox';
+const goToSlideLabel = (index: number) => isChinese ? `转到第 ${index + 1} 张幻灯片` : `Go to slide ${index + 1}`;
 ---
 
 <div class="slides-component" data-slides={slidesData} data-slide-id={slideId} style={`--slides-scale: ${scalePercent};`}>
@@ -309,13 +315,13 @@ const slideId = `slides-${Math.random().toString(36).substr(2, 9)}`;
         ))}
       </div>
 
-      <button class="slides-nav slides-prev" aria-label="Previous slide">
+      <button class="slides-nav slides-prev" aria-label={previousSlideLabel}>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="15 18 9 12 15 6"></polyline>
         </svg>
       </button>
 
-      <button class="slides-nav slides-next" aria-label="Next slide">
+      <button class="slides-nav slides-next" aria-label={nextSlideLabel}>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="9 18 15 12 9 6"></polyline>
         </svg>
@@ -334,13 +340,13 @@ const slideId = `slides-${Math.random().toString(36).substr(2, 9)}`;
 
     <div class="slides-dots">
       {processedImages.map((_, index) => (
-        <button class={`dot ${index === 0 ? 'active' : ''}`} data-index={index} aria-label={`Go to slide ${index + 1}`}></button>
+        <button class={`dot ${index === 0 ? 'active' : ''}`} data-index={index} aria-label={goToSlideLabel(index)}></button>
       ))}
     </div>
   </div>
 
   <div class="lightbox" aria-hidden="true">
-    <button class="lightbox-close" aria-label="Close lightbox">
+    <button class="lightbox-close" aria-label={closeLightboxLabel}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <line x1="18" y1="6" x2="6" y2="18"></line>
         <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -349,7 +355,7 @@ const slideId = `slides-${Math.random().toString(36).substr(2, 9)}`;
 
     <div class="lightbox-content">
       <div class="lightbox-media-container">
-        <button class="lightbox-nav lightbox-prev" aria-label="Previous slide">
+        <button class="lightbox-nav lightbox-prev" aria-label={previousSlideLabel}>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="15 18 9 12 15 6"></polyline>
           </svg>
@@ -357,7 +363,7 @@ const slideId = `slides-${Math.random().toString(36).substr(2, 9)}`;
 
         <div class="lightbox-media"></div>
 
-        <button class="lightbox-nav lightbox-next" aria-label="Next slide">
+        <button class="lightbox-nav lightbox-next" aria-label={nextSlideLabel}>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="9 18 15 12 9 6"></polyline>
           </svg>
@@ -376,7 +382,7 @@ const slideId = `slides-${Math.random().toString(36).substr(2, 9)}`;
 
       <div class="lightbox-dots">
         {processedImages.map((_, index) => (
-          <button class={`dot ${index === 0 ? 'active' : ''}`} data-index={index} aria-label={`Go to slide ${index + 1}`}></button>
+          <button class={`dot ${index === 0 ? 'active' : ''}`} data-index={index} aria-label={goToSlideLabel(index)}></button>
         ))}
       </div>
     </div>

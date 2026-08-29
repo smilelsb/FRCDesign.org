@@ -4,21 +4,31 @@ import { renderGlossaryDescription } from '../../utils/renderGlossaryDescription
 
 type MechanismImage = ImageMetadata & { route: string; label: string };
 
-const mechanismImageModules = import.meta.glob<{ default: ImageMetadata }>(
+const englishMechanismImageModules = import.meta.glob<{ default: ImageMetadata }>(
   '../../content/docs/mechanism-examples/**/thumb/*.{png,jpg,jpeg,webp}',
+  { eager: true }
+);
+const chineseMechanismImageModules = import.meta.glob<{ default: ImageMetadata }>(
+  '../../content/docs/zh/mechanism-examples/**/thumb/*.{png,jpg,jpeg,webp}',
   { eager: true }
 );
 
 const normalizeRoute = (route: string) => route.endsWith('/') ? route : `${route}/`;
+const isChinese = /^\/zh(?:\/|$)/.test(Astro.url.pathname);
+const localizeRoute = (route: string) => isChinese ? `/zh${route}` : route;
+const mechanismImageModules = isChinese
+  ? chineseMechanismImageModules
+  : englishMechanismImageModules;
 
 const mechanismImages: MechanismImage[] = Object.entries(mechanismImageModules)
   .map(([path, module]) => {
     const route = normalizeRoute(
       path
+        .replace('../../content/docs/zh', '/zh')
         .replace('../../content/docs', '')
         .replace(/\/thumb\/[^/]+$/, '/')
     );
-    const fileName = path.split('/').pop() || 'mechanism image';
+    const fileName = path.split('/').pop() || (isChinese ? '机构图片' : 'mechanism image');
     const label = fileName.replace(/\.[^.]+$/, '').replace(/[-_]+/g, ' ');
     return { ...module.default, route, label };
   })
@@ -50,77 +60,93 @@ const imageByLabel = (labelPart: string) =>
 
 const inDepthExamples = [
   {
-    title: '6328 A-Frame Pivot',
-    href: '/mechanism-examples/pivots/6328_2023_pivot/',
+    title: isChinese ? '6328 A 字形框架转轴机构 2023' : '6328 A-Frame Pivot',
+    href: localizeRoute('/mechanism-examples/pivots/6328_2023_pivot/'),
     image: imageByLabel('6328 2023 pivot'),
-    imageAlt: '6328 A-frame pivot CAD render',
-    category: 'Pivot',
-    description: 'A triple-pivoted A-frame arm with notes on torque analysis, custom gearbox packaging, dead-axle clamping, and serviceable joints.',
+    imageAlt: isChinese ? '6328 A 字形框架转轴机构 CAD 渲染图' : '6328 A-frame pivot CAD render',
+    category: isChinese ? '转轴机构' : 'Pivot',
+    description: isChinese
+      ? '一款三转轴 A 字形框架机械臂，包含扭矩分析、定制齿轮箱布局、死轴夹紧和便于维护的关节等设计说明。'
+      : 'A triple-pivoted A-frame arm with notes on torque analysis, custom gearbox packaging, dead-axle clamping, and serviceable joints.',
   },
   {
-    title: "1678's Rapid React Shooter",
-    href: '/mechanism-examples/shooter/1678_2022_shooter/',
+    title: isChinese ? '1678 队的 Rapid React 发射机构' : "1678's Rapid React Shooter",
+    href: localizeRoute('/mechanism-examples/shooter/1678_2022_shooter/'),
     image: imageByLabel('1678 2022 shooter'),
-    imageAlt: '1678 Rapid React shooter CAD render',
-    category: 'Shooter',
-    description: 'A hooded shooter breakdown covering backrollers, flywheel mass, hood actuation, spin control, and practical design tradeoffs.',
+    imageAlt: isChinese ? '1678 队 Rapid React 发射机构 CAD 渲染图' : '1678 Rapid React shooter CAD render',
+    category: isChinese ? '发射机构' : 'Shooter',
+    description: isChinese
+      ? '一篇导向罩式发射机构详解，涵盖背侧滚轮、飞轮质量、导向罩驱动、旋转控制和实际设计权衡。'
+      : 'A hooded shooter breakdown covering backrollers, flywheel mass, hood actuation, spin control, and practical design tradeoffs.',
   },
   {
-    title: '2910 Dead Axle Pivot',
-    href: '/mechanism-examples/pivots/2910_2023_pivot/',
+    title: isChinese ? '2910 队 2023 年死轴转轴机构' : '2910 Dead Axle Pivot',
+    href: localizeRoute('/mechanism-examples/pivots/2910_2023_pivot/'),
     image: imageByLabel('2910 2023 pivot'),
-    imageAlt: '2910 dead axle pivot CAD render',
-    category: 'Pivot',
-    description: 'A custom dead-axle pivot with notes on chain tensioning, load paths, electronics packaging, and serviceable structure.',
+    imageAlt: isChinese ? '2910 队死轴转轴机构 CAD 渲染图' : '2910 dead axle pivot CAD render',
+    category: isChinese ? '转轴机构' : 'Pivot',
+    description: isChinese
+      ? '一款定制死轴转轴机构，包含链条张紧、载荷路径、电子元件布局和便于维护的结构等设计说明。'
+      : 'A custom dead-axle pivot with notes on chain tensioning, load paths, electronics packaging, and serviceable structure.',
   },
 ];
 
 const categories = [
   {
-    title: 'Drivebases',
-    href: '/mechanism-examples/drivebase/swerve/',
-    imageAlt: 'Swerve drivebase CAD render',
-    description: 'Swerve drivebases, bellypans, electronics packaging, frame geometry, and module integration.',
+    title: isChinese ? '底盘' : 'Drivebases',
+    href: localizeRoute('/mechanism-examples/drivebase/swerve/'),
+    imageAlt: isChinese ? '舵轮底盘 CAD 渲染图' : 'Swerve drivebase CAD render',
+    description: isChinese
+      ? '舵轮底盘、底板、电子元件布局、框架几何结构和模块集成。'
+      : 'Swerve drivebases, bellypans, electronics packaging, frame geometry, and module integration.',
     links: [
-      { label: 'Swerve drivebases', href: '/mechanism-examples/drivebase/swerve/' },
+      { label: isChinese ? '舵轮底盘' : 'Swerve drivebases', href: localizeRoute('/mechanism-examples/drivebase/swerve/') },
     ],
   },
   {
-    title: 'Intakes',
-    href: '/mechanism-examples/intake/slapdown/',
-    imageAlt: 'Pivoting intake CAD render',
-    description: 'Over-the-bumper intake layouts, pivoting intakes, linkage deployments, roller placement, and acquisition geometry.',
+    title: isChinese ? '拾取机构' : 'Intakes',
+    href: localizeRoute('/mechanism-examples/intake/slapdown/'),
+    imageAlt: isChinese ? '旋转式拾取机构 CAD 渲染图' : 'Pivoting intake CAD render',
+    description: isChinese
+      ? '越过保险杠的拾取机构布局、旋转式拾取机构、连杆展开结构、滚轮布置和拾取几何结构。'
+      : 'Over-the-bumper intake layouts, pivoting intakes, linkage deployments, roller placement, and acquisition geometry.',
     links: [
-      { label: 'Pivoting intakes', href: '/mechanism-examples/intake/slapdown/' },
-      { label: 'Linkage intakes', href: '/mechanism-examples/intake/linkage/' },
+      { label: isChinese ? '旋转式拾取机构' : 'Pivoting intakes', href: localizeRoute('/mechanism-examples/intake/slapdown/') },
+      { label: isChinese ? '连杆式拾取机构' : 'Linkage intakes', href: localizeRoute('/mechanism-examples/intake/linkage/') },
     ],
   },
   {
-    title: 'Shooters',
-    href: '/mechanism-examples/shooter/',
-    imageAlt: 'Shooter CAD render',
-    description: 'Flywheels, hoods, backrollers, note and ball launchers, and examples from multiple FRC games.',
+    title: isChinese ? '发射机构' : 'Shooters',
+    href: localizeRoute('/mechanism-examples/shooter/'),
+    imageAlt: isChinese ? '发射机构 CAD 渲染图' : 'Shooter CAD render',
+    description: isChinese
+      ? '飞轮、导向罩、背侧滚轮、音符与球类比赛物体发射机构，以及多个 FRC 赛季的设计示例。'
+      : 'Flywheels, hoods, backrollers, note and ball launchers, and examples from multiple FRC games.',
     links: [
-      { label: 'Shooters', href: '/mechanism-examples/shooter/' },
+      { label: isChinese ? '发射机构' : 'Shooters', href: localizeRoute('/mechanism-examples/shooter/') },
     ],
   },
   {
-    title: 'Elevators',
-    href: '/mechanism-examples/elevator/continuous/',
-    imageAlt: 'Continuous elevator CAD render',
-    description: 'Continuous and cascade elevator layouts, bearing blocks, rigging choices, carriages, and COTS elevator kits.',
+    title: isChinese ? '升降机构' : 'Elevators',
+    href: localizeRoute('/mechanism-examples/elevator/continuous/'),
+    imageAlt: isChinese ? '连续式升降机构 CAD 渲染图' : 'Continuous elevator CAD render',
+    description: isChinese
+      ? '连续式与级联式升降机构布局、轴承块、绕绳方案、滑台和 COTS 升降机构套件。'
+      : 'Continuous and cascade elevator layouts, bearing blocks, rigging choices, carriages, and COTS elevator kits.',
     links: [
-      { label: 'Continuous elevators', href: '/mechanism-examples/elevator/continuous/' },
-      { label: 'Cascade elevators', href: '/mechanism-examples/elevator/cascade/' },
+      { label: isChinese ? '连续式升降机构' : 'Continuous elevators', href: localizeRoute('/mechanism-examples/elevator/continuous/') },
+      { label: isChinese ? '级联升降机构' : 'Cascade elevators', href: localizeRoute('/mechanism-examples/elevator/cascade/') },
     ],
   },
   {
-    title: 'Pivots',
-    href: '/mechanism-examples/pivots/',
-    imageAlt: 'Dead axle pivot CAD render',
-    description: 'Dead-axle pivots, belt pivots, chain tensioning, arm structure, and packaging for rotating mechanisms.',
+    title: isChinese ? '转轴机构' : 'Pivots',
+    href: localizeRoute('/mechanism-examples/pivots/'),
+    imageAlt: isChinese ? '死轴转轴机构 CAD 渲染图' : 'Dead axle pivot CAD render',
+    description: isChinese
+      ? '死轴转轴机构、同步带转轴机构、链条张紧、机械臂结构和旋转机构的空间布局。'
+      : 'Dead-axle pivots, belt pivots, chain tensioning, arm structure, and packaging for rotating mechanisms.',
     links: [
-      { label: 'Pivots', href: '/mechanism-examples/pivots/' },
+      { label: isChinese ? '转轴机构' : 'Pivots', href: localizeRoute('/mechanism-examples/pivots/') },
     ],
   },
 ].map((category) => {
@@ -134,24 +160,26 @@ const categories = [
 });
 ---
 
-<h1 id="_top" class="mechanism-page-title-sr">Mechanism Examples</h1>
+<h1 id="_top" class="mechanism-page-title-sr">{isChinese ? '机构示例' : 'Mechanism Examples'}</h1>
 
 <section class="mechanism-hero">
   <div class="mechanism-hero-copy">
-    <p class="mechanism-eyebrow">Mechanism examples</p>
+    <p class="mechanism-eyebrow">{isChinese ? '机构示例' : 'Mechanism examples'}</p>
     <blockquote>
-      <p>Steal from the best, invent the rest.</p>
-      <cite>-Mike Corsetto, Team 1678</cite>
+      <p>{isChinese ? '博采众长，推陈出新。' : 'Steal from the best, invent the rest.'}</p>
+      <cite>{isChinese ? '—Mike Corsetto，1678 队' : '-Mike Corsetto, Team 1678'}</cite>
     </blockquote>
     <p class="hero-copy">
-      Don't be afraid to take inspiration from robots that already solved hard design problems. This library collects in-depth writeups and CAD references so teams can study real mechanisms, compare approaches, and build better designs faster.
+      {isChinese
+        ? '大胆借鉴那些已经解决复杂设计问题的机器人。本资源库汇集了深入的设计详解和 CAD 参考，帮助团队研究真实机构、比较不同方案，更快地做出更好的设计。'
+        : "Don't be afraid to take inspiration from robots that already solved hard design problems. This library collects in-depth writeups and CAD references so teams can study real mechanisms, compare approaches, and build better designs faster."}
     </p>
   </div>
   <div class="mechanism-hero-media" data-hero-rotator>
     {mechanismImages.map((heroImage, index) => (
       <Image
         src={heroImage}
-        alt={`${heroImage.label} CAD render`}
+        alt={`${heroImage.label} ${isChinese ? 'CAD 渲染图' : 'CAD render'}`}
         loading={index === 0 ? 'eager' : 'lazy'}
         class:list={['hero-rotator-image', { active: index === 0 }]}
         data-route={heroImage.route}
@@ -163,20 +191,22 @@ const categories = [
 
 <section class="mechanism-contribution">
   <div>
-    <p class="mechanism-eyebrow">Contribute</p>
-    <h2>Help make the library deeper.</h2>
+    <p class="mechanism-eyebrow">{isChinese ? '参与贡献' : 'Contribute'}</p>
+    <h2>{isChinese ? '帮助我们丰富资源库。' : 'Help make the library deeper.'}</h2>
     <p>
-      This library gets better when teams share what worked. Add examples with images and CAD links, or help turn existing references into Behind the Design writeups with the reasoning, packaging choices, and tradeoffs that made the mechanism work.
+      {isChinese
+        ? '团队分享行之有效的设计，能够让这个资源库不断完善。你可以提交带图片和 CAD 链接的示例，也可以帮助我们将现有参考资料整理成“设计背后”详解，介绍机构成功运作背后的设计思路、空间布局选择与权衡。'
+        : 'This library gets better when teams share what worked. Add examples with images and CAD links, or help turn existing references into Behind the Design writeups with the reasoning, packaging choices, and tradeoffs that made the mechanism work.'}
     </p>
   </div>
-  <a href="/contribution/methods-of-contributing/">Contribute an example</a>
+  <a href={localizeRoute('/contribution/methods-of-contributing/')}>{isChinese ? '贡献机构示例' : 'Contribute an example'}</a>
 </section>
 
 <section id="in-depth-examples" class="mechanism-section">
   <div class="section-heading">
-    <p class="mechanism-eyebrow">Start here</p>
-    <h2>In-depth writeups</h2>
-    <p>These examples go beyond a CAD document and explain why the mechanism was designed the way it was.</p>
+    <p class="mechanism-eyebrow">{isChinese ? '从这里开始' : 'Start here'}</p>
+    <h2>{isChinese ? '深入设计详解' : 'In-depth writeups'}</h2>
+    <p>{isChinese ? '这些示例不止提供 CAD 文档，还会解释机构为何采用这样的设计。' : 'These examples go beyond a CAD document and explain why the mechanism was designed the way it was.'}</p>
   </div>
 
   <div class="featured-grid">
@@ -197,9 +227,9 @@ const categories = [
 
 <section id="browse-library" class="mechanism-section">
   <div class="section-heading">
-    <p class="mechanism-eyebrow">Browse by mechanism</p>
-    <h2>Mechanism library</h2>
-    <p>Each section displays in-depth writeups first followed by CAD references when available.</p>
+    <p class="mechanism-eyebrow">{isChinese ? '按机构浏览' : 'Browse by mechanism'}</p>
+    <h2>{isChinese ? '机构资源库' : 'Mechanism library'}</h2>
+    <p>{isChinese ? '每个分类会优先显示深入设计详解，并在有可用资料时继续列出 CAD 参考。' : 'Each section displays in-depth writeups first followed by CAD references when available.'}</p>
   </div>
 
   <div class="library-grid">

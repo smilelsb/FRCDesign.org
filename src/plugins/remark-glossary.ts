@@ -7,6 +7,7 @@
 
 import { visit } from 'unist-util-visit';
 import type { Root, Text } from 'mdast';
+import type { VFile } from 'vfile';
 import { glossaryTerms } from '../data/glossary';
 
 // Build a case-insensitive regex pattern for all terms
@@ -14,9 +15,9 @@ import { glossaryTerms } from '../data/glossary';
 const sortedTerms = [...glossaryTerms].sort((a, b) => b.term.length - a.term.length);
 
 // Create a map for quick definition lookup
-const termMap = new Map<string, string>();
-glossaryTerms.forEach(({ term, definition }) => {
-  termMap.set(term.toLowerCase(), definition);
+const termMap = new Map<string, { definition: string; definitionZh: string }>();
+glossaryTerms.forEach(({ term, definition, definitionZh }) => {
+  termMap.set(term.toLowerCase(), { definition, definitionZh });
 });
 
 // Build regex pattern - match whole words only
@@ -30,7 +31,10 @@ function escapeRegex(str: string): string {
 }
 
 export function remarkGlossary() {
-  return (tree: Root) => {
+  return (tree: Root, file: VFile) => {
+    const filePath = (file.path || file.history.at(-1) || '').replace(/\\/g, '/');
+    const isChinesePage = /(^|\/)src\/content\/docs\/zh\//.test(filePath);
+
     visit(tree, 'text', (node: Text, index, parent) => {
       if (!parent || index === undefined) return;
 
@@ -59,7 +63,10 @@ export function remarkGlossary() {
         const matchStart = match.index!;
         const matchEnd = matchStart + match[0].length;
         const matchedTerm = match[0];
-        const definition = termMap.get(matchedTerm.toLowerCase());
+        const glossaryTerm = termMap.get(matchedTerm.toLowerCase());
+        const definition = isChinesePage
+          ? glossaryTerm?.definitionZh
+          : glossaryTerm?.definition;
 
         // Add text before match
         if (matchStart > lastIndex) {

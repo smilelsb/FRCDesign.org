@@ -1,6 +1,6 @@
 ---
 import SiteTitle from "@astrojs/starlight/components/SiteTitle.astro";
-import Search from "@astrojs/starlight/components/Search.astro";
+import Search from "./Search.astro";
 
 import ThemeLightIcon from "../assets/header/theme-light.svg";
 import ThemeLightFilledIcon from "../assets/header/theme-light-filled.svg";
@@ -14,33 +14,38 @@ const props = Astro.props;
 const currentPath = Astro.url.pathname;
 const navLinks = getNavLinks(currentPath);
 const mobileNavLabels = getMobileNavLabels(currentPath);
-
+const isChinese = isChinesePath(currentPath);
+const primaryNavigationLabel = isChinese ? "主导航" : "Primary";
+const mobileMenuToggleLabel = isChinese ? "切换导航菜单" : "Toggle navigation menu";
+const themeToggleLabel = isChinese ? "切换深色 / 浅色主题" : "Toggle dark / light theme";
+const githubLabel = isChinese ? "在 GitHub 上打开 FRCDesign.org" : "Open FRCDesign.org on GitHub";
+const globalLightboxCloseLabel = isChinese ? "关闭灯箱" : "Close lightbox";
 
 function isActive(href: string): boolean {
-  if (href === "/") {
-    return currentPath === "/" || currentPath === "";
-  }
+  const normalizedCurrentPath = currentPath.endsWith("/") ? currentPath : currentPath + "/";
+  const normalizedHref = href.endsWith("/") ? href : href + "/";
 
-  // 中文首页 /zh/ 需要加一个特殊判断
-  if (href === "/zh/") {
-    return currentPath === "/zh/" || currentPath === "/zh";
+  if (normalizedHref === "/" || normalizedHref === "/zh/") {
+    return normalizedCurrentPath === normalizedHref;
   }
 
   // Special case: Changelog is a specific page under /resources/
   // Only mark it active if we're exactly on the changelog page
   if (href === "/resources/site-changelog/") {
-    return currentPath === "/resources/site-changelog/" || currentPath === "/resources/site-changelog";
+    return normalizedCurrentPath === href;
   }
 
   // Special case: "Other Resources" should NOT be active when on Changelog
   if (href === "/resources/") {
-    return currentPath.startsWith("/resources/") &&
-           !currentPath.startsWith("/resources/site-changelog");
+    return normalizedCurrentPath.startsWith("/resources/") &&
+           !normalizedCurrentPath.startsWith("/resources/site-changelog/");
   }
 
-  // For nested paths like /educators-guide/introduction/, check the base section
-  const baseSection = "/" + href.split("/")[1] + "/";
-  return currentPath.startsWith(baseSection);
+  // Match the module segment, accounting for the /zh/ locale prefix.
+  const segments = normalizedHref.split("/").filter(Boolean);
+  const moduleSegments = segments[0] === "zh" ? segments.slice(0, 2) : segments.slice(0, 1);
+  const modulePrefix = "/" + moduleSegments.join("/") + "/";
+  return normalizedCurrentPath.startsWith(modulePrefix);
 }
 
 // Get sidebar items for current page
@@ -80,7 +85,7 @@ for (const section of sidebarSections) {
 }
 ---
 
-<div class="header-wrapper">
+<div class="header-wrapper" data-global-lightbox-close-label={globalLightboxCloseLabel}>
   <div class="site-header">
     <div class="site-header-inner">
       <div class="header-top-row">
@@ -91,7 +96,7 @@ for (const section of sidebarSections) {
         <button
           type="button"
           class="mobile-menu-toggle"
-          aria-label="Toggle navigation menu"
+          aria-label={mobileMenuToggleLabel}
           aria-expanded="false"
           data-mobile-menu-toggle
         >
@@ -106,7 +111,7 @@ for (const section of sidebarSections) {
               type="button"
               class="theme-toggle-button"
               data-theme-toggle
-              aria-label="Toggle dark / light theme"
+              aria-label={themeToggleLabel}
             >
               <ThemeLightIcon class="theme-icon theme-icon-outline" />
               <ThemeLightFilledIcon class="theme-icon theme-icon-filled" />
@@ -122,7 +127,7 @@ for (const section of sidebarSections) {
             class="github-link-header"
             target="_blank"
             rel="noreferrer"
-            aria-label="Open FRCDesign.org on GitHub"
+            aria-label={githubLabel}
           >
             <GitIcon class="github-icon" />
           </a>
@@ -131,7 +136,7 @@ for (const section of sidebarSections) {
     </div>
   </div>
 
-  <nav class="navigation-bar" aria-label="Primary">
+  <nav class="navigation-bar" aria-label={primaryNavigationLabel}>
     <div class="navigation-bar-inner">
       <div class="primary-navigation">
         {navLinks.map((item) => (
@@ -141,7 +146,7 @@ for (const section of sidebarSections) {
     </div>
   </nav>
 
-  <nav class="mobile-navigation" aria-label="Primary" data-mobile-menu>
+  <nav class="mobile-navigation" aria-label={primaryNavigationLabel} data-mobile-menu>
     <div class="mobile-navigation-inner">
       <div class="mobile-nav-section">
         <span class="mobile-nav-section-title">{mobileNavLabels.navigation}</span>
@@ -214,6 +219,7 @@ for (const section of sidebarSections) {
   (() => {
     // Global image lightbox functionality
     const initImageLightbox = () => {
+      const closeLabel = document.querySelector('.header-wrapper')?.dataset.globalLightboxCloseLabel || 'Close lightbox';
       // Create lightbox element if it doesn't exist
       let lightbox = document.getElementById('global-image-lightbox');
       if (!lightbox) {
@@ -221,7 +227,7 @@ for (const section of sidebarSections) {
         lightbox.id = 'global-image-lightbox';
         lightbox.className = 'global-image-lightbox';
         lightbox.innerHTML = `
-          <button class="global-lightbox-close" aria-label="Close lightbox">
+          <button class="global-lightbox-close" aria-label="${closeLabel}">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>

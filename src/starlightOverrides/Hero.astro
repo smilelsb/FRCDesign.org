@@ -34,7 +34,10 @@ const showKickoffCountdown = false;
 
 // Check if this is the home page (splash template)
 const isHomePage = data.template === 'splash';
-const isMechanismExamplesPage = Astro.url.pathname === '/mechanism-examples/' || Astro.url.pathname.startsWith('/mechanism-examples/');
+const isMechanismExamplesPage =
+	Astro.url.pathname === '/zh/mechanism-examples/' ||
+	Astro.url.pathname === '/mechanism-examples/' ||
+	Astro.url.pathname.startsWith('/mechanism-examples/');
 const isResourcesPage = Astro.url.pathname === '/resources/';
 // Detect 404 page by empty hero on a splash template (home page has tagline/image/actions so it won't match)
 const isSplashPage = data.template === 'splash';

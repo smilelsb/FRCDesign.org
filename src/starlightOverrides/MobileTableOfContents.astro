@@ -2,6 +2,11 @@
 import TableOfContentsList from './TableOfContentsList.astro';
 
 const { toc } = Astro.locals.starlightRoute;
+const pathname = Astro.url.pathname;
+const onThisPageLabel =
+  pathname === '/zh' || pathname.startsWith('/zh/')
+    ? '本页内容'
+    : Astro.locals.t('tableOfContents.onThisPage');
 ---
 
 {
@@ -11,7 +16,7 @@ const { toc } = Astro.locals.starlightRoute;
         <details id="starlight__mobile-toc">
           <summary id="starlight__on-this-page--mobile" class="sl-flex">
             <span class="toggle sl-flex">
-              {Astro.locals.t('tableOfContents.onThisPage')}
+              {onThisPageLabel}
               <svg aria-hidden="true" class="caret" width="16" height="16" viewBox="0 0 24 24">
                 <path
                   fill="currentColor"
@@ -22,7 +27,7 @@ const { toc } = Astro.locals.starlightRoute;
             <span class="display-current" />
           </summary>
           <div class="dropdown">
-            <TableOfContentsList items={toc.items} isMobile />
+            <TableOfContentsList items={toc.items} />
           </div>
         </details>
       </nav>

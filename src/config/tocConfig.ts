@@ -31,6 +31,7 @@ export interface TocConfig {
 export const tocEnabledDirectories: Record<string, TocConfig | true> = {
   // Add directories here to enable TOC
   '/design-handbook': true,
+  '/zh/design-handbook': true,
   // '/best-practices': true,
 };
 

@@ -3,6 +3,9 @@ import fabworksBlack from '../assets/footer/fabworks-black.svg';
 import fabworksWhite from '../assets/footer/fabworks-white.svg';
 import wcpLogo from '../assets/footer/wcp.svg';
 import Pagination from 'virtual:starlight/components/Pagination';
+import { isChinesePath } from '../config/navConfig';
+
+const sponsorLabel = isChinesePath(Astro.url.pathname) ? 'FRCDesign.org 由以下机构赞助' : 'FRCDesign.org is sponsored by';
 ---
 
 <footer class="site-footer">
@@ -14,7 +17,7 @@ import Pagination from 'virtual:starlight/components/Pagination';
   <div class="site-footer-inner">
     <!-- Sponsors -->
     <div class="footer-sponsors">
-      <p class="footer-powered-label">FRCDesign.org is sponsored by</p>
+      <p class="footer-powered-label">{sponsorLabel}</p>
 
       <div class="footer-sponsor-row">
         <!-- WCP logo / link -->

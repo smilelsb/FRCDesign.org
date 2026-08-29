@@ -15,6 +15,10 @@ const t = Astro.locals.t;
 
 // Get the current page path
 const pathname = Astro.url.pathname;
+const onThisPageLabel =
+  pathname === '/zh' || pathname.startsWith('/zh/')
+    ? '本页内容'
+    : t('tableOfContents.onThisPage');
 
 // Check if TOC should be enabled for this path via directory config
 const tocConfig = getTocConfigForPath(pathname);
@@ -42,7 +46,7 @@ if (tocConfig && typeof tocConfig === 'object') {
 // 1. Frontmatter explicitly enables it (tableOfContents: true), OR
 // 2. Directory config enables it (tocConfig is truthy)
 // Frontmatter can also explicitly disable with tableOfContents: false
-const frontmatterEnabled = frontmatterToc === true || (typeof frontmatterToc === 'object' && frontmatterToc !== null);
+const frontmatterEnabled = frontmatterToc !== undefined && frontmatterToc !== false;
 const frontmatterDisabled = frontmatterToc === false;
 const directoryEnabled = tocConfig !== false;
 
@@ -52,7 +56,7 @@ showToc = items.length > 0 && !frontmatterDisabled && (frontmatterEnabled || dir
 {showToc && (
   <starlight-toc data-min-h={minHeadingLevel} data-max-h={maxHeadingLevel}>
     <nav aria-labelledby="starlight__on-this-page">
-      <h2 id="starlight__on-this-page">{t('tableOfContents.onThisPage')}</h2>
+      <h2 id="starlight__on-this-page">{onThisPageLabel}</h2>
       <TableOfContentsList items={items} />
     </nav>
   </starlight-toc>

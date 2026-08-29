@@ -82,25 +82,25 @@ Using an alternate platform or forking on Github?:
    - 在 `file` 菜单中开启自动保存
 5. 完成一组修改。
 
-<Aside type="tip">
+<Aside type="tip" title="Tip（提示）">
 网站的所有文件和文件夹都位于 `src/content/docs` 文件夹中。
 </Aside>
 
-<Aside type="note" title="添加新页面">
-如果创建新的 `.mdx` 文件，还必须在 `src/config/sidebarConfig.ts` 中为其添加条目，否则页面虽已存在，却不会显示在导航中。完整说明请参阅[添加页面](/contribution/adding-a-page/)。
+<Aside type="note" title="Note（备注）">
+如果创建新的 `.mdx` 文件，还必须在 `src/config/sidebarConfig.ts` 中为其添加条目，否则页面虽已存在，却不会显示在导航中。完整说明请参阅[添加页面](/zh/contribution/adding-a-page/)。
 </Aside>
 
 6. 每当工作告一段落并希望将修改保存到云端时，需要创建所谓的“提交（commit）”，将修改保存到分支。随后还必须“推送（push）”这些提交，才能将其上传到云端，否则它们只会保留在本地。你可以通过 VS Code 或 GitHub Desktop 完成这些操作；这里使用 GitHub Desktop，以便集中管理所有版本控制操作。
 7. 打开 GitHub Desktop，确保侧栏中的“Changes”已选中。侧栏中选中的所有修改都会加入该提交（即修改已为提交“暂存”）。输入提交摘要（说明可选），然后点击“Commit to [branch]”。
 8. 点击按钮，将已经创建的提交推送到云端（按钮可能位于顶部或屏幕中央）。
 
-<Aside type="tip">
+<Aside type="tip" title="Tip（提示）">
 点击“Fetch origin”按钮，会获取其他人已创建并推送到云端的当前分支提交。
 </Aside>
 
 9. 为使你的分支与原始仓库的 main 分支保持同步，请打开屏幕顶部的“branch”菜单，然后点击“Update from main”。如果有提交从 main 拉取到你的分支，可以再次推送以更新云端分支。
 
-<Aside type="tip">
+<Aside type="tip" title="Tip（提示）">
 请务必经常从 main 更新你的分支！否则，你的修改可能与他人对 main 所做的修改产生大量冲突。如果遇到冲突，只需按照 GitHub Desktop 中的提示，在 VS Code 中打开并解决冲突。解决所有冲突后，切回 GitHub Desktop 完成合并。
 </Aside>
 
@@ -121,10 +121,10 @@ Using an alternate platform or forking on Github?:
 
 每次打开 VS Code 进行编辑时，请务必运行 `npm run dev`。
 
-<Aside type="tip">
+<Aside type="tip" title="Tip（提示）">
 点击底部面板中的终端后，可以使用 Ctrl + C 停止本地网站托管。
 </Aside>
 
-<Aside type="note">
+<Aside type="note" title="Note（备注）">
 使用 GitHub Desktop 切换分支时，本地预览也会随之切换，不受影响。
 </Aside>
