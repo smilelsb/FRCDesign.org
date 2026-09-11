@@ -221,7 +221,7 @@ npm install
 npm run dev
 ```
 
-访问 [http://localhost:4321](http://localhost:4321)。
+访问 [http://localhost:4321/zh/](http://localhost:4321/zh/)。
 
 ## 命令
 
