@@ -12,6 +12,9 @@ const sitemapExcludedPaths = ['/test-content-figure/'];
 export default defineConfig({
   site: 'https://frcdesign.org',
   prefetch: true,
+  // This docs site does not use Astro sessions. Disable them so Wrangler
+  // does not try to auto-create the SESSION KV namespace on every deploy.
+  session: false,
   markdown: {
     remarkPlugins: [remarkCenter, remarkGlossary, remarkMdxGlobalImports],
     rehypePlugins: [],
