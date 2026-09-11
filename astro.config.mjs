@@ -12,9 +12,13 @@ const sitemapExcludedPaths = ['/test-content-figure/'];
 export default defineConfig({
   site: 'https://frcdesign.org',
   prefetch: true,
-  // This docs site does not use Astro sessions. Disable them so Wrangler
-  // does not try to auto-create the SESSION KV namespace on every deploy.
-  session: false,
+  // Astro 6 requires an object here; `session: false` is only valid in later versions.
+  // A null driver skips Cloudflare KV auto-provisioning (frcdesign-session / error 10014).
+  session: {
+    driver: {
+      entrypoint: 'unstorage/drivers/null',
+    },
+  },
   markdown: {
     remarkPlugins: [remarkCenter, remarkGlossary, remarkMdxGlobalImports],
     rehypePlugins: [],
